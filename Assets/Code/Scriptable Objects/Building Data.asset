@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bff352701a6ab9d469a04bc9a3e50602, type: 3}
+  m_Name: Building Data
+  m_EditorClassIdentifier: 
+  leftBuildings:
+  - {fileID: 1630058283791181283, guid: 936f77ca406fb944fba355c846218d82, type: 3}
+  - {fileID: 4195881345962761173, guid: 0a7f7264f2baf0641ac6bfb1f305f900, type: 3}
+  - {fileID: 7416225878403509759, guid: 3e493fce1d16ec44cb28991416ed20ce, type: 3}
+  - {fileID: 1636512330968730970, guid: 6578c109ac03df2438d06077e5b2ee7e, type: 3}
+  - {fileID: 1630058283791181283, guid: 936f77ca406fb944fba355c846218d82, type: 3}
+  - {fileID: 1630058283791181283, guid: 936f77ca406fb944fba355c846218d82, type: 3}
+  rightBuildings:
+  - {fileID: 3048086751505081895, guid: cc8e3c5b59f3c6f4fb85785e95ae1a0f, type: 3}
+  - {fileID: 189730503972732579, guid: af8a0400d0f67f44a897d9ff0f6623f0, type: 3}
+  - {fileID: 5871963514999075321, guid: 32f11f41ee4da8345b0c59da77ce30b4, type: 3}
+  - {fileID: 3370109007693884490, guid: 2f208ce4b416fa34eac3e59e9b829c23, type: 3}
+  - {fileID: 3048086751505081895, guid: cc8e3c5b59f3c6f4fb85785e95ae1a0f, type: 3}
+  - {fileID: 3048086751505081895, guid: cc8e3c5b59f3c6f4fb85785e95ae1a0f, type: 3}
+  leftRotation: {x: 0, y: 90, z: 0}
+  rightRotation: {x: 0, y: -90, z: 0}
