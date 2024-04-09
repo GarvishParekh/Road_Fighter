@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 610223fb02a9e014e91b88188937ab9d, type: 3}
+  m_Name: Car Data
+  m_EditorClassIdentifier: 
+  carEngine: 1
+  carHealth: 1
+  carMainMenuSpeed: 2
+  currentSpeedLevel: 0
+  carSpeedLevel:
+  - levelName: RELAXED
+    speedValue: 10
+  - levelName: SWIFT
+    speedValue: 15
+  - levelName: TURBO
+    speedValue: 25
+  - levelName: HYPERSONIC
+    speedValue: 30
+  - levelName: INSANE
+    speedValue: 45
+  touchSensitivity: 5
+  gyroSensitivity: 200
+  gyroResponse: 0.2
+  gyrpMaxVelocity: 4
