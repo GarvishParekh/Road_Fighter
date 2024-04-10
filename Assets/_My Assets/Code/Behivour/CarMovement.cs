@@ -28,6 +28,8 @@ public class CarMovement : MonoBehaviour
     [SerializeField] private Rigidbody carRB;
 
     Vector3 pos;
+    public float lerpedSpeed = 0;
+    public float lerpedCarMovement;
 
     private void Start()
     {
@@ -48,6 +50,7 @@ public class CarMovement : MonoBehaviour
                 break;
             case GameScene.GAMEPLAY:
                 carData.carEngine = CarEngine.ON;
+                lerpedCarMovement = carData.carSpeedLevel[0].speedValue;
                 break;
         }
     }
@@ -68,12 +71,24 @@ public class CarMovement : MonoBehaviour
         switch (gameScene)
         {
             case GameScene.MAIN_MENU:
-                mainRB.velocity = Vector3.forward * carData.carMainMenuSpeed; 
+                mainRB.velocity = Vector3.forward * carData.carMainMenuSpeed * GetPickUpLerp(); 
                 break;
             case GameScene.GAMEPLAY:
-                mainRB.velocity = Vector3.forward * (carData.carSpeedLevel[(int)carData.currentSpeedLevel].speedValue + nosSystem.GetNosValue());
+                mainRB.velocity = Vector3.forward * (GetLerpedMovementValue() + nosSystem.GetNosValue());
                 break;
         }
+    }
+
+    private float GetPickUpLerp()
+    {
+        lerpedSpeed = Mathf.MoveTowards(lerpedSpeed, 1, Time.deltaTime * carData.pickUpSpeed);
+        return lerpedSpeed; 
+    }
+
+    private float GetLerpedMovementValue()
+    {
+        lerpedCarMovement = Mathf.MoveTowards(lerpedCarMovement, carData.carSpeedLevel[(int)carData.currentSpeedLevel].speedValue, carData.gearShiftingSpeed * Time.deltaTime);
+        return lerpedCarMovement;
     }
 
     private void ApplyTurning()

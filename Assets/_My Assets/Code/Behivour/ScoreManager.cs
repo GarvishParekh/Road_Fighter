@@ -1,3 +1,4 @@
+using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -11,6 +12,7 @@ public class ScoreManager : MonoBehaviour
     [SerializeField] private ScoreData scoreData;
 
     [Header (" [USER INTERFACE] ")]
+    [SerializeField] private TMP_Text scoreMultiplierCountTxt;
     [SerializeField] private TMP_Text scoreMultiplierTxt;
     [SerializeField] private TMP_Text scoreTxt;
     [SerializeField] private Image scoreMutliplierImg;
@@ -24,10 +26,9 @@ public class ScoreManager : MonoBehaviour
     private void FixedUpdate()
     {
         scoreData.scoreCount += Time.deltaTime * scoreData.scoreMultiplier[scoreData.currentScoreLevel].value;
-        scoreMultiplierTxt.text = scoreData.scoreMultiplier[scoreData.currentScoreLevel].levelDisplayName;
+        scoreMultiplierCountTxt.text = scoreData.scoreMultiplier[scoreData.currentScoreLevel].levelDisplayName;
 
         scoreTxt.text = $"SCORE <size=45>{scoreData.scoreCount.ToString("0")}";
-        
     }
 
     private void Update()
@@ -36,9 +37,11 @@ public class ScoreManager : MonoBehaviour
         {
             case BoostingStatus.IsBoosting:
                 InscreaseMutliplier();
+                scoreMultiplierTxt.color = scoreData.scoreMultiplier[scoreData.currentScoreLevel].textColor;
                 break;
             case BoostingStatus.NotBoosting:
                 ResetMultiplier();
+                scoreMultiplierTxt.color = scoreData.textDefaultColor;
                 break;
         }
         scoreMutliplierImg.fillAmount = scoreData.scoreMultiplierValue;
@@ -53,11 +56,11 @@ public class ScoreManager : MonoBehaviour
         {
             scoreData.scoreMultiplierValue = 0;
             scoreData.currentScoreLevel++;
-            LeanTween.scale(scoreMultiplierTxt.gameObject, Vector3.one * 2, 0.15f).setEaseInOutSine().setLoopPingPong(1);
+            LeanTween.scale(scoreMultiplierCountTxt.gameObject, Vector3.one * 2, 0.15f).setEaseInOutSine().setLoopPingPong(1);
         }
        
         if (scoreData.scoreMultiplierValue >= 1 && scoreData.currentScoreLevel == scoreData.scoreMultiplier.Length - 1)
-            scoreMutliplierMainHolder.transform.localPosition = (Random.insideUnitCircle * 200) * Time.deltaTime;
+            scoreMutliplierMainHolder.transform.localPosition = (Random.insideUnitCircle * scoreData.shakeEffect) * Time.deltaTime;
         else
             scoreMutliplierMainHolder.transform.localPosition = Vector3.zero;
     }

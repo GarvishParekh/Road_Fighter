@@ -10,7 +10,7 @@ public class MainMenuStart : MonoBehaviour
     {
         buttonCanvas.SetActive(false);
         carData.carEngine = CarEngine.ON;
-        Invoke(nameof(ChangeScene), 2);
+        Invoke(nameof(ChangeScene), 1.5f);
     }
 
     private void ChangeScene()

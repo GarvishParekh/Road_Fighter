@@ -243,7 +243,7 @@ Transform:
   m_GameObject: {fileID: 26218693}
   serializedVersion: 2
   m_LocalRotation: {x: 0.05608423, y: -0.8811977, z: 0.10819741, w: 0.45676965}
-  m_LocalPosition: {x: 0.046, y: 1.084, z: 2.791}
+  m_LocalPosition: {x: 0.089, y: 0.94, z: 1.064}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -16838,7 +16838,7 @@ Transform:
   m_GameObject: {fileID: 919132147514156622}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.058, z: 87.1}
+  m_LocalPosition: {x: 0, y: 0.058, z: 83.899994}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -16942,6 +16942,7 @@ MonoBehaviour:
   nosSystem: {fileID: 0}
   carData: {fileID: 11400000, guid: fb121c1dc1475384783df7983091d60b, type: 2}
   carRB: {fileID: 2110700757}
+  lerpedSpeed: 0
 --- !u!1001 &4417777805887846476
 PrefabInstance:
   m_ObjectHideFlags: 0
