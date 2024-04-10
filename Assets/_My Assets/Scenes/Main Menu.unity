@@ -6346,7 +6346,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: 84ce80690a5e544f8a4717c4d6abd8b2, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: 84ce80690a5e544f8a4717c4d6abd8b2, type: 3}
       propertyPath: m_LocalScale.x
@@ -7731,7 +7731,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: ece4513702e777b4c973bbf3bc162f5b, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: ece4513702e777b4c973bbf3bc162f5b, type: 3}
       propertyPath: m_LocalScale.x
@@ -16943,6 +16943,7 @@ MonoBehaviour:
   carData: {fileID: 11400000, guid: fb121c1dc1475384783df7983091d60b, type: 2}
   carRB: {fileID: 2110700757}
   lerpedSpeed: 0
+  lerpedCarMovement: 0
 --- !u!1001 &4417777805887846476
 PrefabInstance:
   m_ObjectHideFlags: 0

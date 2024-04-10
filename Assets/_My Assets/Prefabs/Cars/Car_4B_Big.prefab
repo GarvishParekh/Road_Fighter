@@ -773,7 +773,7 @@ GameObject:
   - component: {fileID: 840507109504697509}
   - component: {fileID: 19963401041223731}
   m_Layer: 0
-  m_Name: Car_4B
+  m_Name: Car_4B_Big
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
