@@ -1,5 +1,5 @@
-using Unity.Mathematics;
 using UnityEngine;
+using Unity.Mathematics;
 
 public class TrafficBlock : MonoBehaviour
 {
@@ -8,6 +8,7 @@ public class TrafficBlock : MonoBehaviour
     [SerializeField] private GameObject[] lanes;
     [SerializeField] private Transform trafficSpawnPoint;
     [SerializeField] private Transform playerCar;
+    [SerializeField] private Transform laneHolder;
 
     float distance;
     int totalCarsList = 0;
@@ -16,13 +17,28 @@ public class TrafficBlock : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
-        totalCarsList = trafficData.allCars.Length; 
+        totalCarsList = trafficData.allCars.Length;
+        laneHolder = transform.GetChild(0); 
     }
 
     private void Start()
     {
         SpawnCar();
         ResetLane();
+    }
+
+    private void FixedUpdate()
+    {
+        switch (trafficData.trafficStatus)
+        {
+            case TrafficData.TrafficStatus.MOVING:
+                rb.velocity = Vector3.forward * trafficData.trafficSpeed;
+                CalculateDistance();
+                break;
+            case TrafficData.TrafficStatus.STATIC:
+                rb.velocity = Vector3.zero;
+                break;
+        }
     }
 
     private void SpawnCar()
@@ -53,11 +69,6 @@ public class TrafficBlock : MonoBehaviour
         }
     }
 
-    private void FixedUpdate()
-    {
-        rb.velocity = Vector3.forward * trafficData.trafficSpeed;
-        CalculateDistance();
-    }
 
     private void CalculateDistance()
     {

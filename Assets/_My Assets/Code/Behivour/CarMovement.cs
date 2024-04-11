@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CarMovement : MonoBehaviour
 {
@@ -62,6 +63,10 @@ public class CarMovement : MonoBehaviour
             case CarEngine.ON:
                 ApplyVelocity();
                 ApplyTurning();
+            break;
+            case CarEngine.OFF:
+                mainRB.velocity = Vector3.zero;
+                carRB.velocity = Vector3.zero;
             break;
         }
     }

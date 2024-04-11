@@ -1,10 +1,10 @@
-using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class ScoreManager : MonoBehaviour
 {
+    GameStatus gameStatus;
     [Header(" [SCRIPTS] ")]
     [SerializeField] private NosSystem nosSystem;
     
@@ -21,10 +21,15 @@ public class ScoreManager : MonoBehaviour
     private void Start()
     {
         ScoreReset();
+        gameStatus = GameStatus.instance;
     }
 
     private void FixedUpdate()
     {
+        if (gameStatus.GetGameState() == GameState.GAMEOVER)
+        {
+            return;
+        }
         scoreData.scoreCount += Time.deltaTime * scoreData.scoreMultiplier[scoreData.currentScoreLevel].value;
         scoreMultiplierCountTxt.text = scoreData.scoreMultiplier[scoreData.currentScoreLevel].levelDisplayName;
 
@@ -33,6 +38,10 @@ public class ScoreManager : MonoBehaviour
 
     private void Update()
     {
+        if (gameStatus.GetGameState() == GameState.GAMEOVER)
+        {
+            return;
+        }
         switch (nosSystem.boostingStatus)
         {
             case BoostingStatus.IsBoosting:

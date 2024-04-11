@@ -12,32 +12,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 610223fb02a9e014e91b88188937ab9d, type: 3}
   m_Name: Car Data
   m_EditorClassIdentifier: 
-  carEngine: 1
+  carEngine: 0
   carHealth: 1
   carMainMenuSpeed: 10
-  speedLevelValue: 0.015199994
+  gearShiftingSpeed: 5
+  pickUpSpeed: 1
+  speedLevelValue: 0.16720049
   currentSpeedLevel: 0
   carSpeedLevel:
   - levelName: RELAXED
     speedValue: 10
     minValue: 0
-    maxValue: 500
+    maxValue: 1500
   - levelName: SWIFT
     speedValue: 15
-    minValue: 500
-    maxValue: 1000
+    minValue: 1500
+    maxValue: 3500
   - levelName: TURBO
     speedValue: 25
-    minValue: 1000
-    maxValue: 1500
+    minValue: 3500
+    maxValue: 9000
   - levelName: HYPERSONIC
     speedValue: 30
-    minValue: 1500
-    maxValue: 2000
+    minValue: 9000
+    maxValue: 15000
   - levelName: INSANE
     speedValue: 45
-    minValue: 2000
-    maxValue: 2500
+    minValue: 15000
+    maxValue: 30000
   touchSensitivity: 5
   gyroSensitivity: 200
   gyroResponse: 0.2

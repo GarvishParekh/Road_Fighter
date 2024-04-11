@@ -3,8 +3,10 @@ using System.Collections;
 
 public class CameraFollow : MonoBehaviour
 {
-    [Header(" [COMPONENTS] ")]
+    UiManager uiManager;
+    [Header(" [SCRIPTS] ")]
     [SerializeField] CarMovement carMovement;
+    [SerializeField] InstructionManager instructionManager;
 
     [Header (" [COMPONENTS] ")]
     [SerializeField] private Transform cameraTransform;
@@ -16,6 +18,7 @@ public class CameraFollow : MonoBehaviour
 
     public void Start()
     {
+        uiManager = UiManager.instance;
         StartCoroutine(nameof(StartOff));
     }
 
@@ -33,5 +36,11 @@ public class CameraFollow : MonoBehaviour
             yield return null;  
         }
         carMovement.TakeControl();
+        instructionManager.ShowFirstCanvas();
+    }
+
+    public void ChangeCameraSmoothness(float newValue)
+    {
+        cameraSmoothness = newValue;
     }
 }

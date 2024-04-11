@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75845b20a998c7d40bd1ef4becb08958, type: 3}
   m_Name: Traffic Data
   m_EditorClassIdentifier: 
+  trafficStatus: 0
   trafficSpeed: 2
   allCars:
   - {fileID: 5625479494544449469, guid: a36cf52d03c5d0d4a996dfd8e795cf8b, type: 3}
