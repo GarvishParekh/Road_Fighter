@@ -24,7 +24,7 @@ public class CarCollision : MonoBehaviour
             Debug.Log("gameover");
             carData.carEngine = CarEngine.OFF;
             trafficData.trafficStatus = TrafficData.TrafficStatus.STATIC;
-            gameoverCanvas.SetActive(true);
+            //gameoverCanvas.SetActive(true);
 
             uiManager.OpenCanvas(CanvasCellsName.GAMEOVER);
 
