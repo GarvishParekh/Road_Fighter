@@ -579,6 +579,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainMenuCanvas: {fileID: 1090416725}
+  highscoreTxt: {fileID: 484004672}
   carData: {fileID: 11400000, guid: fb121c1dc1475384783df7983091d60b, type: 2}
 --- !u!1 &75878665 stripped
 GameObject:

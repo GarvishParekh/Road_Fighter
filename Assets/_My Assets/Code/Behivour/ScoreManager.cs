@@ -1,6 +1,7 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Globalization;
 
 public class ScoreManager : MonoBehaviour
 {
@@ -18,6 +19,16 @@ public class ScoreManager : MonoBehaviour
     [SerializeField] private Image scoreMutliplierImg;
     [SerializeField] private RectTransform scoreMutliplierMainHolder;
 
+    private void OnEnable()
+    {
+        GameStatus.GameOverAction += NoteScore;
+    }
+
+    private void OnDisable()
+    {
+        GameStatus.GameOverAction -= NoteScore;
+    }
+
     private void Start()
     {
         ScoreReset();
@@ -33,7 +44,7 @@ public class ScoreManager : MonoBehaviour
         scoreData.scoreCount += Time.deltaTime * scoreData.scoreMultiplier[scoreData.currentScoreLevel].value;
         scoreMultiplierCountTxt.text = scoreData.scoreMultiplier[scoreData.currentScoreLevel].levelDisplayName;
 
-        scoreTxt.text = $"SCORE <size=45>{scoreData.scoreCount.ToString("0")}";
+        scoreTxt.text = $"SCORE <size=45>{scoreData.scoreCount.ToString("#,##0", CultureInfo.InvariantCulture)}";
     }
 
     private void Update()
@@ -85,5 +96,18 @@ public class ScoreManager : MonoBehaviour
         scoreData.currentScoreLevel = 0;
         scoreData.scoreMultiplierValue = 0;
         scoreData.scoreCount = 0;
+    }
+
+    private void NoteScore()
+    {
+        // note score
+        int currentHighscore = PlayerPrefs.GetInt(ConstantKeys.HIGHSCORE_COUNT, 0);
+        int currentScore = (int)scoreData.scoreCount;
+
+        // update the highscore
+        if (currentScore > currentHighscore)
+        {
+            PlayerPrefs.SetInt(ConstantKeys.HIGHSCORE_COUNT, currentScore);
+        }
     }
 }

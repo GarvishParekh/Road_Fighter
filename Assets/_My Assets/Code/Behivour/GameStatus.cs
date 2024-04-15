@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public enum GameState
@@ -7,6 +8,7 @@ public enum GameState
 }
 public class GameStatus : MonoBehaviour
 {
+    public static Action GameOverAction;
     public static GameStatus instance;
     [SerializeField] private GameState gameState;
 

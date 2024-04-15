@@ -7,7 +7,6 @@ public class CarCollision : MonoBehaviour
 
     [SerializeField] private CarData carData;
     [SerializeField] private TrafficData trafficData;
-    [SerializeField] private GameObject gameoverCanvas;
 
     private void Start()
     {
@@ -24,12 +23,11 @@ public class CarCollision : MonoBehaviour
             Debug.Log("gameover");
             carData.carEngine = CarEngine.OFF;
             trafficData.trafficStatus = TrafficData.TrafficStatus.STATIC;
-            //gameoverCanvas.SetActive(true);
 
             uiManager.OpenCanvas(CanvasCellsName.GAMEOVER);
 
             gameStauts.ChangeGameState(GameState.GAMEOVER);
-            
+            GameStatus.GameOverAction?.Invoke();    
         }
     }
 }
