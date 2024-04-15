@@ -2,6 +2,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using System.Globalization;
 
 public class GameoverCanvasAnimation : MonoBehaviour, ICanvasCellAnimation
 {
@@ -65,7 +66,7 @@ public class GameoverCanvasAnimation : MonoBehaviour, ICanvasCellAnimation
         while (counter != scoreData.scoreCount)
         {
             counter = Mathf.MoveTowards(counter, scoreData.scoreCount, scoreData.scoreCount / 2.6f * Time.deltaTime);
-            finalScoreTxt.text = counter.ToString("0");
+            finalScoreTxt.text = counter.ToString("#,##0", CultureInfo.InvariantCulture);
             yield return null;
 
             Debug.Log("Calculating");
