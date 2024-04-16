@@ -3,22 +3,33 @@ using UnityEngine;
 using System.Globalization;
 using UnityEngine.SceneManagement;
 
-public class MainMenuStart : MonoBehaviour
+public class MainMenuUIManager : MonoBehaviour
 {
-    [SerializeField] private GameObject mainMenuCanvas;
-    [SerializeField] private TMP_Text highscoreTxt;
+    UiManager uiManager;
+
+    [Header (" <size=15>[SCRIPTABLE OBJECT]")]
     [SerializeField] private CarData carData;
+
+    [Header (" <size=15>[UI]")]
+    [SerializeField] private TMP_Text highscoreTxt;
 
     private void Start()
     {
+        uiManager = UiManager.instance;
+        Invoke(nameof(SetMainMenu), 0.5f);
+    }
+
+    private void SetMainMenu()
+    {
+        uiManager.OpenCanvas(CanvasCellsName.MAIN_MENU);
         SetHighscore();
     }
 
     public void _StartBtn()
     {
-        mainMenuCanvas.SetActive(false);
         carData.carEngine = CarEngine.ON;
         Invoke(nameof(ChangeScene), 1.5f);
+        uiManager.OpenCanvas(CanvasCellsName.EMPTY);
     }
 
     private void ChangeScene()

@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 using System.Globalization;
+using Unity.Mathematics;
 
 public class GameoverCanvasAnimation : MonoBehaviour, ICanvasCellAnimation
 {
@@ -19,12 +20,14 @@ public class GameoverCanvasAnimation : MonoBehaviour, ICanvasCellAnimation
 
     [Header (" <size=15> [CANVAS ANIMATION] ")]
     [SerializeField] GameObject bgImage;
+    [SerializeField] GameObject mainHolder;
     [SerializeField] GameObject crashTittle;
     [SerializeField] GameObject scoreHolder;
     [SerializeField] GameObject coinHolder;
     [SerializeField] GameObject photoHolder;
     [SerializeField] GameObject homeButtom;
     [SerializeField] GameObject retryButton;
+    [SerializeField] GameObject retyrIcon;
 
     WaitForSeconds pointOne = new WaitForSeconds(0.01f);
     float counter = 0;
@@ -37,7 +40,10 @@ public class GameoverCanvasAnimation : MonoBehaviour, ICanvasCellAnimation
 
     public void ResetAnimation()
     {
-        bgImage.transform.localScale = defaultTransform;
+        bgImage.transform.localScale = Vector3.zero;
+        mainHolder.transform.localScale = Vector3.zero;
+        retyrIcon.transform.rotation = Quaternion.Euler(Vector3.zero);
+
         crashTittle.transform.localScale = defaultTransform;
         scoreHolder.transform.localScale = defaultTransform;
         coinHolder.transform.localScale = defaultTransform;
@@ -53,9 +59,12 @@ public class GameoverCanvasAnimation : MonoBehaviour, ICanvasCellAnimation
         StartCoroutine(nameof(CalculateScoreCounter));
         LeanTween.scale(bgImage, Vector3.one * 10, 0.2f).setEaseInOutSine().setOnComplete(() =>
         {
-            LeanTween.scale(crashTittle, Vector3.one, 0.2f).setEaseInOutSine();
-            LeanTween.scale(scoreHolder, Vector3.one, 0.2f).setEaseInOutSine();
-            LeanTween.scale(coinHolder, Vector3.one, 0.2f).setEaseInOutSine();
+            LeanTween.scale(mainHolder, Vector3.one, 0.15f).setEaseInOutSine().setOnComplete(() =>
+            {
+                LeanTween.scale(crashTittle, Vector3.one, 0.2f).setEaseInOutSine();
+                LeanTween.scale(scoreHolder, Vector3.one, 0.2f).setEaseInOutSine();
+                LeanTween.scale(coinHolder, Vector3.one, 0.2f).setEaseInOutSine();
+            });
         });
 
         yield return new WaitForSeconds(1f);
@@ -82,6 +91,7 @@ public class GameoverCanvasAnimation : MonoBehaviour, ICanvasCellAnimation
             LeanTween.scale(retryButton, Vector3.one, 0.2f).setEaseInOutSine().setOnComplete(()=>
             {
                 LeanTween.scale(homeButtom, Vector3.one, 0.2f).setEaseInOutSine();
+                LeanTween.rotateAround(retyrIcon, Vector3.forward, 360, 2f).setEaseOutBounce().setLoopCount(-1);
             });
         });
     }

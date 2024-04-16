@@ -7,7 +7,10 @@ public enum CanvasCellsName
     GAMEOVER,
     TILT_INS,
     HOLD_INS,
-    ALL_SET
+    ALL_SET,
+    MAIN_MENU,
+    EMPTY,
+    GARAGE
 }
 public class UiManager : MonoBehaviour
 {

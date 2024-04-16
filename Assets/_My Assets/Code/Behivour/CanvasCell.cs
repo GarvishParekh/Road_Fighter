@@ -8,7 +8,7 @@ public class CanvasCell : MonoBehaviour, ICanvasCell
     [SerializeField] private CanvasCellsName myCanvasCellName;
 
 
-    private void Start()
+    private void Awake()
     {
         canvasAnimation = GetComponent<ICanvasCellAnimation>(); 
         canvasGroup = GetComponent<CanvasGroup>();  
