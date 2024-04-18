@@ -42,4 +42,14 @@ public class MainMenuUIManager : MonoBehaviour
         int highscoreCount = PlayerPrefs.GetInt(ConstantKeys.HIGHSCORE_COUNT, 0);
         highscoreTxt.text = highscoreCount.ToString("#,##0", CultureInfo.InvariantCulture);
     }
+
+    public void OpenGarage()
+    {
+        uiManager.OpenCanvas(CanvasCellsName.GARAGE);
+    }
+
+    public void OpenMainMenu()
+    {
+        uiManager.OpenCanvas(CanvasCellsName.MAIN_MENU);
+    }
 }
