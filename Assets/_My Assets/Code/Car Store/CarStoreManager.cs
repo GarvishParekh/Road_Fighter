@@ -6,6 +6,8 @@ using System.Collections.Generic;
 
 public class CarStoreManager : MonoBehaviour
 {
+    [SerializeField] private CarStoreData carStoreData;
+
     [SerializeField] private Image cardCarImage;
     [SerializeField] private TMP_Text cardCarName;
     [SerializeField] private TMP_Text cardCarPrice;
@@ -19,7 +21,7 @@ public class CarStoreManager : MonoBehaviour
     [SerializeField] private GameObject equipButton;
     [SerializeField] private GameObject equippedImage;
 
-    public void UpdateCard(Sprite carIcon, string _carName, int _carPrice, string _carClass, CarState _carState)
+    public void UpdateCard(Sprite carIcon, string _carName, int _carPrice, string _carClass, CarLockState _carState, CarEquipState _carEquipState)
     {
         cardCarImage.sprite = carIcon;
         cardCarName.text = _carName;
@@ -28,14 +30,19 @@ public class CarStoreManager : MonoBehaviour
 
         switch (_carState)
         {
-            case CarState.LOCKED:
+            case CarLockState.LOCKED:
                 UpdateButtons(buyButton);
                 break;
-            case CarState.UNLOCKED:
-                UpdateButtons(equipButton);
-                break;
-            case CarState.EQUIPPED:
-                UpdateButtons(equippedImage);
+            case CarLockState.UNLOCKED:
+                switch (_carEquipState)
+                {
+                    case CarEquipState.UNEQUIPPED:
+                        UpdateButtons(equipButton);
+                        break;
+                    case CarEquipState.EQUIPPED:
+                        UpdateButtons(equippedImage);
+                        break;
+                }
                 break;
         }
     }
@@ -95,6 +102,23 @@ public class CarStoreManager : MonoBehaviour
                     carToggle.gameObject.SetActive(true);
                 }
                 break;
+        }
+    }
+
+    public void EquipButton()
+    {
+        foreach (CarToggle carToggle in allCarToggle)
+        {
+            if (carStoreData.selectedCarData.equippedCarclass == carToggle.GetCarClass() &&
+                carStoreData.selectedCarData.equippedCarIndex == carToggle.GetMyIndex())
+            {
+                carToggle.EquipMe();
+            }
+            else
+            {
+                carToggle.UnEquipMe();
+            }
+            carToggle.UpdateUI();
         }
     }
 }

@@ -12,7 +12,8 @@ public class CarStoreData : ScriptableObject
     public List <CarsData> battlepassCars = new List<CarsData>();
 
     [Space]
-    public string selectedClass = "C";
+    public EquippedCarData equippedCarData;
+    public SelectedCarData selectedCarData;
 }
 
 [System.Serializable]
@@ -21,8 +22,10 @@ public class CarsData
     public string carName;    
     public Sprite carImage;
     public int carPrice;
-    public CarState carState;
-    public string playerPrefTag = "";
+    public CarLockState carLockState;
+    public CarEquipState carEquipState;
+    public string lockPlayerPref = "";
+    public string equipPlayerPref = "";
 }
 
 public enum CarsClass
@@ -34,9 +37,28 @@ public enum CarsClass
 }
 
 
-public enum CarState
+public enum CarLockState
 {
     LOCKED,
     UNLOCKED,
+}
+
+public enum CarEquipState
+{
+    UNEQUIPPED,
     EQUIPPED
+}
+
+[System.Serializable]
+public class EquippedCarData
+{
+    public CarsClass equippedCarclass;
+    public int equippedCarIndex;
+}
+
+[System.Serializable]
+public class SelectedCarData
+{
+    public CarsClass equippedCarclass;
+    public int equippedCarIndex;
 }

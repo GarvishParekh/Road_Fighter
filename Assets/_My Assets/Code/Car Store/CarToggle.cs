@@ -23,6 +23,12 @@ public class CarToggle : MonoBehaviour
     [SerializeField] private string myCarName = "";
     [SerializeField] private string myClass = "";
 
+    int lockStatus = 0;
+    int equipStatus = 0;
+
+    string lockPlayerPref;
+    string equipPlayerPref;
+
     private void Awake()
     {
         myToggle = GetComponent<Toggle>();  
@@ -30,8 +36,12 @@ public class CarToggle : MonoBehaviour
 
     private void Start()
     {
+        // get the list from which data can be retrived
         SetMyCatList();
+
+        // get car information and lock unlock information
         SetAllValues();
+        LockIdentifier();
 
         myToggle.onValueChanged.AddListener(delegate
         {
@@ -67,26 +77,99 @@ public class CarToggle : MonoBehaviour
         carIcon.sprite = myCarList[myCarIndex].carImage;
         myCarName = myCarList[myCarIndex].carName;
         myCarPrice = myCarList[myCarIndex].carPrice;
-        myCarList[myCarIndex].playerPrefTag = $"{myCarName}_PLAYER_PREF";
+
+        // set player perf values
+        lockPlayerPref = myCarList[myCarIndex].lockPlayerPref = $"{myCarName}_LOCK_PLAYER_PREF";
+        equipPlayerPref = myCarList[myCarIndex].equipPlayerPref = $"{myCarName}_EQUIP_PLAYER_PREF";
+    }
+
+    private void LockIdentifier()
+    {
+        switch (myCarClass)
+        {
+            case CarsClass.C_CLASS:
+                switch (myCarIndex)
+                {
+                    case 0:
+                        lockStatus = 1;
+                        equipStatus = PlayerPrefs.GetInt(equipPlayerPref, 1);
+                    break;
+
+                    default:
+                        lockStatus = PlayerPrefs.GetInt(lockPlayerPref, 1);
+                        equipStatus = PlayerPrefs.GetInt(equipPlayerPref, 0);
+                    break;
+                }
+                break;
+            default:
+                lockStatus = PlayerPrefs.GetInt(lockPlayerPref, 1);
+                equipStatus = PlayerPrefs.GetInt(equipPlayerPref, 0);
+            break;
+        }
+
+        switch (equipStatus)
+        {
+            case 1:
+                UpdateCardFromHere();
+                EquipMe();
+                myToggle.isOn = true;
+            break;
+        }
     }
 
     public void OnSelectToggle(Toggle _myToggle)
     {
         if (_myToggle.isOn)
         {
-            carStoreManager.UpdateCard
-            (
-                carIcon.sprite,
-                myCarName,
-                myCarPrice,
-                myClass,
-                myCarList[myCarIndex].carState
-            );
+            UpdateCardFromHere();
         }
     }
 
     public CarsClass GetCarClass()
     {
         return myCarClass;
+    }
+
+    public int GetMyIndex()
+    {
+        return myCarIndex;
+    }
+
+    private void UpdateCardFromHere()
+    {
+        carStoreManager.UpdateCard
+        (
+            carIcon.sprite,
+            myCarName,
+            myCarPrice,
+            myClass,
+            (CarLockState)lockStatus,
+            (CarEquipState)equipStatus
+        );
+
+        carStoreData.selectedCarData.equippedCarclass = myCarClass;
+        carStoreData.selectedCarData.equippedCarIndex = myCarIndex;
+    }
+
+    public void UnEquipMe()
+    {
+        PlayerPrefs.SetInt(equipPlayerPref, 0);
+        myCarList[myCarIndex].carEquipState = CarEquipState.UNEQUIPPED;
+    }
+
+    public void EquipMe()
+    {
+        PlayerPrefs.SetInt(equipPlayerPref, 1);
+        myCarList[myCarIndex].carEquipState = CarEquipState.EQUIPPED;
+
+        carStoreData.equippedCarData.equippedCarclass = myCarClass;
+        carStoreData.equippedCarData.equippedCarIndex = myCarIndex; 
+    }
+
+    public void UpdateUI()
+    {
+        // get car information and lock unlock information
+        SetAllValues();
+        LockIdentifier();
     }
 }
