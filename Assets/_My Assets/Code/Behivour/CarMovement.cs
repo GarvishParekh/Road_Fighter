@@ -18,11 +18,13 @@ public class CarMovement : MonoBehaviour
     Rigidbody mainRB;
 
     [Header(" [SCRIPTS] ")]
+    [SerializeField] private GameStatus gameStatus;
     [SerializeField] private InputManager inputManager;
     [SerializeField] private NosSystem nosSystem;
 
     [Header (" [SCRIPTABLE OBJECT] ")]
     [SerializeField] private CarData carData;
+    [SerializeField] private CameraData cameraData;
 
     [Header (" [COMPONENTS] ")]
     [SerializeField] private Rigidbody carRB;
@@ -130,8 +132,15 @@ public class CarMovement : MonoBehaviour
 
     private void CheckForSideDamage()
     {
+        if (gameStatus.GetGameState() == GameState.GAMEOVER)
+        {
+            cameraData.cameraShake = CameraShake.OFF;
+            return;
+        }
+
         RightLaneCheck();
         LeftLaneCheck();
+        AppleCameraShake();
     }
 
     private void RightLaneCheck()
@@ -152,6 +161,19 @@ public class CarMovement : MonoBehaviour
             leftSideSparkParticle.Stop();
     }
 
-    
+    private void AppleCameraShake()
+    {
+        if (carRB.transform.position.x > carData.maxSizeValues - 0.15f ||
+            carRB.transform.position.x < -carData.maxSizeValues + 0.15f)
+        {
+            carData.healthDepletion = HealthDepletion.ON;
+            cameraData.cameraShake = CameraShake.ON;
+        }
 
+        else
+        {
+            carData.healthDepletion = HealthDepletion.OFF;
+            cameraData.cameraShake = CameraShake.OFF;
+        }
+    }
 }

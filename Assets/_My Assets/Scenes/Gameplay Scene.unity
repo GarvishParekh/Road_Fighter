@@ -1783,7 +1783,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc3de1712085901479c6c4b490a4102d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputMethord: 1
   carData: {fileID: 11400000, guid: fb121c1dc1475384783df7983091d60b, type: 2}
   touchCanvas: {fileID: 1099057700}
 --- !u!1 &280504693
@@ -9736,7 +9735,7 @@ GameObject:
   - component: {fileID: 807701301}
   - component: {fileID: 807701300}
   m_Layer: 5
-  m_Name: Health Bar (1)
+  m_Name: Health Bar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11059,12 +11058,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1210781826}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.13801733, y: -0, z: -0, w: 0.9904299}
-  m_LocalPosition: {x: 0, y: 2, z: 4.58}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1231475368}
+  m_Father: {fileID: 1221189441}
   m_LocalEulerAnglesHint: {x: 15.866, y: 0, z: 0}
 --- !u!114 &1210781828
 MonoBehaviour:
@@ -11162,6 +11161,38 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!1 &1221189440
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1221189441}
+  m_Layer: 0
+  m_Name: Camera Shake Animatior
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1221189441
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1221189440}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1210781827}
+  m_Father: {fileID: 1394095141}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1224419704
 GameObject:
   m_ObjectHideFlags: 0
@@ -11256,7 +11287,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 330585546}
-  - {fileID: 1210781827}
+  - {fileID: 1394095141}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1232197596
@@ -12299,6 +12330,38 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 252.2659, y: 45}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1394095140
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1394095141}
+  m_Layer: 0
+  m_Name: Camera Transform Holder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1394095141
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1394095140}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.13801733, y: -0, z: -0, w: 0.9904299}
+  m_LocalPosition: {x: 0, y: 2, z: 4.58}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1221189441}
+  m_Father: {fileID: 1231475368}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1414749012
 GameObject:
   m_ObjectHideFlags: 0
@@ -12904,7 +12967,7 @@ GameObject:
   - component: {fileID: 1631494759}
   - component: {fileID: 1631494758}
   m_Layer: 5
-  m_Name: Health Bar
+  m_Name: Health Bar Holder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12950,8 +13013,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: df141400e3740b3418132cf3f50abb38, type: 3}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 54f203f653f17924f952a60d3464babd, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 0
@@ -13223,12 +13286,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f99ef81798b3d54ca78b9d42f5b43b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cameraData: {fileID: 11400000, guid: d8fa6162f83679140a1b2b61107d6000, type: 2}
   carMovement: {fileID: 4784038050490882498}
   instructionManager: {fileID: 320771025}
-  cameraTransform: {fileID: 1210781827}
+  gameStatus: {fileID: 622831121}
+  cameraTransform: {fileID: 1394095141}
   targetTransform: {fileID: 4784038050490882491}
-  cameraOffset: {x: 0, y: 2, z: 5}
-  cameraSmoothness: 200
+  cameraShakeTransform: {fileID: 1221189441}
 --- !u!1 &1719364611
 GameObject:
   m_ObjectHideFlags: 0
@@ -20431,9 +20495,24 @@ PrefabInstance:
       objectReference: {fileID: 30945367}
     - target: {fileID: 6536278769378105512, guid: 08cc88960212a2942955698c55f046ee,
         type: 3}
+      propertyPath: gameStatus
+      value: 
+      objectReference: {fileID: 622831121}
+    - target: {fileID: 6536278769378105512, guid: 08cc88960212a2942955698c55f046ee,
+        type: 3}
       propertyPath: inputManager
       value: 
       objectReference: {fileID: 251571251}
+    - target: {fileID: 7154276475988182431, guid: 08cc88960212a2942955698c55f046ee,
+        type: 3}
+      propertyPath: healthBar
+      value: 
+      objectReference: {fileID: 807701300}
+    - target: {fileID: 7154276475988182431, guid: 08cc88960212a2942955698c55f046ee,
+        type: 3}
+      propertyPath: gameStatus
+      value: 
+      objectReference: {fileID: 622831121}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

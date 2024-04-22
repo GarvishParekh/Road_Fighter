@@ -14217,6 +14217,7 @@ GameObject:
   - component: {fileID: 6536278769378105512}
   - component: {fileID: 7534489016565806926}
   - component: {fileID: 2488513601022547406}
+  - component: {fileID: 7154276475988182431}
   m_Layer: 0
   m_Name: Main Car Holder
   m_TagString: Player
@@ -14285,6 +14286,7 @@ MonoBehaviour:
   inputManager: {fileID: 0}
   nosSystem: {fileID: 0}
   carData: {fileID: 11400000, guid: fb121c1dc1475384783df7983091d60b, type: 2}
+  cameraData: {fileID: 11400000, guid: d8fa6162f83679140a1b2b61107d6000, type: 2}
   carRB: {fileID: 1579209492600591226}
   leftSideSparkParticle: {fileID: 1868003617214884692}
   rightSideSparkParticle: {fileID: 4372279947817356589}
@@ -14354,6 +14356,21 @@ MonoBehaviour:
   - {fileID: 1783550696224642340}
   - {fileID: 6771169836454999544}
   - {fileID: 1910078611593720378}
+--- !u!114 &7154276475988182431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5605469598140704141}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78ac2d6481d5ee9438d3ef92930744ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  carCollision: {fileID: 750564955646046509}
+  carData: {fileID: 11400000, guid: fb121c1dc1475384783df7983091d60b, type: 2}
+  healthBar: {fileID: 0}
 --- !u!1 &5609098163390358221
 GameObject:
   m_ObjectHideFlags: 0

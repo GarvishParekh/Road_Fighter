@@ -20,14 +20,25 @@ public class CarCollision : MonoBehaviour
     {
         if (other.CompareTag("Enemy"))
         {
-            Debug.Log("gameover");
-            carData.carEngine = CarEngine.OFF;
-            trafficData.trafficStatus = TrafficData.TrafficStatus.STATIC;
-
-            uiManager.OpenCanvas(CanvasCellsName.GAMEOVER);
-
-            gameStauts.ChangeGameState(GameState.GAMEOVER);
-            GameStatus.GameOverAction?.Invoke();    
+            GameOverFunction();
         }
+    }
+
+
+    public void GameOverFunction()
+    {
+        if (gameStauts.GetGameState() == GameState.GAMEOVER)
+        {
+            return;
+        }
+
+        Debug.Log("gameover");
+        carData.carEngine = CarEngine.OFF;
+        trafficData.trafficStatus = TrafficData.TrafficStatus.STATIC;
+
+        uiManager.OpenCanvas(CanvasCellsName.GAMEOVER);
+
+        gameStauts.ChangeGameState(GameState.GAMEOVER);
+        GameStatus.GameOverAction?.Invoke();
     }
 }
