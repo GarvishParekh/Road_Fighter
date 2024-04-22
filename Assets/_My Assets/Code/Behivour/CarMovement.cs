@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.UI;
 
 public class CarMovement : MonoBehaviour
 {
@@ -27,6 +26,8 @@ public class CarMovement : MonoBehaviour
 
     [Header (" [COMPONENTS] ")]
     [SerializeField] private Rigidbody carRB;
+    [SerializeField] private ParticleSystem leftSideSparkParticle;
+    [SerializeField] private ParticleSystem rightSideSparkParticle;
 
     Vector3 pos;
     public float lerpedSpeed = 0;
@@ -63,7 +64,8 @@ public class CarMovement : MonoBehaviour
             case CarEngine.ON:
                 ApplyVelocity();
                 ApplyTurning();
-            break;
+                CheckForSideDamage();
+                break;
             case CarEngine.OFF:
                 mainRB.velocity = Vector3.zero;
                 carRB.velocity = Vector3.zero;
@@ -99,14 +101,23 @@ public class CarMovement : MonoBehaviour
     private void ApplyTurning()
     {
         // clamp the position
-        pos.x = Mathf.Clamp(carRB.position.x, -2, 2);
+        pos.x = Mathf.Clamp(carRB.position.x, -carData.maxSizeValues, carData.maxSizeValues);
         pos.y = mainRB.position.y;
         pos.z = mainRB.position.z;
 
         switch (carControl)
         {
             case CarControl.ON:
-                    carRB.velocity = Vector3.right * inputManager.GetLerpedDirection() * carData.touchSensitivity;
+                switch (carData.controlSystem)
+                {
+                    case ControlSystem.GRYO:
+                        carRB.velocity = Vector3.right * inputManager.GetLerpedDirection() * carData.touchSensitivity;
+                        break;
+                    case ControlSystem.KEYBOARD:
+                        carRB.velocity = Vector3.right * inputManager.GetLerpedDirection() * carData.touchSensitivity;
+                        break;
+                }
+
                 break;
         }
         carRB.position = pos;
@@ -116,4 +127,31 @@ public class CarMovement : MonoBehaviour
     {
         carControl = CarControl.ON;
     }
+
+    private void CheckForSideDamage()
+    {
+        RightLaneCheck();
+        LeftLaneCheck();
+    }
+
+    private void RightLaneCheck()
+    {
+        // damaging right side of the car
+        if (carRB.transform.position.x > carData.maxSizeValues - 0.15f)
+            rightSideSparkParticle.Play();
+        else
+            rightSideSparkParticle.Stop();
+    }
+
+    private void LeftLaneCheck()
+    {
+        // damaging left side of the car
+        if (carRB.transform.position.x < -carData.maxSizeValues + 0.15f)
+            leftSideSparkParticle.Play();
+        else
+            leftSideSparkParticle.Stop();
+    }
+
+    
+
 }

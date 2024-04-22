@@ -12,12 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 610223fb02a9e014e91b88188937ab9d, type: 3}
   m_Name: Car Data
   m_EditorClassIdentifier: 
-  carEngine: 0
+  carEngine: 1
+  controlSystem: 2
+  controlSlider: 1.82
   carHealth: 1
   carMainMenuSpeed: 10
   gearShiftingSpeed: 5
   pickUpSpeed: 1
-  speedLevelValue: 0.16720049
+  maxSizeValues: 2.5
+  speedLevelValue: 0.578423
   currentSpeedLevel: 0
   carSpeedLevel:
   - levelName: RELAXED
@@ -43,4 +46,4 @@ MonoBehaviour:
   touchSensitivity: 5
   gyroSensitivity: 200
   gyroResponse: 0.2
-  gyrpMaxVelocity: 4
+  gyrpMaxVelocity: 2

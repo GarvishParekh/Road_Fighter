@@ -6,20 +6,25 @@ using System.Collections.Generic;
 
 public class CarStoreManager : MonoBehaviour
 {
+    [Header("<size=15>[SCRIPT]")]
+    [SerializeField] private EnableSelectedCar enableSelectedCar;
+
+    [Header ("<size=15>[SCRIPTABLE OBJECT]")]
     [SerializeField] private CarStoreData carStoreData;
 
+    [Header ("<size=15>[CARD INFORMATION]")]
     [SerializeField] private Image cardCarImage;
     [SerializeField] private TMP_Text cardCarName;
     [SerializeField] private TMP_Text cardCarPrice;
     [SerializeField] private TMP_Text cardCarClass;
-
-    [Space]
-    [SerializeField] private List<CarToggle> allCarToggle = new List<CarToggle>();
-
     [Space]
     [SerializeField] private GameObject buyButton;
     [SerializeField] private GameObject equipButton;
     [SerializeField] private GameObject equippedImage;
+
+    [Header ("<size=15>[TOGGLE INFROMATION]")]
+    [SerializeField] private List<CarToggle> allCarToggle = new List<CarToggle>();
+
 
     public void UpdateCard(Sprite carIcon, string _carName, int _carPrice, string _carClass, CarLockState _carState, CarEquipState _carEquipState)
     {
@@ -113,6 +118,7 @@ public class CarStoreManager : MonoBehaviour
                 carStoreData.selectedCarData.equippedCarIndex == carToggle.GetMyIndex())
             {
                 carToggle.EquipMe();
+                enableSelectedCar.ChangeCar(carStoreData.selectedCarData.equippedCarclass, carStoreData.selectedCarData.equippedCarIndex);
             }
             else
             {

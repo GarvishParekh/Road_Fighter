@@ -14,15 +14,28 @@ public enum CarEngine
     OFF,
     ON
 }
+
+public enum ControlSystem
+{
+    GRYO,
+    SLIDER,
+    KEYBOARD
+}
 [CreateAssetMenu(fileName = "Car Data", menuName = "Car Data")]
 public class CarData : ScriptableObject
 {
     public CarEngine carEngine;
+    public ControlSystem controlSystem;
+
+    [Range (-2, 2)]
+    public float controlSlider = -4;
+
     [Header("<size=15>[SPEED VALUE]")]
     public float carHealth = 1;
     public float carMainMenuSpeed = 1.8f;
     public float gearShiftingSpeed = 5f;
     public float pickUpSpeed = 1f;
+    public float maxSizeValues = 2.0f;
     
     [Header("<size=15>[SPEED LEVEL VALUE]")]
     public float speedLevelValue;

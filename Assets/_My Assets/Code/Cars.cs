@@ -2,15 +2,16 @@ using UnityEngine;
 
 public class Cars : MonoBehaviour
 {
-    [SerializeField] private int carIndex;
+    [SerializeField] CarsClass myClass;
+    [SerializeField] private int myCarIndex;
 
-    private void Start()
+    public CarsClass GetMyClass()
     {
-        carIndex = transform.GetSiblingIndex();
+        return myClass; 
     }
 
     public int GetCarIndex()
     {
-        return carIndex;    
+        return myCarIndex;    
     }
 }
