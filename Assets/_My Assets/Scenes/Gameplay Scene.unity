@@ -8768,6 +8768,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameState: 0
+  gameScene: 1
 --- !u!1 &625445500
 GameObject:
   m_ObjectHideFlags: 0
@@ -14144,6 +14145,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nosSystem: {fileID: 30945367}
   scoreData: {fileID: 11400000, guid: f641114f7b26af74e86c3402368bb05e, type: 2}
+  upgradeData: {fileID: 11400000, guid: d5fc867c7f5e46f4b9cbf89ad95dbe10, type: 2}
   scoreMultiplierCountTxt: {fileID: 245758524}
   scoreMultiplierTxt: {fileID: 140459674}
   scoreTxt: {fileID: 2082367143}
@@ -20495,24 +20497,24 @@ PrefabInstance:
       objectReference: {fileID: 30945367}
     - target: {fileID: 6536278769378105512, guid: 08cc88960212a2942955698c55f046ee,
         type: 3}
-      propertyPath: gameStatus
-      value: 
-      objectReference: {fileID: 622831121}
-    - target: {fileID: 6536278769378105512, guid: 08cc88960212a2942955698c55f046ee,
-        type: 3}
       propertyPath: inputManager
       value: 
       objectReference: {fileID: 251571251}
+    - target: {fileID: 6536278769378105512, guid: 08cc88960212a2942955698c55f046ee,
+        type: 3}
+      propertyPath: instructionManager
+      value: 
+      objectReference: {fileID: 320771025}
+    - target: {fileID: 7120198695612720620, guid: 08cc88960212a2942955698c55f046ee,
+        type: 3}
+      propertyPath: instructionManager
+      value: 
+      objectReference: {fileID: 320771025}
     - target: {fileID: 7154276475988182431, guid: 08cc88960212a2942955698c55f046ee,
         type: 3}
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 807701300}
-    - target: {fileID: 7154276475988182431, guid: 08cc88960212a2942955698c55f046ee,
-        type: 3}
-      propertyPath: gameStatus
-      value: 
-      objectReference: {fileID: 622831121}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

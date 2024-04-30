@@ -22,6 +22,13 @@ public class InstructionManager : MonoBehaviour
     private void Awake()
     {
         showInstruction = (ShowInstruction)PlayerPrefs.GetInt(ConstantKeys.SHOW_INSTRUCTION, 0);
+        
+        switch (showInstruction)
+        {
+            case ShowInstruction.NO:
+                cameraFollow.ChangeCameraSmoothness(200);
+                break;
+        }
     }
 
     private void Start()
@@ -55,5 +62,10 @@ public class InstructionManager : MonoBehaviour
         levelShiftCollider.enabled = false;
         uiManager.OpenCanvas(CanvasCellsName.ALL_SET);
         PlayerPrefs.SetInt(ConstantKeys.SHOW_INSTRUCTION, 1);
+    }
+
+    public ShowInstruction GetInstructionState()
+    {
+        return showInstruction;
     }
 }

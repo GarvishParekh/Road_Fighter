@@ -11,6 +11,9 @@ public class ScoreManager : MonoBehaviour
     
     [Header(" [SCRIPTABLE OBJECT] ")]
     [SerializeField] private ScoreData scoreData;
+    [SerializeField] private UpgradesData upgradeData;
+    Upgrades scoreUpgrade;
+    float maxScoreLevel;
 
     [Header (" [USER INTERFACE] ")]
     [SerializeField] private TMP_Text scoreMultiplierCountTxt;
@@ -33,6 +36,13 @@ public class ScoreManager : MonoBehaviour
     {
         ScoreReset();
         gameStatus = GameStatus.instance;
+        SetMaxScoreLevel();
+    }
+
+    private void SetMaxScoreLevel()
+    {
+        scoreUpgrade = upgradeData.upgrades[0];
+        maxScoreLevel = scoreUpgrade.levelValues[scoreUpgrade.upgradeLevel];
     }
 
     private void FixedUpdate()
@@ -72,14 +82,15 @@ public class ScoreManager : MonoBehaviour
     {
         scoreData.scoreMultiplierValue += scoreData.increasingValue * Time.deltaTime;
         
-        if (scoreData.scoreMultiplierValue >= 1 && scoreData.currentScoreLevel < scoreData.scoreMultiplier.Length - 1) 
+        //if (scoreData.scoreMultiplierValue >= 1 && scoreData.currentScoreLevel < scoreData.scoreMultiplier.Length - 1) 
+        if (scoreData.scoreMultiplierValue >= 1 && scoreData.currentScoreLevel < maxScoreLevel)
         {
             scoreData.scoreMultiplierValue = 0;
             scoreData.currentScoreLevel++;
             LeanTween.scale(scoreMultiplierCountTxt.gameObject, Vector3.one * 2, 0.15f).setEaseInOutSine().setLoopPingPong(1);
         }
        
-        if (scoreData.scoreMultiplierValue >= 1 && scoreData.currentScoreLevel == scoreData.scoreMultiplier.Length - 1)
+        if (scoreData.scoreMultiplierValue >= 1 && scoreData.currentScoreLevel == maxScoreLevel)
             scoreMutliplierMainHolder.transform.localPosition = (Random.insideUnitCircle * scoreData.shakeEffect) * Time.deltaTime;
         else
             scoreMutliplierMainHolder.transform.localPosition = Vector3.zero;

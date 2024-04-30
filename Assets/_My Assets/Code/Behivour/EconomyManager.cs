@@ -24,7 +24,7 @@ public class EconomyManager : MonoBehaviour
     private void InitilizeEconomy()
     {
         coinsCollection = PlayerPrefs.GetInt(ConstantKeys.AVAILABLE_COINS, 0);
-        coinsCollection = economyData.availableCoins;
+        economyData.availableCoins = coinsCollection;
 
         UpdateCoinsUI(economyData.availableCoins);
     }

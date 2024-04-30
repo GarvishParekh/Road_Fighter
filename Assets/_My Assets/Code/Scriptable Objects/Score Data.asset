@@ -12,6 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 552a146b2d2466b45bb8448200022ead, type: 3}
   m_Name: Score Data
   m_EditorClassIdentifier: 
+  scoreCount: 259.39865
+  currentScoreLevel: 0
+  scoreMultiplierValue: 0
+  increasingValue: 0.5
+  userScoreLevel: 2
   scoreMultiplier:
   - levelDisplayName: 1X
     value: 10
@@ -29,13 +34,49 @@ MonoBehaviour:
     value: 40
     barColor: {r: 1, g: 0.51064396, b: 0.15566039, a: 1}
     textColor: {r: 0.8, g: 0.40624997, b: 0.125, a: 1}
-  - levelDisplayName: <size=25>MAX</size>5X
+  - levelDisplayName: 5X
     value: 50
     barColor: {r: 0.85800004, g: 0.1647973, b: 0.084942035, a: 1}
     textColor: {r: 0.65, g: 0.12187499, b: 0.06601562, a: 1}
-  scoreCount: 631.60223
-  currentScoreLevel: 0
-  scoreMultiplierValue: 0
-  increasingValue: 0.5
+  - levelDisplayName: 6X
+    value: 60
+    barColor: {r: 0.85800004, g: 0.1647973, b: 0.084942035, a: 1}
+    textColor: {r: 0.65, g: 0.12187499, b: 0.06601562, a: 1}
+  - levelDisplayName: 7X
+    value: 70
+    barColor: {r: 0.85800004, g: 0.1647973, b: 0.084942035, a: 1}
+    textColor: {r: 0.65, g: 0.12187499, b: 0.06601562, a: 1}
+  - levelDisplayName: 8X
+    value: 80
+    barColor: {r: 0.85800004, g: 0.1647973, b: 0.084942035, a: 1}
+    textColor: {r: 0.65, g: 0.12187499, b: 0.06601562, a: 1}
+  - levelDisplayName: 9X
+    value: 90
+    barColor: {r: 0.85800004, g: 0.1647973, b: 0.084942035, a: 1}
+    textColor: {r: 0.65, g: 0.12187499, b: 0.06601562, a: 1}
+  - levelDisplayName: 10X
+    value: 100
+    barColor: {r: 0.85800004, g: 0.1647973, b: 0.084942035, a: 1}
+    textColor: {r: 0.65, g: 0.12187499, b: 0.06601562, a: 1}
+  - levelDisplayName: 11X
+    value: 110
+    barColor: {r: 0.85800004, g: 0.1647973, b: 0.084942035, a: 1}
+    textColor: {r: 0.65, g: 0.12187499, b: 0.06601562, a: 1}
+  - levelDisplayName: 12X
+    value: 120
+    barColor: {r: 0.85800004, g: 0.1647973, b: 0.084942035, a: 1}
+    textColor: {r: 0.65, g: 0.12187499, b: 0.06601562, a: 1}
+  - levelDisplayName: 13X
+    value: 130
+    barColor: {r: 0.85800004, g: 0.1647973, b: 0.084942035, a: 1}
+    textColor: {r: 0.65, g: 0.12187499, b: 0.06601562, a: 1}
+  - levelDisplayName: 14X
+    value: 140
+    barColor: {r: 0.85800004, g: 0.1647973, b: 0.084942035, a: 1}
+    textColor: {r: 0.65, g: 0.12187499, b: 0.06601562, a: 1}
+  - levelDisplayName: 15X
+    value: 150
+    barColor: {r: 0.85800004, g: 0.1647973, b: 0.084942035, a: 1}
+    textColor: {r: 0.65, g: 0.12187499, b: 0.06601562, a: 1}
   textDefaultColor: {r: 1, g: 1, b: 1, a: 1}
   shakeEffect: 200

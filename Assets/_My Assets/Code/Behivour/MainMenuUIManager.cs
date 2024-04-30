@@ -64,4 +64,9 @@ public class MainMenuUIManager : MonoBehaviour
     {
         uiManager.OpenCanvas(CanvasCellsName.MAIN_MENU);
     }
+
+    public void OpenUpgradeCanvas()
+    {
+        uiManager.OpenCanvas(CanvasCellsName.POWERUP_UPGRADE);
+    }
 }

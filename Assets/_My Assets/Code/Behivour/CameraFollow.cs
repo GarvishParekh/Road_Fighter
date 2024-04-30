@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using System.Collections;
-using UnityEngine.UIElements;
 
 public class CameraFollow : MonoBehaviour
 {
@@ -24,6 +23,10 @@ public class CameraFollow : MonoBehaviour
         uiManager = UiManager.instance;
         cameraData.cameraOffsetValue.z = cameraData.cameraZValue;
         StartCoroutine(nameof(StartOff));
+
+        // disable camera shake
+        cameraData.cameraShake = CameraShake.OFF;
+
     }
 
     private void LateUpdate()

@@ -11,6 +11,7 @@ public class GameStatus : MonoBehaviour
     public static Action GameOverAction;
     public static GameStatus instance;
     [SerializeField] private GameState gameState;
+    [SerializeField] private GameScene gameScene;
 
     private void Awake()
     {
@@ -25,5 +26,10 @@ public class GameStatus : MonoBehaviour
     public GameState GetGameState()
     {
         return gameState;
+    }
+
+    public GameScene GetCurrentGameScene()
+    {
+        return gameScene;
     }
 }

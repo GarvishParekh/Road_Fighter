@@ -1,14 +1,15 @@
 using UnityEngine;
 
+public enum GameScene
+{
+    MAIN_MENU,
+    GAMEPLAY
+}
+
 public class CarMovement : MonoBehaviour
 {
-    public enum GameScene
-    {
-        MAIN_MENU,
-        GAMEPLAY
-    }
 
-    [SerializeField] private GameScene gameScene;
+    
     public enum CarControl
     {
         OFF,
@@ -17,10 +18,12 @@ public class CarMovement : MonoBehaviour
     [SerializeField] private CarControl carControl;
     Rigidbody mainRB;
 
+    GameStatus gameStatus;
+    
     [Header(" [SCRIPTS] ")]
-    [SerializeField] private GameStatus gameStatus;
     [SerializeField] private InputManager inputManager;
     [SerializeField] private NosSystem nosSystem;
+    [SerializeField] private InstructionManager instructionManager;
 
     [Header (" [SCRIPTABLE OBJECT] ")]
     [SerializeField] private CarData carData;
@@ -28,8 +31,7 @@ public class CarMovement : MonoBehaviour
 
     [Header (" [COMPONENTS] ")]
     [SerializeField] private Rigidbody carRB;
-    [SerializeField] private ParticleSystem leftSideSparkParticle;
-    [SerializeField] private ParticleSystem rightSideSparkParticle;
+
 
     Vector3 pos;
     public float lerpedSpeed = 0;
@@ -37,17 +39,20 @@ public class CarMovement : MonoBehaviour
 
     private void Start()
     {
+        gameStatus = GameStatus.instance;
+
         Application.targetFrameRate = 60;
         mainRB = GetComponent<Rigidbody>();
         carData.currentSpeedLevel = 0;
         carData.carHealth = 1;
 
         EngineSetting();
+        
     }
 
     private void EngineSetting()
     {
-        switch (gameScene)
+        switch (gameStatus.GetCurrentGameScene())
         {
             case GameScene.MAIN_MENU:
                 carData.carEngine = CarEngine.OFF;
@@ -66,7 +71,8 @@ public class CarMovement : MonoBehaviour
             case CarEngine.ON:
                 ApplyVelocity();
                 ApplyTurning();
-                CheckForSideDamage();
+
+               
                 break;
             case CarEngine.OFF:
                 mainRB.velocity = Vector3.zero;
@@ -77,7 +83,7 @@ public class CarMovement : MonoBehaviour
 
     private void ApplyVelocity()
     {
-        switch (gameScene)
+        switch (gameStatus.GetCurrentGameScene())
         {
             case GameScene.MAIN_MENU:
                 mainRB.velocity = Vector3.forward * carData.carMainMenuSpeed * GetPickUpLerp(); 
@@ -128,52 +134,5 @@ public class CarMovement : MonoBehaviour
     public void TakeControl()
     {
         carControl = CarControl.ON;
-    }
-
-    private void CheckForSideDamage()
-    {
-        if (gameStatus.GetGameState() == GameState.GAMEOVER)
-        {
-            cameraData.cameraShake = CameraShake.OFF;
-            return;
-        }
-
-        RightLaneCheck();
-        LeftLaneCheck();
-        AppleCameraShake();
-    }
-
-    private void RightLaneCheck()
-    {
-        // damaging right side of the car
-        if (carRB.transform.position.x > carData.maxSizeValues - 0.15f)
-            rightSideSparkParticle.Play();
-        else
-            rightSideSparkParticle.Stop();
-    }
-
-    private void LeftLaneCheck()
-    {
-        // damaging left side of the car
-        if (carRB.transform.position.x < -carData.maxSizeValues + 0.15f)
-            leftSideSparkParticle.Play();
-        else
-            leftSideSparkParticle.Stop();
-    }
-
-    private void AppleCameraShake()
-    {
-        if (carRB.transform.position.x > carData.maxSizeValues - 0.15f ||
-            carRB.transform.position.x < -carData.maxSizeValues + 0.15f)
-        {
-            carData.healthDepletion = HealthDepletion.ON;
-            cameraData.cameraShake = CameraShake.ON;
-        }
-
-        else
-        {
-            carData.healthDepletion = HealthDepletion.OFF;
-            cameraData.cameraShake = CameraShake.OFF;
-        }
     }
 }

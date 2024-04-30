@@ -20,9 +20,14 @@ public class GarageCanvasAnimation : MonoBehaviour, ICanvasCellAnimation
         LeanTween.scale(garageButton, Vector3.one, 0.25f).setEaseInOutSine();
         LeanTween.scale(storeMainHolder, Vector3.one, 0.25f).setEaseInOutSine().setOnComplete(() =>
         {
-            LeanTween.scale(carCard, Vector3.one, 0.25f).setEaseInOutSine().setDelay(0.05f);
-            LeanTween.scale(classHolder, Vector3.one, 0.25f).setEaseInOutSine().setDelay(0.1f);
-            LeanTween.scale(gridHolder, Vector3.one, 0.25f).setEaseInOutSine().setDelay(0.15f).setOnComplete(()=>
+            LeanTween.scale(carCard, Vector3.one, 0.25f).setEaseInOutSine();
+            LeanTween.moveLocal(carCard, Vector3.zero, 0.25f).setEaseInOutSine();
+
+            LeanTween.scale(classHolder, Vector3.one, 0.25f).setEaseInOutSine();
+            LeanTween.moveLocal(classHolder, Vector3.zero, 0.25f).setEaseInOutSine();
+
+            LeanTween.moveLocal(gridHolder, Vector3.zero, 0.30f).setEaseInOutSine();
+            LeanTween.scale(gridHolder, Vector3.one, 0.30f).setEaseInOutSine().setOnComplete(()=>
             {
                 scrollGrid.enabled = true;
 
@@ -38,5 +43,9 @@ public class GarageCanvasAnimation : MonoBehaviour, ICanvasCellAnimation
         carCard.transform.localScale = Vector3.zero;
         classHolder.transform.localScale = Vector3.zero;
         gridHolder.transform.localScale = Vector3.zero;
+
+        LeanTween.moveLocalY(carCard, -1000, 0);
+        LeanTween.moveLocalY(classHolder, -1000, 0);
+        LeanTween.moveLocalY(gridHolder, -1000, 0);
     }
 }

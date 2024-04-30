@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Camera Data
   m_EditorClassIdentifier: 
   cameraShake: 0
-  cameraOffsetValue: {x: 0, y: 2, z: 5}
+  cameraOffsetValue: {x: 0, y: 2, z: -4.5}
   cameraSmoothness: 200
   cameraShakeIntensity: 1
+  cameraZValue: 5

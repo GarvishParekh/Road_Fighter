@@ -12,7 +12,8 @@ public enum CanvasCellsName
     EMPTY,
     GARAGE,
     DAILY_REWARD,
-    DAILY_REWARD_COLLECTED
+    DAILY_REWARD_COLLECTED,
+    POWERUP_UPGRADE
 }
 public class UiManager : MonoBehaviour
 {
