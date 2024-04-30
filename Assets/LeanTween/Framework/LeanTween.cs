@@ -222,7 +222,7 @@ public enum LeanProp
 
 /**
 * LeanTween is an efficient tweening engine for Unity3d<br /><br />
-* <a href="#index">Index of All Methods</a> | <a href="LTDescr.html">Optional Paramaters that can be passed</a><br /><br />
+* <a href="#myIndex">Index of All Methods</a> | <a href="LTDescr.html">Optional Paramaters that can be passed</a><br /><br />
 * <strong id='optional'>Optional Parameters</strong> are passed at the end of every method<br /> 
 * <br />
 * <i>Example:</i><br />

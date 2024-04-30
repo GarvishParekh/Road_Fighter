@@ -10,7 +10,9 @@ public enum CanvasCellsName
     ALL_SET,
     MAIN_MENU,
     EMPTY,
-    GARAGE
+    GARAGE,
+    DAILY_REWARD,
+    DAILY_REWARD_COLLECTED
 }
 public class UiManager : MonoBehaviour
 {

@@ -7,6 +7,9 @@ public class MainMenuUIManager : MonoBehaviour
 {
     UiManager uiManager;
 
+    [Header(" <size=15>[SCRIPTS]")]
+    [SerializeField] private DailyRewards dailyRewards;
+
     [Header (" <size=15>[SCRIPTABLE OBJECT]")]
     [SerializeField] private CarData carData;
 
@@ -21,7 +24,16 @@ public class MainMenuUIManager : MonoBehaviour
 
     private void SetMainMenu()
     {
-        uiManager.OpenCanvas(CanvasCellsName.MAIN_MENU);
+        switch (dailyRewards.GetDailyRewardStatus())
+        {
+            case DailyRewardStatus.NOT_COLLECTED:
+                uiManager.OpenCanvas(CanvasCellsName.DAILY_REWARD);
+                break;
+            case DailyRewardStatus.COLLECTED:
+                uiManager.OpenCanvas(CanvasCellsName.MAIN_MENU);
+                break;
+
+        }
         SetHighscore();
     }
 
