@@ -69,4 +69,14 @@ public class MainMenuUIManager : MonoBehaviour
     {
         uiManager.OpenCanvas(CanvasCellsName.POWERUP_UPGRADE);
     }
+
+    public void OpenConfirmBuyCanvas()
+    {
+        uiManager.OpenCanvas(CanvasCellsName.CONFIRM_BUY_POPUP);
+    }
+
+    public void NoEnoughCanvas()
+    {
+        uiManager.OpenCanvas(CanvasCellsName.NOT_ENOUGH_POPUP);
+    }
 }

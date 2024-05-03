@@ -13,12 +13,15 @@ public enum CanvasCellsName
     GARAGE,
     DAILY_REWARD,
     DAILY_REWARD_COLLECTED,
-    POWERUP_UPGRADE
+    POWERUP_UPGRADE,
+    CONFIRM_BUY_POPUP,
+    NOT_ENOUGH_POPUP
 }
 public class UiManager : MonoBehaviour
 {
     public static UiManager instance;
     [SerializeField] private List<CanvasCell> canvasCells = new List<CanvasCell>();
+    [SerializeField] private CanvasCell confirmBuyCanvas;
 
     private void Awake()
     {
@@ -36,6 +39,17 @@ public class UiManager : MonoBehaviour
             else
             {
                 cell.CloseCanvas();
+            }
+        }
+    }
+
+    public void OpenPopupCanvas(CanvasCellsName canvasToOpen)
+    {
+        foreach (var cell in canvasCells)
+        {
+            if (canvasToOpen == cell.GetCanvasName())
+            {
+                cell.OpenCanvas();
             }
         }
     }

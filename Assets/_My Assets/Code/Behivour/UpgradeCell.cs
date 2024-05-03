@@ -2,6 +2,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
+using System.Globalization;
 
 public class UpgradeCell : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class UpgradeCell : MonoBehaviour
     [SerializeField] private int myIndex;
     [SerializeField] private Image upgradeIcon;
     [SerializeField] private TMP_Text upgradeNameTxt;
+    [SerializeField] private TMP_Text requriedCoinsTxt;
     [SerializeField] private List<Image> upgradeBar = new List<Image>();
     [SerializeField] private GameObject upgradeButton;
     [SerializeField] private GameObject upgradeCompleted;
@@ -40,6 +42,7 @@ public class UpgradeCell : MonoBehaviour
 
         upgradeIcon.sprite = myUpgrade.upgradeIcon;
         upgradeNameTxt.text = myUpgrade.upgradeName;
+        requriedCoinsTxt.text = myUpgrade.requriedCoins[myUpgrade.upgradeLevel].ToString("#,##0", CultureInfo.InvariantCulture);
 
         foreach (Image bar in upgradeBar)
         {

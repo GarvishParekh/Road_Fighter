@@ -31,4 +31,5 @@ public class Upgrades
     public int upgradeLevel = 0;
 
     public float[] levelValues;
+    public int[] requriedCoins;
 }
