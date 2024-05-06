@@ -6,10 +6,19 @@ public class PowerUpUpgradeManager : MonoBehaviour
 {
     UiManager uiManager;
     EconomyManager economyManager;
-    [SerializeField] private UpgradesData upgradesData;
-    [SerializeField] private List<UpgradeCell> upgradeCellList = new List<UpgradeCell>();
 
     Upgrades selectedUpgrade;
+
+    [Header("<size=15>[SCRIPTABLE OBJECT]")]
+    [SerializeField] private UpgradesData upgradesData;
+    [SerializeField] private EconomyData economyData;
+
+    [Header("<size=15>[SCRIPTS]")]
+    [SerializeField] private MainMenuUIManager mainMenuUIManager;
+
+    [Header("<size=15>[COMPONENTS]")]
+    [SerializeField] private List<UpgradeCell> upgradeCellList = new List<UpgradeCell>();
+
 
     private void Start()
     {
@@ -40,8 +49,8 @@ public class PowerUpUpgradeManager : MonoBehaviour
         }
         else
         {
-            uiManager.OpenPopupCanvas(CanvasCellsName.NOT_ENOUGH_POPUP);
             // coins not available
+            mainMenuUIManager.NoEnoughCanvas(economyData.availableCoins - selectedUpgrade.requriedCoins[selectedUpgrade.upgradeLevel]);
         }
     }
 

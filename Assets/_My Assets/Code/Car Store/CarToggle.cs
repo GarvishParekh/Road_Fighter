@@ -5,7 +5,8 @@ using System.Collections.Generic;
 public class CarToggle : MonoBehaviour
 {
     Toggle myToggle;
-    [Header("<size=15>[SCRIPTS]")]
+    [Header("<size=15>[SCRIPT</SIZE> <size=10><color=#FF0000>REFERENCE</color><SIZE=15>]")]
+    [SerializeField] private EnableSelectedCar enableSelectedCar;
     [SerializeField] private CarStoreManager carStoreManager;
 
     [Header ("<size=15>[SCRIPTABLE OBJECT]")]
@@ -36,7 +37,7 @@ public class CarToggle : MonoBehaviour
 
     private void Start()
     {
-        // get the list from which data can be retrived
+        // get the list from which data can be restrived
         SetMyCatList();
 
         // get car information and lock unlock information
@@ -83,7 +84,7 @@ public class CarToggle : MonoBehaviour
         equipPlayerPref = myCarList[myCarIndex].equipPlayerPref = $"{myCarName}_EQUIP_PLAYER_PREF";
     }
 
-    private void LockIdentifier()
+    public void LockIdentifier()
     {
         switch (myCarClass)
         {
@@ -96,22 +97,37 @@ public class CarToggle : MonoBehaviour
                     break;
 
                     default:
-                        lockStatus = PlayerPrefs.GetInt(lockPlayerPref, 1);
+                        lockStatus = PlayerPrefs.GetInt(lockPlayerPref, 0);
                         equipStatus = PlayerPrefs.GetInt(equipPlayerPref, 0);
                     break;
                 }
                 break;
             default:
-                lockStatus = PlayerPrefs.GetInt(lockPlayerPref, 1);
+                lockStatus = PlayerPrefs.GetInt(lockPlayerPref, 0);
                 equipStatus = PlayerPrefs.GetInt(equipPlayerPref, 0);
             break;
         }
 
+        /*
+        if (equipStatus == 1)
+        {
+            EquipMe();
+            UpdateCardFromHere();
+            myToggle.isOn = true;
+        }
+        */
+
+        Invoke(nameof(DefaultEquip), 1);
+
+    }
+
+    private void DefaultEquip()
+    {
         switch (equipStatus)
         {
             case 1:
-                UpdateCardFromHere();
                 EquipMe();
+                UpdateCardFromHere();
                 myToggle.isOn = true;
             break;
         }
@@ -135,7 +151,7 @@ public class CarToggle : MonoBehaviour
         return myCarIndex;
     }
 
-    private void UpdateCardFromHere()
+    public void UpdateCardFromHere()
     {
         carStoreManager.UpdateCard
         (
@@ -171,5 +187,22 @@ public class CarToggle : MonoBehaviour
         // get car information and lock unlock information
         SetAllValues();
         LockIdentifier();
+    }
+
+    public void BuyMe()
+    {
+        PlayerPrefs.SetInt(lockPlayerPref, 1);
+        PlayerPrefs.SetInt(equipPlayerPref, 1);
+        myCarList[myCarIndex].carEquipState = CarEquipState.EQUIPPED;
+
+        carStoreData.equippedCarData.equippedCarclass = myCarClass;
+        carStoreData.equippedCarData.equippedCarIndex = myCarIndex;
+
+        LockIdentifier();
+        UpdateUI();
+        UpdateCardFromHere();
+        enableSelectedCar.ChangeCar(myCarClass, myCarIndex);
+
+        EconomyManager.ConfirmPurchase?.Invoke(myCarList[myCarIndex].carPrice);
     }
 }

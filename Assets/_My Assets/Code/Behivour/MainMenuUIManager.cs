@@ -15,6 +15,7 @@ public class MainMenuUIManager : MonoBehaviour
 
     [Header (" <size=15>[UI]")]
     [SerializeField] private TMP_Text highscoreTxt;
+    [SerializeField] private TMP_Text needMoreMoney;
 
     private void Start()
     {
@@ -72,11 +73,12 @@ public class MainMenuUIManager : MonoBehaviour
 
     public void OpenConfirmBuyCanvas()
     {
-        uiManager.OpenCanvas(CanvasCellsName.CONFIRM_BUY_POPUP);
+        uiManager.OpenPopupCanvas(CanvasCellsName.CONFIRM_BUY_POPUP);
     }
 
-    public void NoEnoughCanvas()
+    public void NoEnoughCanvas(int price)
     {
-        uiManager.OpenCanvas(CanvasCellsName.NOT_ENOUGH_POPUP);
+        uiManager.OpenPopupCanvas(CanvasCellsName.NOT_ENOUGH_POPUP);
+        needMoreMoney.text = $"You need <color=#F1C40F><b>{price.ToString("#,##0", CultureInfo.InvariantCulture)}</b></color> more coins to make this pruchase!";
     }
 }

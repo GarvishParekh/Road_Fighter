@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.3069224, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -747,6 +747,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcbac176c91eb4c4e8f7c37c5fd23a5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enableSelectedCar: {fileID: 175457690}
   carStoreManager: {fileID: 1655888892}
   carStoreData: {fileID: 11400000, guid: fd308cb1c8fb3d643b0236c50964042d, type: 2}
   myCarList: []
@@ -1520,6 +1521,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcbac176c91eb4c4e8f7c37c5fd23a5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enableSelectedCar: {fileID: 175457690}
   carStoreManager: {fileID: 1655888892}
   carStoreData: {fileID: 11400000, guid: fd308cb1c8fb3d643b0236c50964042d, type: 2}
   myCarList: []
@@ -2407,6 +2409,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcbac176c91eb4c4e8f7c37c5fd23a5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enableSelectedCar: {fileID: 175457690}
   carStoreManager: {fileID: 1655888892}
   carStoreData: {fileID: 11400000, guid: fd308cb1c8fb3d643b0236c50964042d, type: 2}
   myCarList: []
@@ -3487,6 +3490,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcbac176c91eb4c4e8f7c37c5fd23a5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enableSelectedCar: {fileID: 175457690}
   carStoreManager: {fileID: 1655888892}
   carStoreData: {fileID: 11400000, guid: fd308cb1c8fb3d643b0236c50964042d, type: 2}
   myCarList: []
@@ -4167,6 +4171,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   upgradesData: {fileID: 11400000, guid: d5fc867c7f5e46f4b9cbf89ad95dbe10, type: 2}
+  economyData: {fileID: 11400000, guid: a5b3017761fdaca45beee366927202eb, type: 2}
+  mainMenuUIManager: {fileID: 0}
   upgradeCellList:
   - {fileID: 2103447577}
   - {fileID: 2122019685}
@@ -8033,6 +8039,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcbac176c91eb4c4e8f7c37c5fd23a5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enableSelectedCar: {fileID: 175457690}
   carStoreManager: {fileID: 1655888892}
   carStoreData: {fileID: 11400000, guid: fd308cb1c8fb3d643b0236c50964042d, type: 2}
   myCarList: []
@@ -8648,6 +8655,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcbac176c91eb4c4e8f7c37c5fd23a5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enableSelectedCar: {fileID: 175457690}
   carStoreManager: {fileID: 1655888892}
   carStoreData: {fileID: 11400000, guid: fd308cb1c8fb3d643b0236c50964042d, type: 2}
   myCarList: []
@@ -9230,6 +9238,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcbac176c91eb4c4e8f7c37c5fd23a5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enableSelectedCar: {fileID: 175457690}
   carStoreManager: {fileID: 1655888892}
   carStoreData: {fileID: 11400000, guid: fd308cb1c8fb3d643b0236c50964042d, type: 2}
   myCarList: []
@@ -9978,6 +9987,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcbac176c91eb4c4e8f7c37c5fd23a5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enableSelectedCar: {fileID: 175457690}
   carStoreManager: {fileID: 1655888892}
   carStoreData: {fileID: 11400000, guid: fd308cb1c8fb3d643b0236c50964042d, type: 2}
   myCarList: []
@@ -10959,6 +10969,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcbac176c91eb4c4e8f7c37c5fd23a5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enableSelectedCar: {fileID: 175457690}
   carStoreManager: {fileID: 1655888892}
   carStoreData: {fileID: 11400000, guid: fd308cb1c8fb3d643b0236c50964042d, type: 2}
   myCarList: []
@@ -11831,6 +11842,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcbac176c91eb4c4e8f7c37c5fd23a5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enableSelectedCar: {fileID: 175457690}
   carStoreManager: {fileID: 1655888892}
   carStoreData: {fileID: 11400000, guid: fd308cb1c8fb3d643b0236c50964042d, type: 2}
   myCarList: []
@@ -13415,6 +13427,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcbac176c91eb4c4e8f7c37c5fd23a5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enableSelectedCar: {fileID: 175457690}
   carStoreManager: {fileID: 1655888892}
   carStoreData: {fileID: 11400000, guid: fd308cb1c8fb3d643b0236c50964042d, type: 2}
   myCarList: []
@@ -15151,6 +15164,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcbac176c91eb4c4e8f7c37c5fd23a5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enableSelectedCar: {fileID: 175457690}
   carStoreManager: {fileID: 1655888892}
   carStoreData: {fileID: 11400000, guid: fd308cb1c8fb3d643b0236c50964042d, type: 2}
   myCarList: []
@@ -16458,6 +16472,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcbac176c91eb4c4e8f7c37c5fd23a5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enableSelectedCar: {fileID: 175457690}
   carStoreManager: {fileID: 1655888892}
   carStoreData: {fileID: 11400000, guid: fd308cb1c8fb3d643b0236c50964042d, type: 2}
   myCarList: []
@@ -17160,7 +17175,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
@@ -17190,7 +17205,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1088447962}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1655888892}
+        m_TargetAssemblyTypeName: CarStoreManager, Assembly-CSharp
+        m_MethodName: BuyButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1088447962
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17749,6 +17776,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcbac176c91eb4c4e8f7c37c5fd23a5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enableSelectedCar: {fileID: 175457690}
   carStoreManager: {fileID: 1655888892}
   carStoreData: {fileID: 11400000, guid: fd308cb1c8fb3d643b0236c50964042d, type: 2}
   myCarList: []
@@ -18715,6 +18743,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcbac176c91eb4c4e8f7c37c5fd23a5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enableSelectedCar: {fileID: 175457690}
   carStoreManager: {fileID: 1655888892}
   carStoreData: {fileID: 11400000, guid: fd308cb1c8fb3d643b0236c50964042d, type: 2}
   myCarList: []
@@ -20416,6 +20445,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcbac176c91eb4c4e8f7c37c5fd23a5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enableSelectedCar: {fileID: 175457690}
   carStoreManager: {fileID: 1655888892}
   carStoreData: {fileID: 11400000, guid: fd308cb1c8fb3d643b0236c50964042d, type: 2}
   myCarList: []
@@ -20792,6 +20822,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcbac176c91eb4c4e8f7c37c5fd23a5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enableSelectedCar: {fileID: 175457690}
   carStoreManager: {fileID: 1655888892}
   carStoreData: {fileID: 11400000, guid: fd308cb1c8fb3d643b0236c50964042d, type: 2}
   myCarList: []
@@ -21486,6 +21517,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcbac176c91eb4c4e8f7c37c5fd23a5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enableSelectedCar: {fileID: 175457690}
   carStoreManager: {fileID: 1655888892}
   carStoreData: {fileID: 11400000, guid: fd308cb1c8fb3d643b0236c50964042d, type: 2}
   myCarList: []
@@ -22477,6 +22509,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcbac176c91eb4c4e8f7c37c5fd23a5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enableSelectedCar: {fileID: 175457690}
   carStoreManager: {fileID: 1655888892}
   carStoreData: {fileID: 11400000, guid: fd308cb1c8fb3d643b0236c50964042d, type: 2}
   myCarList: []
@@ -23953,6 +23986,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcbac176c91eb4c4e8f7c37c5fd23a5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enableSelectedCar: {fileID: 175457690}
   carStoreManager: {fileID: 1655888892}
   carStoreData: {fileID: 11400000, guid: fd308cb1c8fb3d643b0236c50964042d, type: 2}
   myCarList: []
@@ -24049,6 +24083,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcbac176c91eb4c4e8f7c37c5fd23a5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enableSelectedCar: {fileID: 175457690}
   carStoreManager: {fileID: 1655888892}
   carStoreData: {fileID: 11400000, guid: fd308cb1c8fb3d643b0236c50964042d, type: 2}
   myCarList: []
@@ -25339,6 +25374,7 @@ MonoBehaviour:
   dailyRewards: {fileID: 973836494}
   carData: {fileID: 11400000, guid: fb121c1dc1475384783df7983091d60b, type: 2}
   highscoreTxt: {fileID: 484004672}
+  needMoreMoney: {fileID: 1719198938}
 --- !u!1 &1651271897 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4012117866925633490, guid: af99a7d67a3cc06448b7c8b0ff6d21f4,
@@ -25477,8 +25513,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88b57173b5bb141489b57b18dc1869ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  uiManager: {fileID: 0}
+  economyManager: {fileID: 0}
   enableSelectedCar: {fileID: 175457690}
+  mainMenuUIManager: {fileID: 1646347370}
   carStoreData: {fileID: 11400000, guid: fd308cb1c8fb3d643b0236c50964042d, type: 2}
+  economyData: {fileID: 11400000, guid: a5b3017761fdaca45beee366927202eb, type: 2}
   cardCarImage: {fileID: 1503651537}
   cardCarName: {fileID: 1986091746}
   cardCarPrice: {fileID: 674842596}
@@ -25645,6 +25685,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcbac176c91eb4c4e8f7c37c5fd23a5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enableSelectedCar: {fileID: 175457690}
   carStoreManager: {fileID: 1655888892}
   carStoreData: {fileID: 11400000, guid: fd308cb1c8fb3d643b0236c50964042d, type: 2}
   myCarList: []
@@ -25809,6 +25850,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcbac176c91eb4c4e8f7c37c5fd23a5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enableSelectedCar: {fileID: 175457690}
   carStoreManager: {fileID: 1655888892}
   carStoreData: {fileID: 11400000, guid: fd308cb1c8fb3d643b0236c50964042d, type: 2}
   myCarList: []
@@ -25973,6 +26015,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcbac176c91eb4c4e8f7c37c5fd23a5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enableSelectedCar: {fileID: 175457690}
   carStoreManager: {fileID: 1655888892}
   carStoreData: {fileID: 11400000, guid: fd308cb1c8fb3d643b0236c50964042d, type: 2}
   myCarList: []
@@ -26627,6 +26670,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcbac176c91eb4c4e8f7c37c5fd23a5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enableSelectedCar: {fileID: 175457690}
   carStoreManager: {fileID: 1655888892}
   carStoreData: {fileID: 11400000, guid: fd308cb1c8fb3d643b0236c50964042d, type: 2}
   myCarList: []
@@ -33703,6 +33747,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcbac176c91eb4c4e8f7c37c5fd23a5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enableSelectedCar: {fileID: 175457690}
   carStoreManager: {fileID: 1655888892}
   carStoreData: {fileID: 11400000, guid: fd308cb1c8fb3d643b0236c50964042d, type: 2}
   myCarList: []
@@ -34697,6 +34742,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcbac176c91eb4c4e8f7c37c5fd23a5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enableSelectedCar: {fileID: 175457690}
   carStoreManager: {fileID: 1655888892}
   carStoreData: {fileID: 11400000, guid: fd308cb1c8fb3d643b0236c50964042d, type: 2}
   myCarList: []
@@ -35771,6 +35817,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcbac176c91eb4c4e8f7c37c5fd23a5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enableSelectedCar: {fileID: 175457690}
   carStoreManager: {fileID: 1655888892}
   carStoreData: {fileID: 11400000, guid: fd308cb1c8fb3d643b0236c50964042d, type: 2}
   myCarList: []
@@ -36156,6 +36203,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcbac176c91eb4c4e8f7c37c5fd23a5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enableSelectedCar: {fileID: 175457690}
   carStoreManager: {fileID: 1655888892}
   carStoreData: {fileID: 11400000, guid: fd308cb1c8fb3d643b0236c50964042d, type: 2}
   myCarList: []

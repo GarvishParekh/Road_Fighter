@@ -95,7 +95,7 @@ public class EconomyManager : MonoBehaviour
         switch (purchaseType)
         {
             case PurchaseType.BUY:
-                areYouSureTxt.text = $"You you sure you want to \n buy <b><color=#DB3E34>{itemName}</b></color> for <color=#F1C40F><b>{itemPrice.ToString("#,##0", CultureInfo.InvariantCulture)} Coins";
+                areYouSureTxt.text = $"You you sure you want to \n buy <i><b><color=#DB3E34>{itemName}</i></b></color> for <color=#F1C40F><b><u>{itemPrice.ToString("#,##0", CultureInfo.InvariantCulture)} Coins";
                 break;
             case PurchaseType.UPGRADE:
                 areYouSureTxt.text = $"You you sure you want to \n upgrade <b><color=#DB3E34>{itemName}</b></color> for <color=#F1C40F><b>{itemPrice.ToString("#,##0", CultureInfo.InvariantCulture)} Coins";

@@ -6,13 +6,19 @@ using System.Collections.Generic;
 
 public class CarStoreManager : MonoBehaviour
 {
-    [Header("<size=15>[SCRIPT]")]
+    [Header("<size=15>[SCRIPT</SIZE> <size=10><color=#7DAA1B>RUNTIME</color><SIZE=15>]")]
+    [SerializeField] private UiManager uiManager;
+    [SerializeField] private EconomyManager economyManager;
+
+    [Header("<size=15>[SCRIPT</SIZE> <size=10><color=#FF0000>REFERENCE</color><SIZE=15>]")] 
     [SerializeField] private EnableSelectedCar enableSelectedCar;
+    [SerializeField] private MainMenuUIManager mainMenuUIManager;
 
-    [Header ("<size=15>[SCRIPTABLE OBJECT]")]
+    [Header("<size=15>[SCRIPTABLE OBJECT]")]
     [SerializeField] private CarStoreData carStoreData;
+    [SerializeField] private EconomyData economyData;
 
-    [Header ("<size=15>[CARD INFORMATION]")]
+    [Header("<size=15>[CARD INFORMATION]")]
     [SerializeField] private Image cardCarImage;
     [SerializeField] private TMP_Text cardCarName;
     [SerializeField] private TMP_Text cardCarPrice;
@@ -22,9 +28,14 @@ public class CarStoreManager : MonoBehaviour
     [SerializeField] private GameObject equipButton;
     [SerializeField] private GameObject equippedImage;
 
-    [Header ("<size=15>[TOGGLE INFROMATION]")]
+    [Header("<size=15>[TOGGLE INFROMATION]")]
     [SerializeField] private List<CarToggle> allCarToggle = new List<CarToggle>();
 
+    private void Start()
+    {
+        uiManager = UiManager.instance;
+        economyManager = EconomyManager.instance;
+    }
 
     public void UpdateCard(Sprite carIcon, string _carName, int _carPrice, string _carClass, CarLockState _carState, CarEquipState _carEquipState)
     {
@@ -62,7 +73,7 @@ public class CarStoreManager : MonoBehaviour
     }
 
     public void FilterCars(string className)
-    {   
+    {
         switch (className)
         {
             case "s":
@@ -127,4 +138,55 @@ public class CarStoreManager : MonoBehaviour
             carToggle.UpdateUI();
         }
     }
+
+    public void BuyButton()
+    {
+        int carPrice = 0;
+        int selectedCarIndex = carStoreData.selectedCarData.equippedCarIndex;
+        string selectedCarName = string.Empty;
+        switch (carStoreData.selectedCarData.equippedCarclass)
+        {
+            case CarsClass.S_CLASS:
+                carPrice = carStoreData.S_cars[selectedCarIndex].carPrice;
+                selectedCarName = carStoreData.S_cars[selectedCarIndex].carName;
+                break;
+            case CarsClass.A_CLASS:
+                carPrice = carStoreData.A_cars[selectedCarIndex].carPrice;
+                selectedCarName = carStoreData.A_cars[selectedCarIndex].carName;
+                break;
+            case CarsClass.B_CLASS:
+                carPrice = carStoreData.B_cars[selectedCarIndex].carPrice;
+                selectedCarName = carStoreData.B_cars[selectedCarIndex].carName;
+                break;
+            case CarsClass.C_CLASS:
+                carPrice = carStoreData.C_cars[selectedCarIndex].carPrice;
+                selectedCarName = carStoreData.C_cars[selectedCarIndex].carName;
+                break;
+            default:
+                Debug.Log("Wrong class");
+                break;
+        }
+
+        if (economyManager.IsMoneyAvilable(carPrice))
+        {
+            Button buyButton = economyManager.GetConfirmBuyButton(carPrice, selectedCarName, PurchaseType.BUY);
+            foreach (CarToggle carToggle in allCarToggle)
+            {
+                if (carStoreData.selectedCarData.equippedCarclass == carToggle.GetCarClass() &&
+                    carStoreData.selectedCarData.equippedCarIndex == carToggle.GetMyIndex())
+                {
+                    //enableSelectedCar.ChangeCar(carStoreData.selectedCarData.equippedCarclass, carStoreData.selectedCarData.equippedCarIndex);
+                    buyButton.onClick.AddListener(carToggle.BuyMe);
+                    buyButton.onClick.AddListener(EquipButton);
+                }
+
+                uiManager.OpenPopupCanvas(CanvasCellsName.CONFIRM_BUY_POPUP);
+            }
+        }
+        else
+        {
+            mainMenuUIManager.NoEnoughCanvas(carPrice - economyData.availableCoins);
+        }
+    }
 }
+

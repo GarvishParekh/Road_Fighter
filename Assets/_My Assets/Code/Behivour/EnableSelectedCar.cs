@@ -8,7 +8,7 @@ public class EnableSelectedCar : MonoBehaviour
 
     private void Start()
     {
-        ChangeCar(carStoreData.selectedCarData.equippedCarclass, carStoreData.selectedCarData.equippedCarIndex);
+        ChangeCar(carStoreData.equippedCarData.equippedCarclass, carStoreData.equippedCarData.equippedCarIndex);
     }
 
     public void ChangeCar (CarsClass _myCarClass, int _myCarIndex)
