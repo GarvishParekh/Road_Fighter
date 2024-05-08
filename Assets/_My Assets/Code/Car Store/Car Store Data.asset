@@ -18,201 +18,240 @@ MonoBehaviour:
     carPrice: 750000
     carLockState: 0
     carEquipState: 0
-    playerPrefTag: QuantumSprint_PLAYER_PREF
+    lockPlayerPref: 
+    equipPlayerPref: 
   - carName: NeonRush
     carImage: {fileID: 21300000, guid: 66560924d76f1a340bfd956a18b69a4f, type: 3}
     carPrice: 800000
     carLockState: 0
     carEquipState: 0
-    playerPrefTag: NeonRush_PLAYER_PREF
+    lockPlayerPref: 
+    equipPlayerPref: 
   - carName: HyperDrive
     carImage: {fileID: 21300000, guid: 99586c1439326a041a615c2bbd188257, type: 3}
     carPrice: 850000
     carLockState: 0
     carEquipState: 0
-    playerPrefTag: HyperDrive_PLAYER_PREF
+    lockPlayerPref: 
+    equipPlayerPref: 
   - carName: IgnitionX
     carImage: {fileID: 21300000, guid: d69c3e6ce10546745984e605b81f031a, type: 3}
     carPrice: 900000
     carLockState: 0
     carEquipState: 0
-    playerPrefTag: IgnitionX_PLAYER_PREF
+    lockPlayerPref: 
+    equipPlayerPref: 
   - carName: AeroBlitz
     carImage: {fileID: 21300000, guid: b9f0e83ca87bbeb4b9fc6739c91c9279, type: 3}
     carPrice: 950000
     carLockState: 0
     carEquipState: 0
-    playerPrefTag: AeroBlitz_PLAYER_PREF
+    lockPlayerPref: 
+    equipPlayerPref: 
   - carName: SonicVortex
     carImage: {fileID: 21300000, guid: efdc58d895e53ac4282e62f114fe4e97, type: 3}
     carPrice: 1000000
     carLockState: 0
     carEquipState: 0
-    playerPrefTag: SonicVortex_PLAYER_PREF
+    lockPlayerPref: 
+    equipPlayerPref: 
   A_cars:
   - carName: AuroraSpeedster
     carImage: {fileID: 21300000, guid: e2086075e40f73647bc72c47189358dd, type: 3}
     carPrice: 430000
     carLockState: 0
     carEquipState: 0
-    playerPrefTag: AuroraSpeedster_PLAYER_PREF
+    lockPlayerPref: 
+    equipPlayerPref: 
   - carName: NovaSprint
     carImage: {fileID: 21300000, guid: d335ff9ba7063d440ad1d33899e5ab57, type: 3}
     carPrice: 440000
     carLockState: 0
     carEquipState: 0
-    playerPrefTag: NovaSprint_PLAYER_PREF
+    lockPlayerPref: 
+    equipPlayerPref: 
   - carName: 'EclipseElite '
     carImage: {fileID: 21300000, guid: be6bb23fa5d1c524d97743a88b0eb16c, type: 3}
     carPrice: 450000
     carLockState: 0
     carEquipState: 0
-    playerPrefTag: EclipseElite _PLAYER_PREF
+    lockPlayerPref: 
+    equipPlayerPref: 
   - carName: 'StellarStriker '
     carImage: {fileID: 21300000, guid: f01392f4da14a9e48b77d86eae902e16, type: 3}
     carPrice: 460000
     carLockState: 0
     carEquipState: 0
-    playerPrefTag: StellarStriker _PLAYER_PREF
+    lockPlayerPref: 
+    equipPlayerPref: 
   - carName: 'HorizonHurricane '
     carImage: {fileID: 21300000, guid: 5274e2312f55fc149a966043a9d75819, type: 3}
     carPrice: 470000
     carLockState: 0
     carEquipState: 0
-    playerPrefTag: HorizonHurricane _PLAYER_PREF
+    lockPlayerPref: 
+    equipPlayerPref: 
   - carName: 'ZenithZoomer '
     carImage: {fileID: 21300000, guid: b72fe16d228336b4ba9a53efcb9de4f2, type: 3}
     carPrice: 480000
     carLockState: 0
     carEquipState: 0
-    playerPrefTag: ZenithZoomer _PLAYER_PREF
+    lockPlayerPref: 
+    equipPlayerPref: 
   - carName: 'FusionFlash '
     carImage: {fileID: 21300000, guid: 2c8f3b3a23c5d534c99e954bd192aa1c, type: 3}
     carPrice: 490000
     carLockState: 0
     carEquipState: 0
-    playerPrefTag: FusionFlash _PLAYER_PREF
+    lockPlayerPref: 
+    equipPlayerPref: 
   - carName: 'RadiantRacer '
     carImage: {fileID: 21300000, guid: 81e3c5446f2319e4c9173746913c4b61, type: 3}
     carPrice: 500000
     carLockState: 0
     carEquipState: 0
-    playerPrefTag: RadiantRacer _PLAYER_PREF
+    lockPlayerPref: 
+    equipPlayerPref: 
   B_cars:
   - carName: BlitzBolt
     carImage: {fileID: 21300000, guid: f6a9902cb3ae6b54b9d3a6606b5a5a8f, type: 3}
     carPrice: 210000
     carLockState: 0
     carEquipState: 0
-    playerPrefTag: BlitzBolt_PLAYER_PREF
+    lockPlayerPref: 
+    equipPlayerPref: 
   - carName: ThunderThrasher
     carImage: {fileID: 21300000, guid: 7dabeb90bbffdbd4ca5d580393e708ec, type: 3}
     carPrice: 220000
     carLockState: 0
     carEquipState: 0
-    playerPrefTag: ThunderThrasher_PLAYER_PREF
+    lockPlayerPref: 
+    equipPlayerPref: 
   - carName: SurgeSprinter
     carImage: {fileID: 21300000, guid: f63fea23c20f1f646adb93ef0de863f1, type: 3}
     carPrice: 230000
     carLockState: 0
     carEquipState: 0
-    playerPrefTag: SurgeSprinter_PLAYER_PREF
+    lockPlayerPref: 
+    equipPlayerPref: 
   - carName: CycloneCruiser
     carImage: {fileID: 21300000, guid: ce2aaf1944f9e2141a550d5769ae4b1a, type: 3}
     carPrice: 240000
     carLockState: 0
     carEquipState: 0
-    playerPrefTag: CycloneCruiser_PLAYER_PREF
+    lockPlayerPref: 
+    equipPlayerPref: 
   - carName: 'VoltageVoyager '
     carImage: {fileID: 21300000, guid: 756f9ac2e5d737543b789dc7ba1e6919, type: 3}
     carPrice: 250000
     carLockState: 0
     carEquipState: 0
-    playerPrefTag: VoltageVoyager _PLAYER_PREF
+    lockPlayerPref: 
+    equipPlayerPref: 
   - carName: 'MomentumMachine '
     carImage: {fileID: 21300000, guid: 99d3e509eb335e14fa26f07cb6fcfbaf, type: 3}
     carPrice: 260000
     carLockState: 0
     carEquipState: 0
-    playerPrefTag: MomentumMachine _PLAYER_PREF
+    lockPlayerPref: 
+    equipPlayerPref: 
   - carName: 'VortexVoyager '
     carImage: {fileID: 21300000, guid: 0f26161776899024cb67a2f4a8c63502, type: 3}
     carPrice: 270000
     carLockState: 0
     carEquipState: 0
-    playerPrefTag: VortexVoyager _PLAYER_PREF
+    lockPlayerPref: 
+    equipPlayerPref: 
   - carName: 'TurboTwister '
     carImage: {fileID: 21300000, guid: 6a597e7dc6767a540ae17e31e66c3f35, type: 3}
     carPrice: 280000
     carLockState: 0
     carEquipState: 0
-    playerPrefTag: TurboTwister _PLAYER_PREF
+    lockPlayerPref: 
+    equipPlayerPref: 
   - carName: IgniteInterceptor
     carImage: {fileID: 21300000, guid: e5ba3cc8dc25ad04dbfa992b3773acc8, type: 3}
     carPrice: 290000
     carLockState: 0
     carEquipState: 0
-    playerPrefTag: IgniteInterceptor_PLAYER_PREF
+    lockPlayerPref: 
+    equipPlayerPref: 
   - carName: 'PowerPulse '
     carImage: {fileID: 21300000, guid: 56f6f2c97c41d6145868f4024193a5bc, type: 3}
     carPrice: 300000
     carLockState: 0
     carEquipState: 0
-    playerPrefTag: PowerPulse _PLAYER_PREF
+    lockPlayerPref: 
+    equipPlayerPref: 
   C_cars:
   - carName: 'UrbanCruiser '
     carImage: {fileID: 21300000, guid: 8b501d1151bd90c4385ef4dc559ebdb6, type: 3}
     carPrice: 60000
     carLockState: 0
     carEquipState: 0
-    playerPrefTag: UrbanCruiser _PLAYER_PREF
+    lockPlayerPref: 
+    equipPlayerPref: 
   - carName: 'StreetStrider '
     carImage: {fileID: 21300000, guid: 5a4dfcdeb478efd46acff3dad4993fee, type: 3}
     carPrice: 70000
     carLockState: 0
     carEquipState: 0
-    playerPrefTag: StreetStrider _PLAYER_PREF
+    lockPlayerPref: 
+    equipPlayerPref: 
   - carName: 'MetroMover '
     carImage: {fileID: 21300000, guid: d5320969b5bc0734086b45a27caa31ce, type: 3}
     carPrice: 70000
     carLockState: 0
     carEquipState: 0
-    playerPrefTag: MetroMover _PLAYER_PREF
+    lockPlayerPref: 
+    equipPlayerPref: 
   - carName: 'CityCrawler '
     carImage: {fileID: 21300000, guid: b651926445cbe8441943db719641142b, type: 3}
     carPrice: 90000
     carLockState: 0
     carEquipState: 0
-    playerPrefTag: CityCrawler _PLAYER_PREF
+    lockPlayerPref: 
+    equipPlayerPref: 
   - carName: 'RoadRover '
     carImage: {fileID: 21300000, guid: 4849f87f673a7f147a2706782269090d, type: 3}
     carPrice: 100000
     carLockState: 0
     carEquipState: 0
-    playerPrefTag: RoadRover _PLAYER_PREF
+    lockPlayerPref: 
+    equipPlayerPref: 
   battlepassCars:
   - carName: 
     carImage: {fileID: 21300000, guid: e91e67c93e2bdeb47a148bdc28d97da5, type: 3}
     carPrice: 0
     carLockState: 0
     carEquipState: 0
-    playerPrefTag: 
+    lockPlayerPref: 
+    equipPlayerPref: 
   - carName: 
     carImage: {fileID: 21300000, guid: 19b6ee3a775310f4dae21670f8e303cb, type: 3}
     carPrice: 0
     carLockState: 0
     carEquipState: 0
-    playerPrefTag: 
+    lockPlayerPref: 
+    equipPlayerPref: 
   - carName: 
     carImage: {fileID: 21300000, guid: f3f2ea9674d10464eaa6dcaf67cb764a, type: 3}
     carPrice: 0
     carLockState: 0
     carEquipState: 0
-    playerPrefTag: 
+    lockPlayerPref: 
+    equipPlayerPref: 
   - carName: 
     carImage: {fileID: 21300000, guid: 3dd56a221aa2c7b49931b0e959d86747, type: 3}
     carPrice: 0
     carLockState: 0
     carEquipState: 0
-    playerPrefTag: 
-  selectedClass: C
+    lockPlayerPref: 
+    equipPlayerPref: 
+  equippedCarData:
+    equippedCarclass: 3
+    equippedCarIndex: 0
+  selectedCarData:
+    equippedCarclass: 3
+    equippedCarIndex: 0
+  foundEquippedCar: 0

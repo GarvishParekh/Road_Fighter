@@ -26,4 +26,9 @@ public class InGameCoinCollection : MonoBehaviour
         coinsCollectedThisRound += economyData.coinsPerCollection;
         inGameUiManager.UpdateCoinsCountTxt(coinsCollectedThisRound);
     }
+
+    public int GetCollectedCoins()
+    {
+        return coinsCollectedThisRound;
+    }
 }

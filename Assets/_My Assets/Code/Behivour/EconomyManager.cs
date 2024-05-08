@@ -10,6 +10,7 @@ public class EconomyManager : MonoBehaviour
     public static Action<int> ConfirmPurchase;
     public static EconomyManager instance;  
 
+    [Header("<size=15>[SCRIPTABLE OBJECT]")]
     [SerializeField] private EconomyData economyData;
 
     [Header("<size=15>[COMPONENTS]")]

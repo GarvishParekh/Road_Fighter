@@ -4,14 +4,18 @@ public class CarCollision : MonoBehaviour
 {
     UiManager uiManager;
     GameStatus gameStauts;
+    EconomyManager economyManager;
 
     [SerializeField] private CarData carData;
     [SerializeField] private TrafficData trafficData;
+
+    [SerializeField] private InGameCoinCollection inGameCoinCollection;
 
     private void Start()
     {
         uiManager = UiManager.instance;
         gameStauts = GameStatus.instance;
+        economyManager = EconomyManager.instance;
 
         trafficData.trafficStatus = TrafficData.TrafficStatus.MOVING;
     }
@@ -40,5 +44,7 @@ public class CarCollision : MonoBehaviour
 
         gameStauts.ChangeGameState(GameState.GAMEOVER);
         GameStatus.GameOverAction?.Invoke();
+
+        economyManager.AddCoins(inGameCoinCollection.GetCollectedCoins());
     }
 }
