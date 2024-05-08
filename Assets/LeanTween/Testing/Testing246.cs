@@ -22,8 +22,8 @@ public class Testing246 : MonoBehaviour {
 
  //           float randRad = Random.Range(0f, 2f * Mathf.PI);
  //           float radius = 4f;
- //           var pos = new Vector3(Mathf.Cos(randRad ) * radius, Mathf.Sin(randRad) * radius, 0f);
- //           LeanTween.move(cube, pos, 1f).setSpeed(1f).setDestroyOnComplete(true);
+ //           var turningVector = new Vector3(Mathf.Cos(randRad ) * radius, Mathf.Sin(randRad) * radius, 0f);
+ //           LeanTween.move(cube, turningVector, 1f).setSpeed(1f).setDestroyOnComplete(true);
  //       }
 
  //       Time.timeScale = gameScale;

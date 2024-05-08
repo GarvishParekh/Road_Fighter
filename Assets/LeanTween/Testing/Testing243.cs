@@ -13,7 +13,7 @@ public class Testing243 : MonoBehaviour {
 //		LeanTween.move(cube1, new Vector3(0, 0, -10), 1f).setEaseInOutQuart().setOnUpdate( ( Vector3 val )=>{
 //			Debug.Log("val:"+val);	
 //		}).setOnComplete(() => {
-//			Debug.Log("cube1 end pos:"+cube1.transform.position);
+//			Debug.Log("cube1 end turningVector:"+cube1.transform.position);
 //		});
 //	}
 

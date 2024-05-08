@@ -178,8 +178,8 @@ public class CarToggle : MonoBehaviour
         PlayerPrefs.SetInt(equipPlayerPref, 1);
         myCarList[myCarIndex].carEquipState = CarEquipState.EQUIPPED;
 
-        carStoreData.equippedCarData.equippedCarclass = myCarClass;
-        carStoreData.equippedCarData.equippedCarIndex = myCarIndex; 
+        carStoreManager.SetEquippedCarClass(myCarClass);
+        carStoreManager.SetEquippedCarIndex(myCarIndex);
     }
 
     public void UpdateUI()

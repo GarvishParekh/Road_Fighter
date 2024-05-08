@@ -33,7 +33,7 @@ public class CarMovement : MonoBehaviour
     [SerializeField] private Rigidbody carRB;
 
 
-    Vector3 pos;
+    Vector3 turningVector;
     public float lerpedSpeed = 0;
     public float lerpedCarMovement;
 
@@ -96,22 +96,26 @@ public class CarMovement : MonoBehaviour
 
     private float GetPickUpLerp()
     {
-        lerpedSpeed = Mathf.MoveTowards(lerpedSpeed, 1, Time.deltaTime * carData.pickUpSpeed);
+        float pickUpSpeed = Time.deltaTime * carData.pickUpSpeed;
+        lerpedSpeed = Mathf.MoveTowards(lerpedSpeed, 1, pickUpSpeed);
         return lerpedSpeed; 
     }
 
     private float GetLerpedMovementValue()
     {
-        lerpedCarMovement = Mathf.MoveTowards(lerpedCarMovement, carData.carSpeedLevel[(int)carData.currentSpeedLevel].speedValue, carData.gearShiftingSpeed * Time.deltaTime);
+        float requriedSpeed = carData.carSpeedLevel[(int)carData.currentSpeedLevel].speedValue;
+        float shiftingSpeed = carData.gearShiftingSpeed * Time.deltaTime;
+        
+        lerpedCarMovement = Mathf.MoveTowards(lerpedCarMovement, requriedSpeed, shiftingSpeed);
         return lerpedCarMovement;
     }
 
     private void ApplyTurning()
     {
         // clamp the position
-        pos.x = Mathf.Clamp(carRB.position.x, -carData.maxSizeValues, carData.maxSizeValues);
-        pos.y = mainRB.position.y;
-        pos.z = mainRB.position.z;
+        turningVector.x = Mathf.Clamp(carRB.position.x, -carData.maxSizeValues, carData.maxSizeValues);
+        turningVector.y = mainRB.position.y;
+        turningVector.z = mainRB.position.z;
 
         switch (carControl)
         {
@@ -128,7 +132,7 @@ public class CarMovement : MonoBehaviour
 
                 break;
         }
-        carRB.position = pos;
+        carRB.position = turningVector;
     }
 
     public void TakeControl()

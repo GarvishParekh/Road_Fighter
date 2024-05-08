@@ -16659,6 +16659,7 @@ GameObject:
   - component: {fileID: 1579209492600591226}
   - component: {fileID: 7375005821183432411}
   - component: {fileID: 750564955646046509}
+  - component: {fileID: 8235645308247042494}
   m_Layer: 0
   m_Name: Car Holder
   m_TagString: Untagged
@@ -16753,6 +16754,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   carData: {fileID: 11400000, guid: fb121c1dc1475384783df7983091d60b, type: 2}
   trafficData: {fileID: 11400000, guid: 9dc036fb28f92d24abaece9409f895f3, type: 2}
+--- !u!114 &8235645308247042494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6934280868190785083}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26dfab630592c294e9b34db677d8ca7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6945486186894222468
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,6 +1,6 @@
 using UnityEngine;
-using System.Collections.Generic;
 using UnityEngine.UI;
+using System.Collections.Generic;
 
 public class PowerUpUpgradeManager : MonoBehaviour
 {
@@ -18,7 +18,6 @@ public class PowerUpUpgradeManager : MonoBehaviour
 
     [Header("<size=15>[COMPONENTS]")]
     [SerializeField] private List<UpgradeCell> upgradeCellList = new List<UpgradeCell>();
-
 
     private void Start()
     {
@@ -39,10 +38,13 @@ public class PowerUpUpgradeManager : MonoBehaviour
     {
         selectedUpgrade = upgradesData.upgrades[(int)powerUpToUpgrade];
 
-        if (economyManager.IsMoneyAvilable(selectedUpgrade.requriedCoins[selectedUpgrade.upgradeLevel]))
+        int upgradePrice = selectedUpgrade.requriedCoins[selectedUpgrade.upgradeLevel];
+        string upgradeName = selectedUpgrade.upgradeName;
+
+        if (economyManager.IsMoneyAvilable(upgradePrice))
         {
             // coins available
-            Button buyButton = economyManager.GetConfirmBuyButton(selectedUpgrade.requriedCoins[selectedUpgrade.upgradeLevel], selectedUpgrade.upgradeName, PurchaseType.UPGRADE);
+            Button buyButton = economyManager.GetConfirmBuyButton(upgradePrice, upgradeName, PurchaseType.UPGRADE);
             buyButton.onClick.AddListener(SendToYesButton);
 
             uiManager.OpenPopupCanvas(CanvasCellsName.CONFIRM_BUY_POPUP);
@@ -50,15 +52,18 @@ public class PowerUpUpgradeManager : MonoBehaviour
         else
         {
             // coins not available
-            mainMenuUIManager.NoEnoughCanvas(economyData.availableCoins - selectedUpgrade.requriedCoins[selectedUpgrade.upgradeLevel]);
+            int availabeCoins = economyData.availableCoins;
+            mainMenuUIManager.NoEnoughCanvas(availabeCoins - upgradePrice);
         }
     }
 
+    
     public void SendToYesButton()
     {
         PowerupType powerUpToUpgrade = selectedUpgrade.powerupType;
         EconomyManager.ConfirmPurchase?.Invoke(selectedUpgrade.requriedCoins[selectedUpgrade.upgradeLevel]);
-        if (selectedUpgrade.upgradeLevel < 5)
+
+        if (selectedUpgrade.upgradeLevel < upgradesData.maxUpgradeLevel)
         {
             selectedUpgrade.upgradeLevel += 1;
         }

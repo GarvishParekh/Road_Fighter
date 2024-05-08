@@ -125,11 +125,11 @@ public class CarStoreManager : MonoBehaviour
     {
         foreach (CarToggle carToggle in allCarToggle)
         {
-            if (carStoreData.selectedCarData.equippedCarclass == carToggle.GetCarClass() &&
-                carStoreData.selectedCarData.equippedCarIndex == carToggle.GetMyIndex())
+            if (GetSelectedCarClass() == carToggle.GetCarClass() &
+                GetSelectedCarIndex() == carToggle.GetMyIndex())
             {
                 carToggle.EquipMe();
-                enableSelectedCar.ChangeCar(carStoreData.selectedCarData.equippedCarclass, carStoreData.selectedCarData.equippedCarIndex);
+                enableSelectedCar.ChangeCar(GetSelectedCarClass(), GetSelectedCarIndex());
             }
             else
             {
@@ -142,9 +142,10 @@ public class CarStoreManager : MonoBehaviour
     public void BuyButton()
     {
         int carPrice = 0;
-        int selectedCarIndex = carStoreData.selectedCarData.equippedCarIndex;
+        int selectedCarIndex = GetSelectedCarIndex();
         string selectedCarName = string.Empty;
-        switch (carStoreData.selectedCarData.equippedCarclass)
+        
+        switch (GetSelectedCarClass())
         {
             case CarsClass.S_CLASS:
                 carPrice = carStoreData.S_cars[selectedCarIndex].carPrice;
@@ -172,10 +173,9 @@ public class CarStoreManager : MonoBehaviour
             Button buyButton = economyManager.GetConfirmBuyButton(carPrice, selectedCarName, PurchaseType.BUY);
             foreach (CarToggle carToggle in allCarToggle)
             {
-                if (carStoreData.selectedCarData.equippedCarclass == carToggle.GetCarClass() &&
-                    carStoreData.selectedCarData.equippedCarIndex == carToggle.GetMyIndex())
+                if (GetSelectedCarClass() == carToggle.GetCarClass() &&
+                    GetSelectedCarIndex() == carToggle.GetMyIndex())
                 {
-                    //enableSelectedCar.ChangeCar(carStoreData.selectedCarData.equippedCarclass, carStoreData.selectedCarData.equippedCarIndex);
                     buyButton.onClick.AddListener(carToggle.BuyMe);
                     buyButton.onClick.AddListener(EquipButton);
                 }
@@ -188,5 +188,20 @@ public class CarStoreManager : MonoBehaviour
             mainMenuUIManager.NoEnoughCanvas(carPrice - economyData.availableCoins);
         }
     }
+
+    public void SetEquippedCarClass(CarsClass _carClass)
+        => carStoreData.equippedCarData.equippedCarclass = _carClass;
+    public void SetEquippedCarIndex(int _carIndex)
+        => carStoreData.equippedCarData.equippedCarIndex = _carIndex;
+
+    private CarsClass GetSelectedCarClass()
+    {
+        return carStoreData.selectedCarData.equippedCarclass;
+    }
+    private int GetSelectedCarIndex()
+    {
+        return carStoreData.selectedCarData.equippedCarIndex;
+    }
+    
 }
 

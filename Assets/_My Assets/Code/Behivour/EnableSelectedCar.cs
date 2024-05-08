@@ -8,7 +8,11 @@ public class EnableSelectedCar : MonoBehaviour
 
     private void Start()
     {
-        ChangeCar(carStoreData.equippedCarData.equippedCarclass, carStoreData.equippedCarData.equippedCarIndex);
+        //PlayerPrefs.GetInt(ConstantKeys.car)
+        CarsClass carClass = carStoreData.equippedCarData.equippedCarclass;
+        int carIndex = carStoreData.equippedCarData.equippedCarIndex;
+
+        ChangeCar(carClass, carIndex);
     }
 
     public void ChangeCar (CarsClass _myCarClass, int _myCarIndex)
