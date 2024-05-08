@@ -11,4 +11,6 @@ public class EconomyData : ScriptableObject
 {
     public int availableCoins = 0;
     public int defaultCoins = 10000;
+
+    public int coinsPerCollection = 50;
 }

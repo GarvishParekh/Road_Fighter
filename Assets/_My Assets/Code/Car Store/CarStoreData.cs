@@ -14,6 +14,8 @@ public class CarStoreData : ScriptableObject
     [Space]
     public EquippedCarData equippedCarData;
     public SelectedCarData selectedCarData;
+
+    public bool foundEquippedCar = false;
 }
 
 [System.Serializable]

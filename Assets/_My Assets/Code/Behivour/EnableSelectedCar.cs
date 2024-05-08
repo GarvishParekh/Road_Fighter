@@ -6,6 +6,8 @@ public class EnableSelectedCar : MonoBehaviour
     [SerializeField] private CarStoreData carStoreData;
     [SerializeField] private List<Cars> carsList = new List<Cars>();
 
+    public bool foundEquippedCar = false;
+
     private void Start()
     {
         //PlayerPrefs.GetInt(ConstantKeys.car)

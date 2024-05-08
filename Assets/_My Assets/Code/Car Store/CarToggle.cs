@@ -33,10 +33,6 @@ public class CarToggle : MonoBehaviour
     private void Awake()
     {
         myToggle = GetComponent<Toggle>();  
-    }
-
-    private void Start()
-    {
         // get the list from which data can be restrived
         SetMyCatList();
 

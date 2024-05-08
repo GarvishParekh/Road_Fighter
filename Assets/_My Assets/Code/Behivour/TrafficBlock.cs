@@ -1,5 +1,6 @@
 using UnityEngine;
 using Unity.Mathematics;
+using System.Collections.Generic;
 
 public class TrafficBlock : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class TrafficBlock : MonoBehaviour
     [SerializeField] private Transform trafficSpawnPoint;
     [SerializeField] private Transform playerCar;
     [SerializeField] private Transform laneHolder;
+
+    [SerializeField] private List<GameObject> nearMissTriggerList = new List<GameObject>();
 
     float distance;
     int totalCarsList = 0;
@@ -59,6 +62,7 @@ public class TrafficBlock : MonoBehaviour
         
         CloseAllLanes();
         lanes[count].gameObject.SetActive (true);
+        EnableNearMissColliders();
     }
 
     private void CloseAllLanes()
@@ -77,6 +81,14 @@ public class TrafficBlock : MonoBehaviour
         {
             transform.position = trafficSpawnPoint.position;
             ResetLane();
+        }
+    }
+
+    private void EnableNearMissColliders()
+    {
+        foreach(GameObject nearMissCollider in nearMissTriggerList)
+        {
+            nearMissCollider.SetActive(true);
         }
     }
 }

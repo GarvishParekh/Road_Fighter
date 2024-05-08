@@ -1,13 +1,19 @@
+using System;
 using UnityEngine;
 
-public class NearMissManager : MonoBehaviour
+public class NearMissTrigger : MonoBehaviour
 {
+    public static Action NearMiss;
+
+
     private void OnTriggerEnter(Collider collider)
     {
         if (collider.CompareTag ("NearMiss"))
         {
             Debug.Log("Near Miss");
-            collider.enabled = false;   
+            collider.gameObject.SetActive(false);
+
+            NearMiss?.Invoke();
         }
     }
 }

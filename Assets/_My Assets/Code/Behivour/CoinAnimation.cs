@@ -12,7 +12,6 @@ public class CoinAnimation : MonoBehaviour
     [SerializeField] private float degree = 0;
     [SerializeField] private float waveHeight = 0;
     [SerializeField] private float waveSpeed = 1;
-    [SerializeField] private float heightOffset = 0;
 
     private void Awake()
     {

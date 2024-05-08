@@ -247,7 +247,7 @@ GameObject:
   - component: {fileID: 7957607352462144064}
   - component: {fileID: 8615640629730779663}
   m_Layer: 0
-  m_Name: Left Side Collider
+  m_Name: Near Miss Colliders
   m_TagString: NearMiss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -384,7 +384,7 @@ GameObject:
   - component: {fileID: 4544106474138268659}
   - component: {fileID: 5429893383600902905}
   m_Layer: 0
-  m_Name: Left Side Collider
+  m_Name: Near Miss Colliders
   m_TagString: NearMiss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -565,6 +565,10 @@ MonoBehaviour:
   trafficSpawnPoint: {fileID: 0}
   playerCar: {fileID: 0}
   laneHolder: {fileID: 0}
+  nearMissTriggerList:
+  - {fileID: 8322908107336196048}
+  - {fileID: 1434021835837975833}
+  - {fileID: 4442893088215205551}
 --- !u!54 &8617266501998226441
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -807,7 +811,7 @@ GameObject:
   - component: {fileID: 7822603865486080121}
   - component: {fileID: 9089453343379454202}
   m_Layer: 0
-  m_Name: Left Side Collider
+  m_Name: Near Miss Colliders
   m_TagString: NearMiss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
