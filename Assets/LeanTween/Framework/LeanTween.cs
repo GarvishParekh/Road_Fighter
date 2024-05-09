@@ -587,7 +587,7 @@ public class LeanTween : MonoBehaviour {
             init();
             int backId = uniqueId & 0xFFFF;
             int backCounter = uniqueId >> 16;
-                // Debug.Log("uniqueId:"+uniqueId+ " id:"+backId +" counter:"+backCounter + " setCounter:"+ tw     eens[backId].counter + " tweens[id].type:"+tweens[backId].type);
+                // Debug.Log("uniqueId:"+uniqueId+ " id:"+backId +" scoreCounter:"+backCounter + " setCounter:"+ tw     eens[backId].scoreCounter + " tweens[id].type:"+tweens[backId].type);
             if(tweens[backId].trans==null || (tweens[backId].trans.gameObject == gameObject && tweens[backId].counter==backCounter)) {
                 if (callOnComplete && tweens[backId].optional.onComplete != null)
                     tweens[backId].optional.onComplete();
@@ -669,7 +669,7 @@ public class LeanTween : MonoBehaviour {
 
 //      Debug.Log("backId:" + backId+" backCounter:"+backCounter);
         if (tweens[backId] != null && tweens[backId].uniqueId == uniqueId && tweens[backId].counter == backCounter) {
-            // Debug.Log("tween count:" + tweens[backId].counter);
+            // Debug.Log("tween count:" + tweens[backId].scoreCounter);
             return tweens[backId];
         }
         for(int i = 0; i <= tweenMaxSearch; i++){
@@ -855,7 +855,7 @@ public class LeanTween : MonoBehaviour {
         int backId = uniqueId & 0xFFFF;
         int backCounter = uniqueId >> 16;
         if (backId < 0 || backId >= maxTweens) return false;
-        // Debug.Log("tweens[backId].counter:"+tweens[backId].counter+" backCounter:"+backCounter +" toggle:"+tweens[backId].toggle);
+        // Debug.Log("tweens[backId].scoreCounter:"+tweens[backId].scoreCounter+" backCounter:"+backCounter +" toggle:"+tweens[backId].toggle);
         if (tweens[backId].counter == backCounter && Mathf.Equals(tweens[i].direction, 0f))
         {
             return true;
@@ -903,7 +903,7 @@ public class LeanTween : MonoBehaviour {
         int backId = uniqueId & 0xFFFF;
         int backCounter = uniqueId >> 16;
         if (backId < 0 || backId >= maxTweens) return false;
-        // Debug.Log("tweens[backId].counter:"+tweens[backId].counter+" backCounter:"+backCounter +" toggle:"+tweens[backId].toggle);
+        // Debug.Log("tweens[backId].scoreCounter:"+tweens[backId].scoreCounter+" backCounter:"+backCounter +" toggle:"+tweens[backId].toggle);
         if(tweens[backId].counter==backCounter && tweens[backId].toggle){
             return true;
         }
@@ -1002,7 +1002,7 @@ public class LeanTween : MonoBehaviour {
         if(found==false)
             logError("no available tween found!");
 
-        // Debug.Log("new tween with i:"+i+" counter:"+tweens[i].counter+" tweenMaxSearch:"+tweenMaxSearch+" tween:"+tweens[i]);
+        // Debug.Log("new tween with i:"+i+" scoreCounter:"+tweens[i].scoreCounter+" tweenMaxSearch:"+tweenMaxSearch+" tween:"+tweens[i]);
 
         global_counter++;
         if(global_counter>0x8000)
@@ -3724,7 +3724,7 @@ public class LTRect : System.Object{
 
             /*uint backId = toId & 0xFFFF;
             uint backCounter = toId >> 16;
-            if(_id!=backId || backCounter!=counter){
+            if(_id!=backId || backCounter!=scoreCounter){
                 Debug.LogError("BAD CONVERSION toId:"+_id);
             }*/
 

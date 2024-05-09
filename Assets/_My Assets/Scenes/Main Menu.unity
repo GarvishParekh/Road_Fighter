@@ -4172,7 +4172,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upgradesData: {fileID: 11400000, guid: d5fc867c7f5e46f4b9cbf89ad95dbe10, type: 2}
   economyData: {fileID: 11400000, guid: a5b3017761fdaca45beee366927202eb, type: 2}
-  mainMenuUIManager: {fileID: 0}
+  mainMenuUIManager: {fileID: 1646347370}
   upgradeCellList:
   - {fileID: 2103447577}
   - {fileID: 2122019685}

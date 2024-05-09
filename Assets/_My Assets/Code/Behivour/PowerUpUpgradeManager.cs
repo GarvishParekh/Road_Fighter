@@ -53,7 +53,7 @@ public class PowerUpUpgradeManager : MonoBehaviour
         {
             // coins not available
             int availabeCoins = economyData.availableCoins;
-            mainMenuUIManager.NoEnoughCanvas(availabeCoins - upgradePrice);
+            mainMenuUIManager.NoEnoughCanvas(upgradePrice - availabeCoins);
         }
     }
 

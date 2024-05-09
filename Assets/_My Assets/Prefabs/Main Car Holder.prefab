@@ -8577,7 +8577,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &9014572509052239812
 Transform:
   m_ObjectHideFlags: 0
@@ -14355,6 +14355,7 @@ MonoBehaviour:
   - {fileID: 1783550696224642340}
   - {fileID: 6771169836454999544}
   - {fileID: 1910078611593720378}
+  foundEquippedCar: 0
 --- !u!114 &7154276475988182431
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16754,6 +16755,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   carData: {fileID: 11400000, guid: fb121c1dc1475384783df7983091d60b, type: 2}
   trafficData: {fileID: 11400000, guid: 9dc036fb28f92d24abaece9409f895f3, type: 2}
+  inGameCoinCollection: {fileID: 0}
 --- !u!1 &6945486186894222468
 GameObject:
   m_ObjectHideFlags: 0

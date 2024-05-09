@@ -3,7 +3,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 using System.Globalization;
-using Unity.Mathematics;
 
 public class GameoverCanvasAnimation : MonoBehaviour, ICanvasCellAnimation
 {
@@ -14,9 +13,13 @@ public class GameoverCanvasAnimation : MonoBehaviour, ICanvasCellAnimation
     [Header (" <size=15> [SCRIPTABLE OBJECT] ")]
     [SerializeField] private ScoreData scoreData;
     [SerializeField] private CarData carData;
+
+    [Header(" <size=15> [SCRIPTS] ")]
+    [SerializeField] private InGameCoinCollection inGameCoinCollection;
     
     [Header (" <size=15> [GAME OVER CANVAS] ")]
     [SerializeField] private TMP_Text finalScoreTxt;
+    [SerializeField] private TMP_Text finalCoinTxt;
 
     [Header (" <size=15> [CANVAS ANIMATION] ")]
     [SerializeField] GameObject bgImage;
@@ -30,7 +33,8 @@ public class GameoverCanvasAnimation : MonoBehaviour, ICanvasCellAnimation
     [SerializeField] GameObject retyrIcon;
 
     WaitForSeconds pointOne = new WaitForSeconds(0.01f);
-    float counter = 0;
+    float scoreCounter = 0;
+    float coinCounter = 0;
     Vector3 defaultTransform = new Vector3 (0,1,1);
     
     public void PlayAnimation()
@@ -57,6 +61,7 @@ public class GameoverCanvasAnimation : MonoBehaviour, ICanvasCellAnimation
     {
         ResetAnimation();
         StartCoroutine(nameof(CalculateScoreCounter));
+        StartCoroutine(nameof(CalculateCoinCounter));
         LeanTween.scale(bgImage, Vector3.one * 10, 0.2f).setEaseInOutSine().setOnComplete(() =>
         {
             LeanTween.scale(mainHolder, Vector3.one, 0.15f).setEaseInOutSine().setOnComplete(() =>
@@ -72,13 +77,13 @@ public class GameoverCanvasAnimation : MonoBehaviour, ICanvasCellAnimation
 
     private IEnumerator CalculateScoreCounter()
     {
-        while (counter != scoreData.scoreCount)
+        while (scoreCounter != scoreData.scoreCount)
         {
-            counter = Mathf.MoveTowards(counter, scoreData.scoreCount, scoreData.scoreCount / 2.6f * Time.deltaTime);
-            finalScoreTxt.text = counter.ToString("#,##0", CultureInfo.InvariantCulture);
+            scoreCounter = Mathf.MoveTowards(scoreCounter, scoreData.scoreCount, scoreData.scoreCount / 2.6f * Time.deltaTime);
+            finalScoreTxt.text = scoreCounter.ToString("#,##0", CultureInfo.InvariantCulture);
             yield return null;
 
-            Debug.Log("Calculating");
+            Debug.Log("Calculating score");
         }
         
         Debug.Log("Calculation completed");
@@ -94,6 +99,22 @@ public class GameoverCanvasAnimation : MonoBehaviour, ICanvasCellAnimation
                 LeanTween.rotateAround(retyrIcon, Vector3.forward, 360, 2f).setEaseOutBounce().setLoopCount(-1);
             });
         });
+    }
+
+    private IEnumerator CalculateCoinCounter()
+    {
+        int coinsCollected = inGameCoinCollection.GetCollectedCoins();
+        float collectionSpeed = coinsCollected / 1.6f * Time.deltaTime;
+        
+        while (coinCounter != coinsCollected)
+        {
+            coinCounter = Mathf.MoveTowards(coinCounter, coinsCollected, collectionSpeed);
+            finalCoinTxt.text = coinCounter.ToString("#,##0", CultureInfo.InvariantCulture);
+            yield return null;
+
+            Debug.Log("Calculating coins");
+        }
+        Debug.Log("Calculation completed");
     }
 
     private void CaptureSS()

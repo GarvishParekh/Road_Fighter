@@ -257,7 +257,7 @@ GameObject:
   - component: {fileID: 4920324555477247765}
   - component: {fileID: 5586578243313553870}
   m_Layer: 5
-  m_Name: Near Miss Holder
+  m_Name: Near Miss Holder Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

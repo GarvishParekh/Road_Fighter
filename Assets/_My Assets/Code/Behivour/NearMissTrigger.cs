@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class NearMissTrigger : MonoBehaviour
 {
-    public static Action NearMiss;
+    public static Action<NearMissSide> NearMiss;
 
 
     private void OnTriggerEnter(Collider collider)
@@ -13,7 +13,8 @@ public class NearMissTrigger : MonoBehaviour
             Debug.Log("Near Miss");
             collider.gameObject.SetActive(false);
 
-            NearMiss?.Invoke();
+            NearMissTriggerIdentity nearMissIdentity = collider.GetComponent<NearMissTriggerIdentity>();
+            NearMiss?.Invoke(nearMissIdentity.GetMySide());
         }
     }
 }

@@ -45,7 +45,7 @@ public class LTSeq {
 
 			/*uint backId = toId & 0xFFFF;
 			uint backCounter = toId >> 16;
-			if(_id!=backId || backCounter!=counter){
+			if(_id!=backId || backCounter!=scoreCounter){
 				Debug.LogError("BAD CONVERSION toId:"+_id);
 			}*/
 

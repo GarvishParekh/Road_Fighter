@@ -201,6 +201,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7957607352462144064}
+  - {fileID: 5088133938515363159}
   m_Father: {fileID: 1291829085775317049}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &751479814732108254
@@ -246,8 +247,9 @@ GameObject:
   m_Component:
   - component: {fileID: 7957607352462144064}
   - component: {fileID: 8615640629730779663}
+  - component: {fileID: 2200335459632057060}
   m_Layer: 0
-  m_Name: Near Miss Colliders
+  m_Name: Near Miss Colliders (Right)
   m_TagString: NearMiss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -287,8 +289,21 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 4, y: 5, z: 0.29}
-  m_Center: {x: 0, y: 1, z: 0}
+  m_Size: {x: 2.0070515, y: 5, z: 0.29}
+  m_Center: {x: 0.99647427, y: 1, z: 0}
+--- !u!114 &2200335459632057060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1434021835837975833}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b51e02330fd09634a90219307f0faecd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myNearMissSide: 1
 --- !u!1 &2294124088257599900
 GameObject:
   m_ObjectHideFlags: 0
@@ -383,6 +398,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4544106474138268659}
   - component: {fileID: 5429893383600902905}
+  - component: {fileID: 4189911562591822099}
   m_Layer: 0
   m_Name: Near Miss Colliders
   m_TagString: NearMiss
@@ -426,6 +442,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 4, y: 5, z: 0.29}
   m_Center: {x: 0, y: 1, z: 0}
+--- !u!114 &4189911562591822099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4442893088215205551}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b51e02330fd09634a90219307f0faecd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myNearMissSide: 0
 --- !u!1 &6531646589688575503
 GameObject:
   m_ObjectHideFlags: 0
@@ -568,6 +597,7 @@ MonoBehaviour:
   nearMissTriggerList:
   - {fileID: 8322908107336196048}
   - {fileID: 1434021835837975833}
+  - {fileID: 8462161751950378855}
   - {fileID: 4442893088215205551}
 --- !u!54 &8617266501998226441
 Rigidbody:
@@ -810,6 +840,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7822603865486080121}
   - component: {fileID: 9089453343379454202}
+  - component: {fileID: 5495679247630012675}
   m_Layer: 0
   m_Name: Near Miss Colliders
   m_TagString: NearMiss
@@ -853,6 +884,86 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 4, y: 5, z: 0.29}
   m_Center: {x: 0, y: 1, z: 0}
+--- !u!114 &5495679247630012675
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8322908107336196048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b51e02330fd09634a90219307f0faecd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myNearMissSide: 1
+--- !u!1 &8462161751950378855
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5088133938515363159}
+  - component: {fileID: 7938921802551203980}
+  - component: {fileID: 1721081721433462498}
+  m_Layer: 0
+  m_Name: Near Miss Colliders (Left)
+  m_TagString: NearMiss
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5088133938515363159
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8462161751950378855}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5293216064446856328}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &7938921802551203980
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8462161751950378855}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.9869204, y: 5, z: 0.29}
+  m_Center: {x: -1.0065398, y: 1, z: 0}
+--- !u!114 &1721081721433462498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8462161751950378855}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b51e02330fd09634a90219307f0faecd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myNearMissSide: 0
 --- !u!1 &8714042340528296179
 GameObject:
   m_ObjectHideFlags: 0

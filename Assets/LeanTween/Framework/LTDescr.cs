@@ -119,7 +119,7 @@ public class LTDescr
 
 			/*uint backId = toId & 0xFFFF;
 			uint backCounter = toId >> 16;
-			if(_id!=backId || backCounter!=counter){
+			if(_id!=backId || backCounter!=scoreCounter){
 				Debug.LogError("BAD CONVERSION toId:"+_id);
 			}*/
 
@@ -1763,7 +1763,7 @@ public class LTDescr
 	public LTDescr setId( uint id, uint global_counter ){
 		this._id = id;
 		this.counter = global_counter;
-		// Debug.Log("Global counter:"+global_counter);
+		// Debug.Log("Global scoreCounter:"+global_counter);
 		return this;
 	}
 

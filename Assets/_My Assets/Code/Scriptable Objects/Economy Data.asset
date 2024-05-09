@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ed8ac83cf49a1f44b4a5c7101a11b87, type: 3}
   m_Name: Economy Data
   m_EditorClassIdentifier: 
-  availableCoins: 0
-  defaultCoins: 100000
+  availableCoins: 2500
+  defaultCoins: 1000000
   coinsPerCollection: 50
+  coinsCollectedPerRound: 0
