@@ -12,8 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75845b20a998c7d40bd1ef4becb08958, type: 3}
   m_Name: Traffic Data
   m_EditorClassIdentifier: 
-  trafficStatus: 0
-  trafficSpeed: 2
+  trafficStatus: 1
+  trafficSpeed:
+  - 2
+  - 2.1
+  - 2.2
+  - 2.3
+  - 2.5
   allCars:
   - {fileID: 5625479494544449469, guid: a36cf52d03c5d0d4a996dfd8e795cf8b, type: 3}
   - {fileID: 5122450375441818932, guid: 8f801a1b27c28354fa8d37af0b3fd1b6, type: 3}
@@ -53,3 +58,6 @@ MonoBehaviour:
   - {fileID: 1399905151309712789, guid: 360fe9acdf8de544b8c746aadf3644b2, type: 3}
   - {fileID: 9101372778282399681, guid: de8d93b8fb962e04c9d51cfb699dc9fb, type: 3}
   - {fileID: 8463603565609920533, guid: e6ee11d5402354949922f0959ed79ffb, type: 3}
+  minTrafficSpawnDistance: 6
+  maxTrafficSpawnDistance: 25
+  positionOffCamera: -5

@@ -81,4 +81,9 @@ public class MainMenuUIManager : MonoBehaviour
         uiManager.OpenPopupCanvas(CanvasCellsName.NOT_ENOUGH_POPUP);
         needMoreMoney.text = $"You need <color=#F1C40F><b>{price.ToString("#,##0", CultureInfo.InvariantCulture)}</b></color> more coins to make this pruchase!";
     }
+
+    public void OpenSettings()
+    {
+        uiManager.OpenCanvas(CanvasCellsName.SETTINGS);
+    }
 }

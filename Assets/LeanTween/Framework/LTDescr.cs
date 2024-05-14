@@ -1804,10 +1804,10 @@ public class LTDescr
 	/**
 	* Set the finish time of the tween
 	* @method setSpeed
-	* @param {float} speed:float the speed in unity units per second you wish the object to travel (overrides the given time)
+	* @param {float} speedLevel:float the speedLevel in unity units per second you wish the object to travel (overrides the given time)
 	* @return {LTDescr} LTDescr an object that distinguishes the tween
 	* @example
-	* LeanTween.moveLocalZ( gameObject, 10f, 1f).setSpeed(0.2f) // the given time is ignored when speed is set<br>
+	* LeanTween.moveLocalZ( gameObject, 10f, 1f).setSpeed(0.2f) // the given time is ignored when speedLevel is set<br>
 	*/
 	public LTDescr setSpeed( float speed ){
 		this.speed = speed;

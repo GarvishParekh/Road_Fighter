@@ -35,7 +35,7 @@ public class CarSpeedManager : MonoBehaviour
         {
             if (scoreData.scoreCount <= carData.carSpeedLevel[(int)carData.currentSpeedLevel].maxValue)
             {
-                // calculate and update speed bar value 
+                // calculate and update speedLevel bar value 
                 carData.speedLevelValue = BinaryConverter
                 (
                     scoreData.scoreCount,
@@ -46,7 +46,7 @@ public class CarSpeedManager : MonoBehaviour
             }
             else
             {
-                // increase the speed level and update in UI
+                // increase the speedLevel level and update in UI
                 carData.currentSpeedLevel += 1;
                 speedLevelNameTxt.text = carData.carSpeedLevel[(int)carData.currentSpeedLevel].levelName;
                 

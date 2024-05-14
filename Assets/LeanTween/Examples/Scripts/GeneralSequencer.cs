@@ -47,7 +47,7 @@ public class GeneralSequencer : MonoBehaviour {
 			}
 		});
 
-		// You can speed up or slow down the sequence of events
+		// You can speedLevel up or slow down the sequence of events
 		seq.setScale(speedScale);
 
         // seq.reverse(); // not working yet

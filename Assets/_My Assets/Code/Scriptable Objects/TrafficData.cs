@@ -1,5 +1,11 @@
 using UnityEngine;
 
+public enum MovingCars
+{
+    STATIC,
+    MOVING
+}
+
 [CreateAssetMenu(fileName = "Traffic Data", menuName = "Traffic Data")]
 public class TrafficData : ScriptableObject
 {
@@ -9,6 +15,13 @@ public class TrafficData : ScriptableObject
         STATIC
     }
     public TrafficStatus trafficStatus;
-    public float trafficSpeed = 2;
+    public float[] trafficSpeed;
     public GameObject[] allCars;
+
+    [Space]
+    public float minTrafficSpawnDistance;
+    public float maxTrafficSpawnDistance;
+
+    [Space]
+    public float positionOffCamera = -5;
 }

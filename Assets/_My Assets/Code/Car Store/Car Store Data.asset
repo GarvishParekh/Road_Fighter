@@ -249,9 +249,9 @@ MonoBehaviour:
     lockPlayerPref: 
     equipPlayerPref: 
   equippedCarData:
-    equippedCarclass: 2
-    equippedCarIndex: 8
+    equippedCarclass: 3
+    equippedCarIndex: 0
   selectedCarData:
-    equippedCarclass: 2
-    equippedCarIndex: 8
+    equippedCarclass: 3
+    equippedCarIndex: 0
   foundEquippedCar: 0

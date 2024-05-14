@@ -22,4 +22,8 @@ public static class ConstantKeys
     // car selection
     public static string EQUIPPED_CAR_CLASS = "Equipped_Car_Class";
     public static string EQUIPPED_CAR_INDEX = "Equipped_Car_Index";
+
+    // settings
+    public static string SETTINGS_MUSIC = "SettingsMusic";
+    public static string SFX_Settings = "settingsSFX";
 }

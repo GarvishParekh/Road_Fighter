@@ -15,7 +15,8 @@ public enum CanvasCellsName
     DAILY_REWARD_COLLECTED,
     POWERUP_UPGRADE,
     CONFIRM_BUY_POPUP,
-    NOT_ENOUGH_POPUP
+    NOT_ENOUGH_POPUP,
+    SETTINGS
 }
 public class UiManager : MonoBehaviour
 {
