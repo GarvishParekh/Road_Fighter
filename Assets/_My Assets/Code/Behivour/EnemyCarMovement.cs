@@ -16,6 +16,16 @@ public class EnemyCarMovement : MonoBehaviour
         movementSpeed = Random.Range(0.1f, 0.2f);
     }
 
+    private void OnEnable()
+    {
+        GameStatus.GameOverAction += OnGameOver;
+    }
+
+    private void OnDisable()
+    {
+        GameStatus.GameOverAction -= OnGameOver;
+    }
+
     private void Update()
     {
         Animation();
@@ -43,5 +53,10 @@ public class EnemyCarMovement : MonoBehaviour
     {
         isMoving = false;
         transform.localPosition = Vector3.zero;
+    }
+
+    public void OnGameOver()
+    {
+        isMoving = false;
     }
 }
