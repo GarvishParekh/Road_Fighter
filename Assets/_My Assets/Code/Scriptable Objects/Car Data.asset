@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Car Data
   m_EditorClassIdentifier: 
   carEngine: 1
-  controlSystem: 2
+  controlSystem: 0
   healthDepletion: 0
   controlSlider: 1.82
   healthDepletionRate: 0.2

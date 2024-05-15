@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Car_20A_D
+  m_Name: PhotoShoot Car
   m_Shader: {fileID: -6465566751694194690, guid: d2ba55ca0a82a06499ae8d18ad1e37b9,
     type: 3}
   m_Parent: {fileID: 0}
@@ -62,7 +62,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 62b095059dee941048ebf0452e8d59e6, type: 3}
+        m_Texture: {fileID: 2800000, guid: 22e043ffc222b4c868eeb3468861e617, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
