@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
+using System.Collections.Concurrent;
 
 public class CarToggle : MonoBehaviour
 {
@@ -20,6 +21,7 @@ public class CarToggle : MonoBehaviour
 
     [Space]
     [SerializeField] private Image carIcon;
+    [SerializeField] private Image lockImge;
     [SerializeField] private int myCarPrice = 0;
     [SerializeField] private string myCarName = "";
     [SerializeField] private string myClass = "";
@@ -102,6 +104,16 @@ public class CarToggle : MonoBehaviour
                 lockStatus = PlayerPrefs.GetInt(lockPlayerPref, 0);
                 equipStatus = PlayerPrefs.GetInt(equipPlayerPref, 0);
             break;
+        }
+
+        switch (lockStatus)
+        {
+            case 0:
+                lockImge.enabled = true;
+                break;
+            case 1:
+                lockImge.enabled = false;
+                break;
         }
 
         /*

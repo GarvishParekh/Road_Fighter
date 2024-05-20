@@ -12,7 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d04fdef236e882243a001316a1fc8f83, type: 3}
   m_Name: Sound Data
   m_EditorClassIdentifier: 
-  backgroundMusicStatus: 0
   backgroundMusicType: 0
   mainMenuMusic:
   - {fileID: 8300000, guid: 2acafeed2fb7aa44ca28a34eb32415b4, type: 3}
@@ -24,3 +23,17 @@ MonoBehaviour:
   SFXVolume: 1
   soundBuffer: 0.5
   whooshSFX: {fileID: 8300000, guid: 96d4cf6e641bed24396e885ecbfd2359, type: 3}
+  carEngineSound:
+    AClass_A: {fileID: 8300000, guid: b049660b860c8334a852b54855bce599, type: 3}
+    AClass_B: {fileID: 8300000, guid: 2b9be05b0a886f147b9ac9a64d6a22fe, type: 3}
+    BClass_A: {fileID: 8300000, guid: ff89099d49f4dfb46981d1be1b34544d, type: 3}
+    BClass_B: {fileID: 8300000, guid: 1a39652b55ef6dc4c894ece2783c58c7, type: 3}
+    CClass_A: {fileID: 8300000, guid: f42ee6c61e2b5a049b588a485b2f267f, type: 3}
+    CClass_B: {fileID: 8300000, guid: c0191f5eddde47443a5bfd777e6d37b6, type: 3}
+    SClass_A: {fileID: 8300000, guid: 316224186e8ae6543990a05f4dc13981, type: 3}
+  engineSoundSettings:
+    engineStartingPitch: 0.65
+    engineMaxPitch: 2.5
+    soundMultiplier: 0.005
+  eningeSFXVolume: 0.25
+  enginePitch: 1.2
