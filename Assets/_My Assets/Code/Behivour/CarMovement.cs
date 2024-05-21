@@ -140,7 +140,7 @@ public class CarMovement : MonoBehaviour
     private void CarRotation()
     {
         carRotationVec = carRB.transform.rotation.eulerAngles;
-        carRotationVec.y = inputManager.GetLerpedDirection() * 8;
+        carRotationVec.y = inputManager.GetLerpedDirection() * 20;
         carRB.transform.rotation = Quaternion.Euler(carRotationVec);
     }
 
