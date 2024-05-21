@@ -31,11 +31,13 @@ public class SFXPlayer : MonoBehaviour
     private void OnEnable()
     {
         SceneManager.sceneLoaded += PlayEngineSound;
+        Actions.Crash += OnCrash;
     }
 
     private void OnDisable()
     {
         SceneManager.sceneLoaded -= PlayEngineSound;
+        Actions.Crash -= OnCrash;
     }
 
 
@@ -56,12 +58,19 @@ public class SFXPlayer : MonoBehaviour
 
     private void AudioSourceSetup()
     {
-        sfxAudioSource.volume = soundData.SFXVolume;
+        sfxAudioSource.volume = soundData.maxSFXVolume;
     }
 
     public void PlayWooshSound()
     {
+        sfxAudioSource.volume = soundData.maxSFXVolume;
         PlaySound(soundData.whooshSFX);
+    }
+
+    public void PlayCrashSound()
+    {
+        sfxAudioSource.volume = soundData.lowSFXVolume;
+        PlaySound(soundData.crashSFX);
     }
 
     public void TurnSFX(bool check)
@@ -119,5 +128,11 @@ public class SFXPlayer : MonoBehaviour
     public AudioSource GetEngineAudoiSource()
     {
         return engineAudioSource;
+    }
+
+    private void OnCrash()
+    {
+        engineAudioSource.Stop();
+        PlayCrashSound();
     }
 }

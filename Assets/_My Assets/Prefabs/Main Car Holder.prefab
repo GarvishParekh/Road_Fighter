@@ -14355,6 +14355,7 @@ MonoBehaviour:
   - {fileID: 1783550696224642340}
   - {fileID: 6771169836454999544}
   - {fileID: 1910078611593720378}
+  carHolder: {fileID: 0}
   foundEquippedCar: 0
 --- !u!114 &7154276475988182431
 MonoBehaviour:
@@ -16755,7 +16756,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   carData: {fileID: 11400000, guid: fb121c1dc1475384783df7983091d60b, type: 2}
   trafficData: {fileID: 11400000, guid: 9dc036fb28f92d24abaece9409f895f3, type: 2}
-  inGameCoinCollection: {fileID: 0}
 --- !u!1 &6945486186894222468
 GameObject:
   m_ObjectHideFlags: 0
@@ -18589,6 +18589,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26dfab630592c294e9b34db677d8ca7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  outerGlowObj: {fileID: 0}
+  animationSpeed: 0.35
 --- !u!1 &7852476866587236282
 GameObject:
   m_ObjectHideFlags: 0

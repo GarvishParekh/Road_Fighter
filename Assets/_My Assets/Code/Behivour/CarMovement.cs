@@ -130,9 +130,18 @@ public class CarMovement : MonoBehaviour
                         break;
                 }
 
-                break;
+                CarRotation();
+            break;
         }
         carRB.position = turningVector;
+    }
+
+    Vector3 carRotationVec = Vector3.zero;
+    private void CarRotation()
+    {
+        carRotationVec = carRB.transform.rotation.eulerAngles;
+        carRotationVec.y = inputManager.GetLerpedDirection() * 8;
+        carRB.transform.rotation = Quaternion.Euler(carRotationVec);
     }
 
     public void TakeControl()

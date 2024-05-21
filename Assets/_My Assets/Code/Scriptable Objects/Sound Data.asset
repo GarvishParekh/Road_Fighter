@@ -20,9 +20,11 @@ MonoBehaviour:
   gameplayMusic:
   - {fileID: 8300000, guid: dd88d2e12e2043e41afb34769accee52, type: 3}
   musicVolume: 0.2
-  SFXVolume: 1
+  maxSFXVolume: 0.5
+  lowSFXVolume: 0.25
   soundBuffer: 0.5
   whooshSFX: {fileID: 8300000, guid: 96d4cf6e641bed24396e885ecbfd2359, type: 3}
+  crashSFX: {fileID: 8300000, guid: a1f7abf0dd920704dab30efe19ec8631, type: 3}
   carEngineSound:
     AClass_A: {fileID: 8300000, guid: b049660b860c8334a852b54855bce599, type: 3}
     AClass_B: {fileID: 8300000, guid: 2b9be05b0a886f147b9ac9a64d6a22fe, type: 3}
@@ -32,8 +34,10 @@ MonoBehaviour:
     CClass_B: {fileID: 8300000, guid: c0191f5eddde47443a5bfd777e6d37b6, type: 3}
     SClass_A: {fileID: 8300000, guid: 316224186e8ae6543990a05f4dc13981, type: 3}
   engineSoundSettings:
-    engineStartingPitch: 0.65
-    engineMaxPitch: 2.5
+    engineStartingPitch: 1.2
+    engineMaxPitch: 2.4
     soundMultiplier: 0.005
-  eningeSFXVolume: 0.25
-  enginePitch: 1.2
+    engineRevPitch: 3
+    revSpeed: 5
+    normalSpeed: 2
+  eningeSFXVolume: 0.15

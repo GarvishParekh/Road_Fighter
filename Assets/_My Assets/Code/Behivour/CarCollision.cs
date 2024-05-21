@@ -27,6 +27,10 @@ public class CarCollision : MonoBehaviour
 
     public void GameOverFunction()
     {
+        if (carData.godMode == GodMode.ON)
+        {
+            return;   
+        }
         if (gameStauts.GetGameState() == GameState.GAMEOVER)
         {
             return;
@@ -40,5 +44,6 @@ public class CarCollision : MonoBehaviour
 
         gameStauts.ChangeGameState(GameState.GAMEOVER);
         GameStatus.GameOverAction?.Invoke();
+        Actions.Crash?.Invoke();
     }
 }

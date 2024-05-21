@@ -53,6 +53,7 @@ public class CarSpeedManager : MonoBehaviour
                 // speeding up animation
                 LeanTween.scale(speedLevelNameTxt.gameObject, Vector3.one * 2, 0.15f).setEaseInOutSine().setLoopPingPong(1);
                 boostingUpParticles.Play();
+                Actions.SpeedLevelIncreased?.Invoke();
             }
             yield return null;  
         }

@@ -12,18 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 610223fb02a9e014e91b88188937ab9d, type: 3}
   m_Name: Car Data
   m_EditorClassIdentifier: 
+  godMode: 0
   carEngine: 1
-  controlSystem: 2
+  controlSystem: 0
   healthDepletion: 0
   controlSlider: 1.82
   healthDepletionRate: 0.2
   maxSizeValues: 2.5
-  carHealth: 1
+  carHealth: 0.8433335
   carMainMenuSpeed: 10
   gearShiftingSpeed: 5
   pickUpSpeed: 1
-  speedLevelValue: 0.017333351
-  currentSpeedLevel: 0
+  speedLevelValue: 0.99999726
+  currentSpeedLevel: 4
   carSpeedLevel:
   - levelName: RELAXED
     speedValue: 10

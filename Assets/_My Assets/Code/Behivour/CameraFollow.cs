@@ -18,6 +18,11 @@ public class CameraFollow : MonoBehaviour
     [SerializeField] private Transform targetTransform;
     [SerializeField] private Transform cameraShakeTransform;
 
+    [Header (" [DYNAMIC CAMERA] ")]
+    [SerializeField] private Transform carHolder;
+    [SerializeField] private Transform cameraHolderTransform;
+    [SerializeField] private Transform lookAtTransform;
+
     public void Start()
     {
         uiManager = UiManager.instance;
@@ -35,6 +40,7 @@ public class CameraFollow : MonoBehaviour
         cameraTransform.position = Vector3.MoveTowards(cameraTransform.position, finalPosition, Time.deltaTime * cameraData.cameraSmoothness);
 
         CameraShakeEffect();
+        DynamicCamera();
     }
 
     private IEnumerator StartOff()
@@ -68,5 +74,16 @@ public class CameraFollow : MonoBehaviour
                 cameraShakeTransform.localPosition = Vector3.zero;
                 break;
         }
+    }
+
+    Vector3 dynamicVector = Vector3.zero;
+    float yMovement = 0;
+    private void DynamicCamera()
+    {
+        dynamicVector = transform.localPosition;
+        dynamicVector.x = -(carHolder.localPosition.x / 20);
+
+        cameraHolderTransform.localPosition = dynamicVector;
+        //cameraHolderTransform.LookAt(lookAtTransform);    
     }
 }

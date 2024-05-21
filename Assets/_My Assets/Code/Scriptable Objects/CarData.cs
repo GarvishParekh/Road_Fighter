@@ -28,9 +28,16 @@ public enum HealthDepletion
     ON
 }
 
+public enum GodMode
+{
+    OFF,
+    ON
+}
+
 [CreateAssetMenu(fileName = "Car Data", menuName = "Car Data")]
 public class CarData : ScriptableObject
 {
+    public GodMode godMode;
     public CarEngine carEngine;
     public ControlSystem controlSystem;
     public HealthDepletion healthDepletion;

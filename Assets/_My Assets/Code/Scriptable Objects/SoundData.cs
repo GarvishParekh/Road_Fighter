@@ -20,17 +20,20 @@ public class SoundData : ScriptableObject
 
     [Header ("<size=15>[VALUES]")]
     public float musicVolume = 0.5f;
-    public float SFXVolume = 0.5f;
+    public float maxSFXVolume = 0.5f;
+    public float lowSFXVolume = 0.5f;
     public float soundBuffer = 0.2f;
 
     [Header("<size=15>[SFX]")]
     public AudioClip whooshSFX;
+    public AudioClip crashSFX;
 
     [Header("<size=15>[ENGINE SETTINGS]")]
     public CarEngineSound carEngineSound;
     public EngineSoundSettings engineSoundSettings;
+
+    [Space]
     public float eningeSFXVolume = 0.1f;
-    public float enginePitch = 1.2f;
 }
 
 [System.Serializable]
@@ -57,4 +60,9 @@ public class EngineSoundSettings
     public float engineStartingPitch = 0.35f;
     public float engineMaxPitch = 2.5f;
     public float soundMultiplier = 0.0005f;
+
+    [Space]
+    public float engineRevPitch = 3;
+    public float revSpeed = 5;
+    public float normalSpeed = 2;
 }
