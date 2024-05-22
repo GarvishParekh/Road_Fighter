@@ -7,11 +7,13 @@ public enum BoostingStatus
 }
 
 public class NosSystem : MonoBehaviour
-{ 
+{
+
     public BoostingStatus boostingStatus;
     [SerializeField] private float nosValue = 1;
     [SerializeField] private ParticleSystem nosParticles;
 
+    [ContextMenu("NOS")]
     public void BoostButtonDown()
     {
         boostingStatus = BoostingStatus.IsBoosting;

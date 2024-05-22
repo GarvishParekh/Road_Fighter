@@ -14387,8 +14387,8 @@ MonoBehaviour:
   instructionManager: {fileID: 0}
   carData: {fileID: 11400000, guid: fb121c1dc1475384783df7983091d60b, type: 2}
   cameraData: {fileID: 11400000, guid: d8fa6162f83679140a1b2b61107d6000, type: 2}
-  rightSideSparkParticle: {fileID: 4372279947817356589}
-  leftSideSparkParticle: {fileID: 1868003617214884692}
+  rightSideSparkParticle: {fileID: 1570431098960783387}
+  leftSideSparkParticle: {fileID: 5537249070081726153}
 --- !u!1 &5609098163390358221
 GameObject:
   m_ObjectHideFlags: 0
@@ -16689,7 +16689,9 @@ Transform:
   - {fileID: 7214011018906450170}
   - {fileID: 7313223965556817070}
   - {fileID: 3564386386402866775}
+  - {fileID: 4312185942808414049}
   - {fileID: 7990458386010274556}
+  - {fileID: 7117092819106970035}
   - {fileID: 5450131288623520901}
   - {fileID: 6273996934851323224}
   m_Father: {fileID: 5308228441564423728}
@@ -22165,6 +22167,86 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 503893385314622307}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1626363548756775496
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 3778047832782561818}
+    m_Modifications:
+    - target: {fileID: 8383168345990507515, guid: 2926bd39ecf41ce4d870607603b05a44,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8383168345990507515, guid: 2926bd39ecf41ce4d870607603b05a44,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.48999998
+      objectReference: {fileID: 0}
+    - target: {fileID: 8383168345990507515, guid: 2926bd39ecf41ce4d870607603b05a44,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.30599976
+      objectReference: {fileID: 0}
+    - target: {fileID: 8383168345990507515, guid: 2926bd39ecf41ce4d870607603b05a44,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.122769736
+      objectReference: {fileID: 0}
+    - target: {fileID: 8383168345990507515, guid: 2926bd39ecf41ce4d870607603b05a44,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.9924352
+      objectReference: {fileID: 0}
+    - target: {fileID: 8383168345990507515, guid: 2926bd39ecf41ce4d870607603b05a44,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8383168345990507515, guid: 2926bd39ecf41ce4d870607603b05a44,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8383168345990507515, guid: 2926bd39ecf41ce4d870607603b05a44,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 194.104
+      objectReference: {fileID: 0}
+    - target: {fileID: 8383168345990507515, guid: 2926bd39ecf41ce4d870607603b05a44,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8383168345990507515, guid: 2926bd39ecf41ce4d870607603b05a44,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8792243318890830623, guid: 2926bd39ecf41ce4d870607603b05a44,
+        type: 3}
+      propertyPath: m_Name
+      value: Spark Particles (Sphere_R)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2926bd39ecf41ce4d870607603b05a44, type: 3}
+--- !u!198 &1570431098960783387 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 241307361476754003, guid: 2926bd39ecf41ce4d870607603b05a44,
+    type: 3}
+  m_PrefabInstance: {fileID: 1626363548756775496}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &7117092819106970035 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8383168345990507515, guid: 2926bd39ecf41ce4d870607603b05a44,
+    type: 3}
+  m_PrefabInstance: {fileID: 1626363548756775496}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1924497882774163719
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22243,17 +22325,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spark Particles (Left)
       objectReference: {fileID: 0}
+    - target: {fileID: 8792243318890830623, guid: c085adb878fd9da469098216841b9f67,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c085adb878fd9da469098216841b9f67, type: 3}
---- !u!198 &1868003617214884692 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 241307361476754003, guid: c085adb878fd9da469098216841b9f67,
-    type: 3}
-  m_PrefabInstance: {fileID: 1924497882774163719}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7990458386010274556 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8383168345990507515, guid: c085adb878fd9da469098216841b9f67,
@@ -22496,17 +22577,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spark Particles (Right)
       objectReference: {fileID: 0}
+    - target: {fileID: 8792243318890830623, guid: c085adb878fd9da469098216841b9f67,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c085adb878fd9da469098216841b9f67, type: 3}
---- !u!198 &4372279947817356589 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 241307361476754003, guid: c085adb878fd9da469098216841b9f67,
-    type: 3}
-  m_PrefabInstance: {fileID: 4608377271029708670}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5450131288623520901 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8383168345990507515, guid: c085adb878fd9da469098216841b9f67,
@@ -22670,6 +22750,86 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1908569544420744339, guid: bfde8e1116c806f4cb37d7aeaf4edc98,
     type: 3}
   m_PrefabInstance: {fileID: 5087011601100494779}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &5728870600275356826
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 3778047832782561818}
+    m_Modifications:
+    - target: {fileID: 8383168345990507515, guid: 2926bd39ecf41ce4d870607603b05a44,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8383168345990507515, guid: 2926bd39ecf41ce4d870607603b05a44,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.48999998
+      objectReference: {fileID: 0}
+    - target: {fileID: 8383168345990507515, guid: 2926bd39ecf41ce4d870607603b05a44,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.306
+      objectReference: {fileID: 0}
+    - target: {fileID: 8383168345990507515, guid: 2926bd39ecf41ce4d870607603b05a44,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.122769736
+      objectReference: {fileID: 0}
+    - target: {fileID: 8383168345990507515, guid: 2926bd39ecf41ce4d870607603b05a44,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.9924352
+      objectReference: {fileID: 0}
+    - target: {fileID: 8383168345990507515, guid: 2926bd39ecf41ce4d870607603b05a44,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8383168345990507515, guid: 2926bd39ecf41ce4d870607603b05a44,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8383168345990507515, guid: 2926bd39ecf41ce4d870607603b05a44,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 194.104
+      objectReference: {fileID: 0}
+    - target: {fileID: 8383168345990507515, guid: 2926bd39ecf41ce4d870607603b05a44,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8383168345990507515, guid: 2926bd39ecf41ce4d870607603b05a44,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8792243318890830623, guid: 2926bd39ecf41ce4d870607603b05a44,
+        type: 3}
+      propertyPath: m_Name
+      value: Spark Particles (Sphere_L)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2926bd39ecf41ce4d870607603b05a44, type: 3}
+--- !u!4 &4312185942808414049 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8383168345990507515, guid: 2926bd39ecf41ce4d870607603b05a44,
+    type: 3}
+  m_PrefabInstance: {fileID: 5728870600275356826}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &5537249070081726153 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 241307361476754003, guid: 2926bd39ecf41ce4d870607603b05a44,
+    type: 3}
+  m_PrefabInstance: {fileID: 5728870600275356826}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6061423236537155529
 PrefabInstance:
