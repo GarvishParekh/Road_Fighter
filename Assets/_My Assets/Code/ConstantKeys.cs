@@ -26,4 +26,5 @@ public static class ConstantKeys
     // settings
     public static string SETTINGS_MUSIC = "SettingsMusic";
     public static string SFX_Settings = "settingsSFX";
+    public static string CONTROLS_SETTINGS = "Controls_Settings";
 }

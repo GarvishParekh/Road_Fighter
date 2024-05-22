@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   godMode: 0
   carEngine: 1
-  controlSystem: 0
+  controlSystem: 3
   healthDepletion: 0
   controlSlider: 1.82
   healthDepletionRate: 0.2
@@ -47,6 +47,7 @@ MonoBehaviour:
     minValue: 15000
     maxValue: 30000
   touchSensitivity: 5
+  swipeValue: 0
   gyroSensitivity: 200
   gyroResponse: 0.2
   gyrpMaxVelocity: 2

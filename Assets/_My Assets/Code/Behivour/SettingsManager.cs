@@ -8,16 +8,20 @@ public class SettingsManager : MonoBehaviour
 
     [Header("<size=15>[SCRIPTABLE OBJECT]")]
     [SerializeField] private SettingsData settingsData;
+    [SerializeField] private CarData carData;
 
     [Header("<size=15>[TOGGLES]")]
     [SerializeField] private Toggle musicToggle;
     [SerializeField] private Toggle sfxToggle;
+    [SerializeField] private Toggle tiltToggle;
+    [SerializeField] private Toggle touchToggle;
 
     private void Start()
     {
         backgroundMusic = BackgroundMusic.instance;
         sfxPlayer = SFXPlayer.instance; 
         SetupSettings();
+        ControlSetup();
     }
 
     private void SetupSettings()
@@ -91,6 +95,37 @@ public class SettingsManager : MonoBehaviour
             settingsData.sfxStatus = SFXStatus.OFF;
             sfxPlayer.TurnSFX(false);
             PlayerPrefs.SetInt(ConstantKeys.SFX_Settings, 0);
+        }
+    }
+
+    public void ChangeControls()
+    {
+        if (tiltToggle.isOn)
+        {
+            carData.controlSystem = ControlSystem.GRYO;
+            PlayerPrefs.SetInt(ConstantKeys.CONTROLS_SETTINGS, 0);
+        }
+        else if (touchToggle.isOn)
+        {
+            carData.controlSystem = ControlSystem.SWIPE;
+            PlayerPrefs.SetInt(ConstantKeys.CONTROLS_SETTINGS, 1);
+        }
+    }
+
+    private void ControlSetup()
+    {
+        int controlIndex = PlayerPrefs.GetInt(ConstantKeys.CONTROLS_SETTINGS, 0);
+
+        switch (controlIndex)
+        {
+            case 0:
+                tiltToggle.isOn = true;
+                carData.controlSystem = ControlSystem.GRYO;
+                break;
+            case 1:
+                touchToggle.isOn = true;
+                carData.controlSystem = ControlSystem.SWIPE;
+                break;
         }
     }
 }

@@ -19,7 +19,8 @@ public enum ControlSystem
 {
     GRYO,
     SLIDER,
-    KEYBOARD
+    KEYBOARD,
+    SWIPE
 }
 
 public enum HealthDepletion
@@ -61,8 +62,13 @@ public class CarData : ScriptableObject
     public CurrentSpeedLevel currentSpeedLevel;
     public CarSpeedLevel[] carSpeedLevel;
 
-    [Header("<size=15>[CONTOLS VALUE]")]
+    [Header("<size=15>[CONTROLS VALUE]")]
     public float touchSensitivity;
+
+    [Header("<size=15>[GYRO VALUE]")]
+    public float swipeValue;
+
+    [Header("<size=15>[GYRO VALUE]")]
     public float gyroSensitivity;
     public float gyroResponse;
     public float gyrpMaxVelocity;

@@ -125,9 +125,14 @@ public class CarMovement : MonoBehaviour
                     case ControlSystem.GRYO:
                         carRB.velocity = Vector3.right * inputManager.GetLerpedDirection() * carData.touchSensitivity;
                         break;
+
                     case ControlSystem.KEYBOARD:
                         carRB.velocity = Vector3.right * inputManager.GetLerpedDirection() * carData.touchSensitivity;
                         break;
+
+                    case ControlSystem.SWIPE:
+                        carRB.velocity = Vector3.right * inputManager.GetLerpedDirection() * carData.touchSensitivity;
+                    break;
                 }
 
                 CarRotation();
