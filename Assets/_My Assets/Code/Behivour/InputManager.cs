@@ -33,7 +33,7 @@ public class InputManager : MonoBehaviour
             break;
 
             case ControlSystem.SWIPE:
-                gyroCanvas.SetActive(true);
+                gyroCanvas.SetActive(false);
                 swipeCanvas.SetActive(true);
             break;
         }

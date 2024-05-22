@@ -2312,7 +2312,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   carData: {fileID: 11400000, guid: fb121c1dc1475384783df7983091d60b, type: 2}
+  gyroCanvas: {fileID: 1438433972}
   touchCanvas: {fileID: 1099057700}
+  swipeCanvas: {fileID: 1965441077}
 --- !u!1 &269282154
 GameObject:
   m_ObjectHideFlags: 0
@@ -4041,6 +4043,7 @@ GameObject:
   - component: {fileID: 378511910}
   - component: {fileID: 378511909}
   - component: {fileID: 378511911}
+  - component: {fileID: 378511912}
   m_Layer: 5
   m_Name: Left Side Control
   m_TagString: Untagged
@@ -4118,6 +4121,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Delegates: []
+--- !u!114 &378511912
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 378511907}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e78b361661f16a459a229b5cc443b1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controlSmoothness: 20
+  deltaThreshold: 0.2
 --- !u!1001 &381328834
 PrefabInstance:
   m_ObjectHideFlags: 0
