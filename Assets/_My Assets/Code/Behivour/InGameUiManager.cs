@@ -14,6 +14,7 @@ public class InGameUiManager : MonoBehaviour
     [SerializeField] private TMP_Text coinCounTxt;
     [SerializeField] private List<GameObject> nearMissCanvasListRight = new List<GameObject>();
     [SerializeField] private List<GameObject> nearMissCanvasListLeft = new List<GameObject>();
+    [SerializeField] private List<GameObject> onScreenNearMiss = new List<GameObject>();
 
     int canvasSpawnCount;
 
@@ -32,10 +33,12 @@ public class InGameUiManager : MonoBehaviour
         switch (nearMissSide)
         {
             case NearMissSide.LEFT:
-                SpawnNearMissCanvas(nearMissCanvasListLeft[0], nearMissCanvasListLeft);
+                //SpawnNearMissCanvas(nearMissCanvasListLeft[0], nearMissCanvasListLeft);
+                OnScreenNearMiss();
                 break;
             case NearMissSide.RIGHT:
-                SpawnNearMissCanvas(nearMissCanvasListRight[0], nearMissCanvasListRight);
+                //SpawnNearMissCanvas(nearMissCanvasListRight[0], nearMissCanvasListRight);
+                OnScreenNearMiss();
                 break;
         }
     }
@@ -49,6 +52,17 @@ public class InGameUiManager : MonoBehaviour
 
         listToRefleftIn.Remove(spawnedCanvas);
         listToRefleftIn.Add(spawnedCanvas);
+    }
+
+    private void OnScreenNearMiss()
+    {
+        onScreenNearMiss[0].transform.SetSiblingIndex(nearMissCanvasListRight.Count);
+        onScreenNearMiss[0].SetActive(true);
+
+        GameObject spawnedCanvas = onScreenNearMiss[0];
+
+        onScreenNearMiss.Remove(spawnedCanvas);
+        onScreenNearMiss.Add(spawnedCanvas);
     }
 
     public void UpdateCoinsCountTxt(int _coinsToAdd)

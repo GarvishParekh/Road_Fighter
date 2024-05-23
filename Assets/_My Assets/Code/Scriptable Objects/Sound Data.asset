@@ -23,7 +23,7 @@ MonoBehaviour:
   maxSFXVolume: 0.5
   lowSFXVolume: 0.25
   soundBuffer: 0.5
-  whooshSFX: {fileID: 8300000, guid: 96d4cf6e641bed24396e885ecbfd2359, type: 3}
+  whooshSFX: {fileID: 8300000, guid: 4ef75ed3136041f4799bfe3046a717eb, type: 3}
   crashSFX: {fileID: 8300000, guid: a1f7abf0dd920704dab30efe19ec8631, type: 3}
   carEngineSound:
     AClass_A: {fileID: 8300000, guid: b049660b860c8334a852b54855bce599, type: 3}

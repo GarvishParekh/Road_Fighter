@@ -9,6 +9,8 @@ public class NearMissTrigger : MonoBehaviour, ICanvasCellAnimation
     [SerializeField] private GameObject outerGlowObj;
     [SerializeField] private float animationSpeed = 0.35f;
 
+    Transform enemyCar;
+
     private void Start()
     {
         sfxPlayer = SFXPlayer.instance;
@@ -34,6 +36,7 @@ public class NearMissTrigger : MonoBehaviour, ICanvasCellAnimation
         if (collider.CompareTag ("NearMiss"))
         {
             Debug.Log("Near Miss");
+            enemyCar = collider.transform;
             collider.gameObject.SetActive(false);
 
             NearMissTriggerIdentity nearMissIdentity = collider.GetComponent<NearMissTriggerIdentity>();
@@ -42,6 +45,19 @@ public class NearMissTrigger : MonoBehaviour, ICanvasCellAnimation
             PlayAnimation();
 
             sfxPlayer.PlayWooshSound();
+        }
+    }
+
+    
+    public Transform GetTrafficCar()
+    {
+        if (enemyCar == null)
+        {
+            return null;
+        }
+        else
+        {
+            return enemyCar;
         }
     }
 }
