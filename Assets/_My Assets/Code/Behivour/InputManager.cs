@@ -25,6 +25,7 @@ public class InputManager : MonoBehaviour
         {
             case ControlSystem.KEYBOARD:
                 swipeCanvas.SetActive(false);
+                gyroCanvas.SetActive(true);
             break;
 
 

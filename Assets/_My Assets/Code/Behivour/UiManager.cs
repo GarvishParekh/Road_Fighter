@@ -16,7 +16,8 @@ public enum CanvasCellsName
     POWERUP_UPGRADE,
     CONFIRM_BUY_POPUP,
     NOT_ENOUGH_POPUP,
-    SETTINGS
+    SETTINGS,
+    UPDATE_AVAILABLE
 }
 public class UiManager : MonoBehaviour
 {
