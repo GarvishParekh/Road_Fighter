@@ -31,7 +31,7 @@ public class CarSwitcher : MonoBehaviour
     {
         if (Input.GetKeyDown (KeyCode.Space))
         {
-            //ChangeNextCar();
+            ChangeNextCar();
         }
     }
 }
