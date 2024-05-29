@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 610223fb02a9e014e91b88188937ab9d, type: 3}
   m_Name: Car Data
   m_EditorClassIdentifier: 
-  godMode: 1
+  godMode: 0
   carEngine: 1
   controlSystem: 2
   healthDepletion: 0
@@ -23,7 +23,7 @@ MonoBehaviour:
   carMainMenuSpeed: 10
   gearShiftingSpeed: 5
   pickUpSpeed: 1
-  speedLevelValue: 0.019200025
+  speedLevelValue: 0.25666472
   currentSpeedLevel: 0
   carSpeedLevel:
   - levelName: RELAXED
