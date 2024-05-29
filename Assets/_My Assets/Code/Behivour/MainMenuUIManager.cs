@@ -86,4 +86,14 @@ public class MainMenuUIManager : MonoBehaviour
     {
         uiManager.OpenCanvas(CanvasCellsName.SETTINGS);
     }
+
+    public void OpenUpdateCanvas()
+    {
+        uiManager.OpenPopupCanvas(CanvasCellsName.UPDATE_AVAILABLE);
+    }
+
+    public void UpdateNowButton()
+    {
+        Application.OpenURL("https://play.google.com/store/apps/details?id=com.theintellify.SpeedNation");
+    }
 }
