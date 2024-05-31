@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Car Data
   m_EditorClassIdentifier: 
   godMode: 0
-  carEngine: 1
-  controlSystem: 2
+  carEngine: 0
+  controlSystem: 0
   healthDepletion: 0
   controlSlider: 1.82
   healthDepletionRate: 0.2
@@ -23,7 +23,7 @@ MonoBehaviour:
   carMainMenuSpeed: 10
   gearShiftingSpeed: 5
   pickUpSpeed: 1
-  speedLevelValue: 0.25666472
+  speedLevelValue: 0.7251333
   currentSpeedLevel: 0
   carSpeedLevel:
   - levelName: RELAXED

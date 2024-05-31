@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class CarCollision : MonoBehaviour
 {
+    AdsManager adsManager;
     UiManager uiManager;
     GameStatus gameStauts;
 
@@ -12,6 +13,7 @@ public class CarCollision : MonoBehaviour
     {
         uiManager = UiManager.instance;
         gameStauts = GameStatus.instance;
+        adsManager = AdsManager.instance;
 
         trafficData.trafficStatus = TrafficData.TrafficStatus.MOVING;
     }
@@ -45,5 +47,11 @@ public class CarCollision : MonoBehaviour
         gameStauts.ChangeGameState(GameState.GAMEOVER);
         GameStatus.GameOverAction?.Invoke();
         Actions.Crash?.Invoke();
+
+        // show ads
+        if (adsManager !=null)
+        {
+            adsManager.ShowInterstitialAd();
+        }
     }
 }
