@@ -31,6 +31,8 @@ public class GameoverCanvasAnimation : MonoBehaviour, ICanvasCellAnimation
     [SerializeField] GameObject homeButtom;
     [SerializeField] GameObject retryButton;
     [SerializeField] GameObject retyrIcon;
+    [SerializeField] GameObject doubleCoinsButton;
+    [SerializeField] GameObject doubleCoinsHolder;
 
     WaitForSeconds pointOne = new WaitForSeconds(0.01f);
     float scoreCounter = 0;
@@ -54,6 +56,7 @@ public class GameoverCanvasAnimation : MonoBehaviour, ICanvasCellAnimation
         photoHolder.transform.localScale = defaultTransform;
         LeanTween.rotate(photoHolder, defaultTransform, 0);
         homeButtom.transform.localScale = defaultTransform;
+        doubleCoinsButton.transform.localScale = Vector3.zero;
         retryButton.transform.localScale = defaultTransform;
     }
 
@@ -95,8 +98,13 @@ public class GameoverCanvasAnimation : MonoBehaviour, ICanvasCellAnimation
         {
             LeanTween.scale(retryButton, Vector3.one, 0.2f).setEaseInOutSine().setOnComplete(()=>
             {
-                LeanTween.scale(homeButtom, Vector3.one, 0.2f).setEaseInOutSine();
-                LeanTween.rotateAround(retyrIcon, Vector3.forward, 360, 2f).setEaseOutBounce().setLoopCount(-1);
+
+                LeanTween.scale(doubleCoinsButton, Vector3.one, 0.2f).setEaseInOutSine().setOnComplete(() =>
+                { 
+                    LeanTween.scale(homeButtom, Vector3.one, 0.2f).setEaseInOutSine();
+                    LeanTween.rotateAround(retyrIcon, Vector3.forward, 360, 2f).setEaseOutBounce().setLoopCount(-1);
+                    LeanTween.scale(doubleCoinsButton, Vector3.one * 1.2f, 0.2f).setEaseInOutSine().setLoopPingPong(-1);
+                });
             });
         });
     }
@@ -106,6 +114,15 @@ public class GameoverCanvasAnimation : MonoBehaviour, ICanvasCellAnimation
         int coinsCollected = inGameCoinCollection.GetCollectedCoins();
         float collectionSpeed = coinsCollected / 1.6f * Time.deltaTime;
         
+        if (coinsCollected > 1000)
+        {
+            doubleCoinsHolder.SetActive(true);
+        }
+        else
+        {
+            doubleCoinsHolder.SetActive(false);
+        }
+
         while (coinCounter != coinsCollected)
         {
             coinCounter = Mathf.MoveTowards(coinCounter, coinsCollected, collectionSpeed);
