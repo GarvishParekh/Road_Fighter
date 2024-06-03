@@ -12,22 +12,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 469c24fdb3bd6431b92cc1465bd9166b, type: 3}
   m_Name: RemoteConfigDataStoreAsset
   m_EditorClassIdentifier: 
-  _rsKeyList: "[\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"d7e9dd6a-17e9-4c39-a596-a99c36737891\"\r\n   
+  _rsKeyList: "[\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"d6b43fad-eec5-4744-a8c9-d4faf6c2426b\"\r\n   
     },\r\n    \"rs\": {\r\n      \"key\": \"Android_Version\",\r\n      \"type\":
     \"float\",\r\n      \"value\": 1.0\r\n    }\r\n  },\r\n  {\r\n    \"metadata\":
-    {\r\n      \"entityId\": \"ae0b0723-84b2-4c5f-a2e8-b0352bf1a977\"\r\n    },\r\n   
+    {\r\n      \"entityId\": \"34b58563-2585-48f9-8408-94aff73e63c3\"\r\n    },\r\n   
     \"rs\": {\r\n      \"key\": \"iOS_Version\",\r\n      \"type\": \"float\",\r\n     
     \"value\": 1.0\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\":
-    \"e3062339-b605-41cd-8385-a48df01031c6\"\r\n    },\r\n    \"rs\": {\r\n     
+    \"042d52d2-8d1f-452f-8e0e-dd205637e664\"\r\n    },\r\n    \"rs\": {\r\n     
     \"key\": \"Version_Check\",\r\n      \"type\": \"bool\",\r\n      \"value\":
     true\r\n    }\r\n  }\r\n]"
-  _rsLastCachedKeyList: "[\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"d7e9dd6a-17e9-4c39-a596-a99c36737891\"\r\n   
+  _rsLastCachedKeyList: "[\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"d6b43fad-eec5-4744-a8c9-d4faf6c2426b\"\r\n   
     },\r\n    \"rs\": {\r\n      \"key\": \"Android_Version\",\r\n      \"type\":
     \"float\",\r\n      \"value\": 1.0\r\n    }\r\n  },\r\n  {\r\n    \"metadata\":
-    {\r\n      \"entityId\": \"ae0b0723-84b2-4c5f-a2e8-b0352bf1a977\"\r\n    },\r\n   
+    {\r\n      \"entityId\": \"34b58563-2585-48f9-8408-94aff73e63c3\"\r\n    },\r\n   
     \"rs\": {\r\n      \"key\": \"iOS_Version\",\r\n      \"type\": \"float\",\r\n     
     \"value\": 1.0\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\":
-    \"e3062339-b605-41cd-8385-a48df01031c6\"\r\n    },\r\n    \"rs\": {\r\n     
+    \"042d52d2-8d1f-452f-8e0e-dd205637e664\"\r\n    },\r\n    \"rs\": {\r\n     
     \"key\": \"Version_Check\",\r\n      \"type\": \"bool\",\r\n      \"value\":
     true\r\n    }\r\n  }\r\n]"
   _environments: "[\r\n  {\r\n    \"projectId\": \"41e1be62-562a-4ab2-96cb-d615b8c9756c\",\r\n   

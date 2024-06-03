@@ -22,5 +22,3 @@ MonoBehaviour:
     rewardedID: ca-app-pub-4892570451993674/6243492372
   totalTimeSpent: 0
   adsTimer: 0
-  perGameAdsThreshold: 600
-  showTime: 240
