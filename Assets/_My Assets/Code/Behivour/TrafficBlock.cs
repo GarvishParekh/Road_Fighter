@@ -7,8 +7,10 @@ public class TrafficBlock : MonoBehaviour
     Rigidbody rb;
 
     [SerializeField] private MovingCars movingCars;
+
     [Header ("<size=15>[SCRIPTABLE OBJECT]")]
     [SerializeField] private TrafficData trafficData;
+    [SerializeField] private CarData carData;
 
     [Header ("<size=15>[COMPONENTS]")]
     [SerializeField] private GameObject[] lanes;
@@ -78,6 +80,9 @@ public class TrafficBlock : MonoBehaviour
 
     private void RandomMovingStatus()
     {
+        if ((int)carData.currentSpeedLevel <= 2)
+            return;
+
         int randomCount = UnityEngine.Random.Range(0, 2);
         movingCars = (MovingCars)randomCount;
 

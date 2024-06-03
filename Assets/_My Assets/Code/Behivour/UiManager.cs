@@ -17,7 +17,8 @@ public enum CanvasCellsName
     CONFIRM_BUY_POPUP,
     NOT_ENOUGH_POPUP,
     SETTINGS,
-    UPDATE_AVAILABLE
+    UPDATE_AVAILABLE,
+    DOUBLE_COINS_DONE
 }
 public class UiManager : MonoBehaviour
 {
