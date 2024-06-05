@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "97615475138",
+    "project_id": "game-79cae",
+    "storage_bucket": "game-79cae.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:97615475138:android:87298e776da98d2221665b",
+        "android_client_info": {
+          "package_name": "com.theintellify.speednation"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA-wce6_2khkB7vinl-lkQA2M35YSuMJMc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

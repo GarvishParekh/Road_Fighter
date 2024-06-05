@@ -77,7 +77,6 @@ public class CameraFollow : MonoBehaviour
     }
 
     Vector3 dynamicVector = Vector3.zero;
-    float yMovement = 0;
     private void DynamicCamera()
     {
         dynamicVector = transform.localPosition;
