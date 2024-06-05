@@ -1,6 +1,7 @@
 using Firebase;
 using UnityEngine;
 using Firebase.Analytics;
+using Firebase.Extensions;
 
 public class FirebaseInitlization : MonoBehaviour
 {
@@ -26,7 +27,7 @@ public class FirebaseInitlization : MonoBehaviour
 
     private void Start()
     {
-        FirebaseApp.CheckAndFixDependenciesAsync().ContinueWith(task =>
+        FirebaseApp.CheckAndFixDependenciesAsync().ContinueWithOnMainThread(task =>
         {
             FirebaseAnalytics.SetAnalyticsCollectionEnabled(true);
         });

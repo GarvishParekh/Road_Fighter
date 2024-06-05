@@ -18,7 +18,8 @@ public enum CanvasCellsName
     NOT_ENOUGH_POPUP,
     SETTINGS,
     UPDATE_AVAILABLE,
-    DOUBLE_COINS_DONE
+    DOUBLE_COINS_DONE,
+    PAUSE_CANVAS
 }
 public class UiManager : MonoBehaviour
 {
