@@ -23,8 +23,8 @@ MonoBehaviour:
   carMainMenuSpeed: 10
   gearShiftingSpeed: 5
   pickUpSpeed: 1
-  speedLevelValue: 0.54790974
-  currentSpeedLevel: 1
+  speedLevelValue: 0.3978676
+  currentSpeedLevel: 0
   carSpeedLevel:
   - levelName: RELAXED
     speedValue: 10
