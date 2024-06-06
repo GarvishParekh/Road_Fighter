@@ -1,13 +1,14 @@
 {
   "project_info": {
     "project_number": "97615475138",
+    "firebase_url": "https://game-79cae-default-rtdb.firebaseio.com",
     "project_id": "game-79cae",
     "storage_bucket": "game-79cae.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:97615475138:android:582ad6f76cdd6fba21665b",
+        "mobilesdk_app_id": "1:97615475138:android:09723ec0d04cd2fb21665b",
         "android_client_info": {
           "package_name": "com.theintellify.speednation"
         }
