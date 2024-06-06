@@ -27,6 +27,7 @@ public class InGameUiManager : MonoBehaviour
     [SerializeField] private GameObject notAvailablePanel;
     [SerializeField] private TMP_Text coinCounTxt;
     [SerializeField] private TMP_Text timeSpentCountTxt;
+    [SerializeField] private GameObject newHighscoreCrossed;
 
     [Space]
     [SerializeField] private List<GameObject> nearMissCanvasListRight = new List<GameObject>();
@@ -151,6 +152,14 @@ public class InGameUiManager : MonoBehaviour
 
     private void UpdateTimeSpent(float currentTime)
     {
-        timeSpentCountTxt.text = currentTime.ToString("#,##0", CultureInfo.InvariantCulture);
+        timeSpentCountTxt.text = currentTime.ToString("#,##0.<size=25>00", CultureInfo.InvariantCulture);
+    }
+
+    public void HighscoreCrossedPopup()
+    {
+        LeanTween.scaleX(newHighscoreCrossed, 1, 0.25f).setEaseInOutSine().setOnComplete(() =>
+        {
+            LeanTween.scaleX(newHighscoreCrossed, 0, 0.25f).setEaseInOutSine().setDelay(2);
+        });
     }
 }
