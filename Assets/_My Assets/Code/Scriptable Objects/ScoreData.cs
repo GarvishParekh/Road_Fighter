@@ -6,6 +6,7 @@ public class ScoreData : ScriptableObject
     [Header (" <size=15>[ SCORE VALUES ] ")]
     public float scoreCount = 0;
     public int currentScoreLevel = 0;
+    public float timeSpent = 0;
 
     [Space]
     public float scoreMultiplierValue = 0;

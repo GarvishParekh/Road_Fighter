@@ -82,7 +82,6 @@ public class ScoreManager : MonoBehaviour
     {
         scoreData.scoreMultiplierValue += scoreData.increasingValue * Time.deltaTime;
         
-        //if (scoreData.scoreMultiplierValue >= 1 && scoreData.currentScoreLevel < scoreData.scoreMultiplier.Length - 1) 
         if (scoreData.scoreMultiplierValue >= 1 && scoreData.currentScoreLevel < maxScoreLevel)
         {
             scoreData.scoreMultiplierValue = 0;

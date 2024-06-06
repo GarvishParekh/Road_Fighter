@@ -1,8 +1,10 @@
 using TMPro;
 using UnityEngine;
-using System.Collections.Generic;
-using System.Globalization;
 using UnityEngine.UI;
+using System.Globalization;
+using System.Collections.Generic;
+using UnityEngine.SceneManagement;
+using System.Data;
 
 public enum NearMissSide
 {
@@ -13,14 +15,18 @@ public enum NearMissSide
 public class InGameUiManager : MonoBehaviour
 {
     AdsManager adsManager;
+    UiManager uiManager;
+    SFXPlayer sfxPlayer;
 
     [Header("<size=15>[ SCRIPTABLE OBEJCT ]")]
     [SerializeField] private AdsData adsData;
+    [SerializeField] private ScoreData scoreData;
 
     [Header("<size=15>[ UI ]")]
     [SerializeField] private Button doubleCoinsBtn;
     [SerializeField] private GameObject notAvailablePanel;
     [SerializeField] private TMP_Text coinCounTxt;
+    [SerializeField] private TMP_Text timeSpentCountTxt;
 
     [Space]
     [SerializeField] private List<GameObject> nearMissCanvasListRight = new List<GameObject>();
@@ -31,7 +37,9 @@ public class InGameUiManager : MonoBehaviour
 
     private void Start()
     {
+        uiManager = UiManager.instance;
         adsManager = AdsManager.instance;
+        sfxPlayer = SFXPlayer.instance;
         InvokeRepeating(nameof(AdsAvailableCheck), 0, 5);
     }
 
@@ -43,6 +51,11 @@ public class InGameUiManager : MonoBehaviour
     private void OnDisable()
     {
         NearMissTrigger.NearMiss -= OnNearMiss;
+    }
+
+    private void Update()
+    {
+        UpdateTimeSpent(scoreData.timeSpent);
     }
 
     private void OnNearMiss(NearMissSide nearMissSide)
@@ -105,5 +118,39 @@ public class InGameUiManager : MonoBehaviour
                 notAvailablePanel.SetActive(true);
                 break;
         }
+    }
+
+    bool turnItOff = false;
+    public void Btn_PauseButton()
+    {
+        GameObject engineSource = sfxPlayer.GetEngineAudoiSource().gameObject;
+        if (engineSource.activeInHierarchy)
+        {
+            engineSource.SetActive(false);
+            turnItOff = true;
+        }
+        uiManager.OpenCanvas(CanvasCellsName.PAUSE_CANVAS);
+        Time.timeScale = 0;
+    }
+    public void Btn_ResumeButton()
+    {
+        if (turnItOff)
+        {
+            sfxPlayer.GetEngineAudoiSource().gameObject.SetActive(true);
+            sfxPlayer.GetEngineAudoiSource().Play();
+        }
+        uiManager.OpenCanvas(CanvasCellsName.GAMEPLAY);
+        Time.timeScale = 1;
+    }
+    public void Btn_HomeButton()
+    {
+        sfxPlayer.gameObject.SetActive(true);
+        Time.timeScale = 1;
+        SceneManager.LoadScene(0);
+    }
+
+    private void UpdateTimeSpent(float currentTime)
+    {
+        timeSpentCountTxt.text = currentTime.ToString("#,##0", CultureInfo.InvariantCulture);
     }
 }

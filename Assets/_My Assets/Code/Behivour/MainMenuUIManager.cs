@@ -19,6 +19,7 @@ public class MainMenuUIManager : MonoBehaviour
 
     private void Start()
     {
+        Debug.Log("Identifier: " + Application.identifier);
         uiManager = UiManager.instance;
         Invoke(nameof(SetMainMenu), 0.5f);
     }
@@ -94,6 +95,10 @@ public class MainMenuUIManager : MonoBehaviour
 
     public void UpdateNowButton()
     {
-        Application.OpenURL("https://play.google.com/store/apps/details?id=com.theintellify.SpeedNation");
+#if UNITY_ANDROID
+        Application.OpenURL("https://play.google.com/store/apps/details?id=" + Application.identifier);
+#elif UNITY_IOS
+        Application.OpenURL("https://apps.apple.com/us/app/speed-nation/id6502994204");
+# endif
     }
 }

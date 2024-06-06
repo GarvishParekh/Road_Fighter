@@ -9,6 +9,7 @@ public class TrafficBlock : MonoBehaviour
     [SerializeField] private MovingCars movingCars;
 
     [Header ("<size=15>[SCRIPTABLE OBJECT]")]
+    [SerializeField] private ScoreData scoreData;
     [SerializeField] private TrafficData trafficData;
     [SerializeField] private CarData carData;
 
@@ -80,7 +81,7 @@ public class TrafficBlock : MonoBehaviour
 
     private void RandomMovingStatus()
     {
-        if ((int)carData.currentSpeedLevel <= 2)
+        if ((int)scoreData.timeSpent <= 180)
             return;
 
         int randomCount = UnityEngine.Random.Range(0, 2);

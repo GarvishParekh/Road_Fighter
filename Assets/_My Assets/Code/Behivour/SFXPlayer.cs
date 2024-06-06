@@ -75,7 +75,8 @@ public class SFXPlayer : MonoBehaviour
 
     public void TurnSFX(bool check)
     {
-        sfxAudioSource.enabled = check;
+        sfxAudioSource.gameObject.SetActive(check);
+        engineAudioSource.gameObject.SetActive(check);
     }
 
     private void PlayEngineSound(Scene _scene, LoadSceneMode _loadMode)
