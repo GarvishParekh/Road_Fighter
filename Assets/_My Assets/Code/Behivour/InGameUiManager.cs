@@ -4,6 +4,7 @@ using UnityEngine.UI;
 using System.Globalization;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
+using System.Data;
 
 public enum NearMissSide
 {
@@ -19,11 +20,13 @@ public class InGameUiManager : MonoBehaviour
 
     [Header("<size=15>[ SCRIPTABLE OBEJCT ]")]
     [SerializeField] private AdsData adsData;
+    [SerializeField] private ScoreData scoreData;
 
     [Header("<size=15>[ UI ]")]
     [SerializeField] private Button doubleCoinsBtn;
     [SerializeField] private GameObject notAvailablePanel;
     [SerializeField] private TMP_Text coinCounTxt;
+    [SerializeField] private TMP_Text timeSpentCountTxt;
 
     [Space]
     [SerializeField] private List<GameObject> nearMissCanvasListRight = new List<GameObject>();
@@ -48,6 +51,11 @@ public class InGameUiManager : MonoBehaviour
     private void OnDisable()
     {
         NearMissTrigger.NearMiss -= OnNearMiss;
+    }
+
+    private void Update()
+    {
+        UpdateTimeSpent(scoreData.timeSpent);
     }
 
     private void OnNearMiss(NearMissSide nearMissSide)
@@ -139,5 +147,10 @@ public class InGameUiManager : MonoBehaviour
         sfxPlayer.gameObject.SetActive(true);
         Time.timeScale = 1;
         SceneManager.LoadScene(0);
+    }
+
+    private void UpdateTimeSpent(float currentTime)
+    {
+        timeSpentCountTxt.text = currentTime.ToString("#,##0", CultureInfo.InvariantCulture);
     }
 }
