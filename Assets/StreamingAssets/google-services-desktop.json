@@ -8,20 +8,22 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:97615475138:android:09723ec0d04cd2fb21665b",
+        "mobilesdk_app_id": "1:97615475138:ios:2baeedbd01be6dd621665b",
         "android_client_info": {
           "package_name": "com.theintellify.speednation"
         }
       },
-      "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyA-wce6_2khkB7vinl-lkQA2M35YSuMJMc"
+          "current_key": "AIzaSyAvt_AJethtBdn7y9MNC26XKHU1LJ8jnPk"
         }
       ],
       "services": {
+        "analytics_service": {
+          "status": 0
+        },
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "status": 1
         }
       }
     }
