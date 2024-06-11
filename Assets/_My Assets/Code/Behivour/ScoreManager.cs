@@ -8,6 +8,7 @@ public class ScoreManager : MonoBehaviour
     GameStatus gameStatus;
     [Header(" [SCRIPTS] ")]
     [SerializeField] private NosSystem nosSystem;
+    [SerializeField] private InGameUiManager inGameUiManager;
     
     [Header(" [SCRIPTABLE OBJECT] ")]
     [SerializeField] private ScoreData scoreData;
@@ -21,6 +22,10 @@ public class ScoreManager : MonoBehaviour
     [SerializeField] private TMP_Text scoreTxt;
     [SerializeField] private Image scoreMutliplierImg;
     [SerializeField] private RectTransform scoreMutliplierMainHolder;
+
+    int currentHighscore = 0;
+    int currentScore = 0;
+    bool highscoreCrossed = false;
 
     private void OnEnable()
     {
@@ -37,6 +42,7 @@ public class ScoreManager : MonoBehaviour
         ScoreReset();
         gameStatus = GameStatus.instance;
         SetMaxScoreLevel();
+        currentHighscore = PlayerPrefs.GetInt(ConstantKeys.HIGHSCORE_COUNT, 0);
     }
 
     private void SetMaxScoreLevel()
@@ -63,6 +69,8 @@ public class ScoreManager : MonoBehaviour
         {
             return;
         }
+
+        NewHighscoreCheck();
         switch (nosSystem.boostingStatus)
         {
             case BoostingStatus.IsBoosting:
@@ -82,7 +90,6 @@ public class ScoreManager : MonoBehaviour
     {
         scoreData.scoreMultiplierValue += scoreData.increasingValue * Time.deltaTime;
         
-        //if (scoreData.scoreMultiplierValue >= 1 && scoreData.currentScoreLevel < scoreData.scoreMultiplier.Length - 1) 
         if (scoreData.scoreMultiplierValue >= 1 && scoreData.currentScoreLevel < maxScoreLevel)
         {
             scoreData.scoreMultiplierValue = 0;
@@ -112,13 +119,28 @@ public class ScoreManager : MonoBehaviour
     private void NoteScore()
     {
         // note score
-        int currentHighscore = PlayerPrefs.GetInt(ConstantKeys.HIGHSCORE_COUNT, 0);
-        int currentScore = (int)scoreData.scoreCount;
+        currentScore = (int)scoreData.scoreCount;
 
         // update the highscore
         if (currentScore > currentHighscore)
         {
             PlayerPrefs.SetInt(ConstantKeys.HIGHSCORE_COUNT, currentScore);
+        }
+    }
+
+    private void NewHighscoreCheck()
+    {
+        if (currentHighscore == 0)
+            return;
+
+        if (highscoreCrossed)
+            return;
+
+        currentScore = (int)scoreData.scoreCount;
+        if (currentScore > currentHighscore)
+        {
+            inGameUiManager.HighscoreCrossedPopup();
+            highscoreCrossed = true;
         }
     }
 }

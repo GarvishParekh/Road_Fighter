@@ -23,29 +23,29 @@ MonoBehaviour:
   carMainMenuSpeed: 10
   gearShiftingSpeed: 5
   pickUpSpeed: 1
-  speedLevelValue: 0.7251333
+  speedLevelValue: 0.3230151
   currentSpeedLevel: 0
   carSpeedLevel:
   - levelName: RELAXED
     speedValue: 10
     minValue: 0
-    maxValue: 1500
+    maxValue: 60
   - levelName: SWIFT
     speedValue: 15
-    minValue: 1500
-    maxValue: 3500
+    minValue: 60
+    maxValue: 180
   - levelName: TURBO
     speedValue: 25
-    minValue: 3500
-    maxValue: 9000
+    minValue: 180
+    maxValue: 300
   - levelName: HYPERSONIC
     speedValue: 30
-    minValue: 9000
-    maxValue: 15000
+    minValue: 300
+    maxValue: 420
   - levelName: INSANE
     speedValue: 45
-    minValue: 15000
-    maxValue: 30000
+    minValue: 420
+    maxValue: 540
   touchSensitivity: 5
   swipeValue: 0
   gyroSensitivity: 200

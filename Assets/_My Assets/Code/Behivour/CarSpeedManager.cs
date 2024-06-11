@@ -20,8 +20,19 @@ public class CarSpeedManager : MonoBehaviour
         StartCoroutine (nameof(SpeedCalculation));  
     }
 
-    private void ReserScoreValues()
+    private void Update()
     {
+        CalculateTimeSpent();
+    }
+
+    private void CalculateTimeSpent()
+    {
+        scoreData.timeSpent += Time.deltaTime;
+    }
+
+    private void ResetScoreValues()
+    {
+        scoreData.timeSpent = 0;
         scoreData.scoreCount = 0;
         carData.currentSpeedLevel = 0;
         speedLevelNameTxt.text = carData.carSpeedLevel[0].levelName;
@@ -29,16 +40,16 @@ public class CarSpeedManager : MonoBehaviour
 
     private IEnumerator SpeedCalculation()
     {
-        ReserScoreValues();
+        ResetScoreValues();
         
         while ((int)carData.currentSpeedLevel < carData.carSpeedLevel.Length - 1)
         {
-            if (scoreData.scoreCount <= carData.carSpeedLevel[(int)carData.currentSpeedLevel].maxValue)
+            if (scoreData.timeSpent <= carData.carSpeedLevel[(int)carData.currentSpeedLevel].maxValue)
             {
                 // calculate and update speedLevel bar value 
                 carData.speedLevelValue = BinaryConverter
                 (
-                    scoreData.scoreCount,
+                    scoreData.timeSpent,
                     carData.carSpeedLevel[(int)carData.currentSpeedLevel].minValue,
                     carData.carSpeedLevel[(int)carData.currentSpeedLevel].maxValue
                 );
