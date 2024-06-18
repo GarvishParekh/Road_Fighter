@@ -1223,8 +1223,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: SCORE MULTIPLIER
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 290d21b297f0f9a458f06825454aa40d, type: 2}
-  m_sharedMaterial: {fileID: 2959845842797605623, guid: 290d21b297f0f9a458f06825454aa40d,
+  m_fontAsset: {fileID: 11400000, guid: e166390abcfea3a4d9ec1c5a6cec4873, type: 2}
+  m_sharedMaterial: {fileID: -3296433457199808368, guid: e166390abcfea3a4d9ec1c5a6cec4873,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
