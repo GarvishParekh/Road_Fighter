@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571337, b: 0.3069219, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.3069224, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5346,7 +5346,7 @@ GameObject:
   - component: {fileID: 375185092}
   - component: {fileID: 375185091}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Store Txt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5393,8 +5393,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: STORE
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8a45ed483403b4050a137cf4553f9af1, type: 2}
-  m_sharedMaterial: {fileID: 8088079628875772496, guid: 8a45ed483403b4050a137cf4553f9af1,
+  m_fontAsset: {fileID: 11400000, guid: e166390abcfea3a4d9ec1c5a6cec4873, type: 2}
+  m_sharedMaterial: {fileID: -3296433457199808368, guid: e166390abcfea3a4d9ec1c5a6cec4873,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -20343,10 +20343,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: audio
+  m_text: AUDIO
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 290d21b297f0f9a458f06825454aa40d, type: 2}
-  m_sharedMaterial: {fileID: 2959845842797605623, guid: 290d21b297f0f9a458f06825454aa40d,
+  m_fontAsset: {fileID: 11400000, guid: e166390abcfea3a4d9ec1c5a6cec4873, type: 2}
+  m_sharedMaterial: {fileID: -3296433457199808368, guid: e166390abcfea3a4d9ec1c5a6cec4873,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -20381,7 +20381,7 @@ MonoBehaviour:
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 4096
   m_textAlignment: 65535
-  m_characterSpacing: 0
+  m_characterSpacing: -1.44
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -25105,10 +25105,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Controls
+  m_text: CONTROLS
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 290d21b297f0f9a458f06825454aa40d, type: 2}
-  m_sharedMaterial: {fileID: 2959845842797605623, guid: 290d21b297f0f9a458f06825454aa40d,
+  m_fontAsset: {fileID: 11400000, guid: e166390abcfea3a4d9ec1c5a6cec4873, type: 2}
+  m_sharedMaterial: {fileID: -3296433457199808368, guid: e166390abcfea3a4d9ec1c5a6cec4873,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -25143,7 +25143,7 @@ MonoBehaviour:
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 4096
   m_textAlignment: 65535
-  m_characterSpacing: 0
+  m_characterSpacing: -1.44
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -26254,8 +26254,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: SETTINGS
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8a45ed483403b4050a137cf4553f9af1, type: 2}
-  m_sharedMaterial: {fileID: 8088079628875772496, guid: 8a45ed483403b4050a137cf4553f9af1,
+  m_fontAsset: {fileID: 11400000, guid: e166390abcfea3a4d9ec1c5a6cec4873, type: 2}
+  m_sharedMaterial: {fileID: -3296433457199808368, guid: e166390abcfea3a4d9ec1c5a6cec4873,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -26462,10 +26462,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: rate game
+  m_text: RATE GAME
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 290d21b297f0f9a458f06825454aa40d, type: 2}
-  m_sharedMaterial: {fileID: 2959845842797605623, guid: 290d21b297f0f9a458f06825454aa40d,
+  m_fontAsset: {fileID: 11400000, guid: e166390abcfea3a4d9ec1c5a6cec4873, type: 2}
+  m_sharedMaterial: {fileID: -3296433457199808368, guid: e166390abcfea3a4d9ec1c5a6cec4873,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -35002,10 +35002,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Car name
+  m_text: CAR NAME
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 290d21b297f0f9a458f06825454aa40d, type: 2}
-  m_sharedMaterial: {fileID: 2959845842797605623, guid: 290d21b297f0f9a458f06825454aa40d,
+  m_fontAsset: {fileID: 11400000, guid: e166390abcfea3a4d9ec1c5a6cec4873, type: 2}
+  m_sharedMaterial: {fileID: -3296433457199808368, guid: e166390abcfea3a4d9ec1c5a6cec4873,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -35030,13 +35030,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 35
-  m_fontSizeBase: 35
+  m_fontSize: 27
+  m_fontSizeBase: 27
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 1
+  m_fontStyle: 17
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 4096
   m_textAlignment: 65535
@@ -35529,8 +35529,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: UPGRADES
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8a45ed483403b4050a137cf4553f9af1, type: 2}
-  m_sharedMaterial: {fileID: 8088079628875772496, guid: 8a45ed483403b4050a137cf4553f9af1,
+  m_fontAsset: {fileID: 11400000, guid: e166390abcfea3a4d9ec1c5a6cec4873, type: 2}
+  m_sharedMaterial: {fileID: -3296433457199808368, guid: e166390abcfea3a4d9ec1c5a6cec4873,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -35565,7 +35565,7 @@ MonoBehaviour:
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 4096
   m_textAlignment: 65535
-  m_characterSpacing: 0
+  m_characterSpacing: 2
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
