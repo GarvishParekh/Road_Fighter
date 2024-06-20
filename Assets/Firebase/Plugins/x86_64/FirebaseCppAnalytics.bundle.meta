@@ -1,5 +1,7 @@
 fileFormatVersion: 2
-guid: 9bcf3af9279275d49a2cd3810ad68d24
+guid: 35bfcced25264151bd76b628a1dfa989
+labels:
+- gvh
 PluginImporter:
   externalObjects: {}
   serializedVersion: 2
@@ -21,13 +23,32 @@ PluginImporter:
     second:
       enabled: 0
       settings:
+        CPU: x86_64
         DefaultValueInitialized: true
   - first:
-      Windows Store Apps: WindowsStoreApps
+      Standalone: Linux64
+    second:
+      enabled: 1
+      settings:
+        CPU: AnyCPU
+  - first:
+      Standalone: OSXUniversal
+    second:
+      enabled: 1
+      settings:
+        CPU: x86_64
+  - first:
+      Standalone: Win
     second:
       enabled: 0
       settings:
-        CPU: AnyCPU
+        CPU: None
+  - first:
+      Standalone: Win64
+    second:
+      enabled: 1
+      settings:
+        CPU: x86_64
   userData: 
   assetBundleName: 
   assetBundleVariant: 

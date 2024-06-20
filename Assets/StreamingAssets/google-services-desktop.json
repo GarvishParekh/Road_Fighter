@@ -1,27 +1,28 @@
 {
   "project_info": {
     "project_number": "97615475138",
-    "firebase_url": "https://game-79cae-default-rtdb.firebaseio.com",
     "project_id": "game-79cae",
     "storage_bucket": "game-79cae.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:97615475138:android:09723ec0d04cd2fb21665b",
+        "mobilesdk_app_id": "1:97615475138:ios:13a7f68e4ba801d921665b",
         "android_client_info": {
           "package_name": "com.theintellify.speednation"
         }
       },
-      "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyA-wce6_2khkB7vinl-lkQA2M35YSuMJMc"
+          "current_key": "AIzaSyAvt_AJethtBdn7y9MNC26XKHU1LJ8jnPk"
         }
       ],
       "services": {
+        "analytics_service": {
+          "status": 0
+        },
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "status": 1
         }
       }
     }
